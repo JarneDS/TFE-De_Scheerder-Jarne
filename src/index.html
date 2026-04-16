@@ -20,6 +20,37 @@
     <script src="scripts/app.js" defer></script>
 </head>
 <body>
-
+    <section class="accueil">
+        <h1>Bienvenue sur «Les secrets de la voiture».</h1>
+        <h2>Ici vous allez pouvoir tout apprendre sur votre véhicule.</h2>
+        <p>Vous pouvez remplir le formulaire ci-dessous ou directement appuyer sur le bouton «Commencer».</p>
+    </section>
+    <section class="form__accueil">
+        <div class="form__elements">
+            <h3>Nouvelle voiture :</h3>
+            <div class="form">
+                <label for="MVoiture">Marque de la voiture :</label><br>
+                <input type="text" id="marqueVoiture" name="marqueVoiture" placeholder="Marque">
+            </div>
+            <div class="form">
+                <label for="typeVoiture">Type de voiture :</label><br>
+                <select id="typeVoiture" name="typeVoiture">
+                    <option value="">Sélectionner un type</option>
+                    <option value="essence">Essence</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="mhev">MHEV</option>
+                    <option value="hev">HEV</option>
+                    <option value="phev">PHEV</option>
+                    <option value="electrique">Électrique</option>
+                </select>
+            </div>
+            <button id="ajouterVoiture">Ajouter la voiture</button>
+        </div>
+        <div class="voituresEnregistrees">
+            <h3>Voiture enregistrées :</h3>
+            <div id="listeVoitures"></div>
+        </div>
+    </section>
+    <a href="selection.html">Commencer →</a>
 </body>
 </html>
