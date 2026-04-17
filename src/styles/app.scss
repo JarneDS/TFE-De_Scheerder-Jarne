@@ -54,6 +54,12 @@ h3, label, .commencer {
     font-family: "TitilliumWeb-Bold";
 }
 
+h4 {
+    font-size: clamp(1.125rem, 0.247vw + 1.079rem, 1.375rem);
+    margin: 10px 0;
+    font-family: "TitilliumWeb-SemiBold";
+}
+
 p, option, select, input, button, a {
     color: var(--color-text);
     margin: 13px 0;
@@ -152,6 +158,11 @@ select {
     border-radius: 5px;
     cursor: pointer;
     width: fit-content;
+    transition: all .3s;
+}
+
+#ajouterVoiture:hover, .suppVehicule:hover {
+    background-color: var(--color-secondary);
 }
 
 .commencer {
@@ -172,22 +183,34 @@ select {
     border-radius: 10px 0;
     border: none;
     padding: 10px;
-    margin: 40px 0 0 40px;
+    margin: 40px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btnRetour:hover {
+    background-color: var(--color-secondary);
 }
 
 .selection__body {
-    background-image: url(../assets/);
+    background: url(../assets/bg.png);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 100vh;
+    background-position: center;
 }
 
 .selection__type {
     width: 38.54%;
+    background-color: var(--color-bg);
+    padding: 0;
 }
 
 .btnLiens__container {
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
 }
 
 .btnLiens {
@@ -200,4 +223,38 @@ select {
 
 .btnLiens:hover {
     background-color: var(--color-secondary);
+}
+
+.accueil__selection, .choix__types, .btnLiens__container {
+    padding: 0 40px;
+}
+
+.voitureRendu {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+    width: 61%;
+}
+
+.choix__types {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 0 40px;
+    justify-content: center;
+}
+
+.choix__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 198px;
+    padding: 10px 10px 0;
+    border: var(--color-text) 1px solid;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 0;
 }
