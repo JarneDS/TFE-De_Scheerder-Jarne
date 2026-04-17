@@ -1,4 +1,4 @@
-const marqueInput = document.getElementById("marqueVoiture");
+const marqueInput = document.getElementById("MVoiture");
 const typeSelect = document.getElementById("typeVoiture");
 const btnAjouter = document.getElementById("ajouterVoiture");
 const liste = document.getElementById("listeVoitures");
@@ -14,10 +14,10 @@ function afficherVoitures() {
     liste.innerHTML = voitures
         .map((voiture, index) => `
             <div class="voiture-item">
-                <div class="voiture-check">
+                <button class="voiture-check">
                     <p>${voiture.marque} – ${voiture.type}</p>
-                    <p class="check">&#x2714;</p>
-                </div>
+                    <span class="check">&#x2714;</span>
+                </button>
                 <button onclick="supprimerVoiture(${index})" class="suppVehicule">Supprimer ce véhicule</button>
             </div>
         `)
@@ -52,3 +52,22 @@ window.supprimerVoiture = function(index) {
 };
 
 afficherVoitures();
+
+const voitureSelect = document.querySelectorAll(".voiture-check");
+const activeIndex = localStorage.getItem("voitureActive");
+
+if (activeIndex !== null && voitureSelect[activeIndex]) {
+    voitureSelect[activeIndex].classList.add("actif");
+}
+
+voitureSelect.forEach((v, index) => {
+    v.addEventListener("click", () => {
+
+        voitureSelect.forEach(el => el.classList.remove("actif"));
+
+        v.classList.add("actif");
+
+        localStorage.setItem("voitureActive", index);
+    });
+});
+

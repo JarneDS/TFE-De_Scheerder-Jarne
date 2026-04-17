@@ -26,29 +26,39 @@
   --color-thirdly: #FF5050;
 }
 
-body {
+html, body {
     background: var(--color-bg);
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 40px;
 }
 
 h1 {
     font-size: clamp(2.188rem, 0.617vw + 2.072rem, 2.813rem);
-    margin: 37px 0;
+    margin: 0 0 37px;
+    font-family: "TitilliumWeb-Bold";
 }
 
 h2 {
     font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
     margin: 26px 0;
+    font-family: "TitilliumWeb-Bold";
 }
 
 h3, label, .commencer {
     font-size: clamp(1.25rem, 0.37vw + 1.181rem, 1.625rem);
     margin: 14px 0;
+    font-family: "TitilliumWeb-Bold";
 }
 
 p, option, select, input, button, a {
     color: var(--color-text);
     margin: 13px 0;
     font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
+    font-family: "TitilliumWeb-SemiBold";
 }
 
 /* ACCUEIL */
@@ -56,6 +66,7 @@ p, option, select, input, button, a {
     display: flex;
     flex-direction: row;
     gap: 150px;
+    justify-content: center;
 }
 
 .form__elements {
@@ -71,22 +82,24 @@ p, option, select, input, button, a {
     border: none;
     border-radius: 5px;
     width: 100%;
+    height: 41px;
     cursor: pointer;
 }
 
 #MVoiture {
     background-color: var(--color-secondary);
     color: var(--color-text);
-    padding: 9px 0 10px;
+    padding: 9px 0 10px 13px;
     border: none;
     border-radius: 5px;
-    width: 100%;
     cursor: pointer;
+    width: 100%;
+    height: 41px;
+    box-sizing: border-box;
 }
 
 #MVoiture::placeholder {
     color: var(--color-text);
-    padding-left: 13px;
 }
 
 .select-wrapper {
@@ -117,10 +130,19 @@ select {
     flex-direction: row;
     align-items: center;
     gap: 5px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
 }
 
-.check {
+.voiture-check .check {
     color: var(--color-secondary);
+    display: none;
+}
+
+.voiture-check.actif .check {
+    display: block;
 }
 
 #ajouterVoiture, .suppVehicule {
@@ -129,6 +151,7 @@ select {
     padding: 9px 13px 10px;
     border-radius: 5px;
     cursor: pointer;
+    width: fit-content;
 }
 
 .commencer {
@@ -138,4 +161,43 @@ select {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+}
+
+/* SELECTION */
+.btnRetour {
+    background-color: var(--color-primary);
+    border-radius: 10px 0;
+    border: none;
+    padding: 10px;
+    margin: 40px 0 0 40px;
+}
+
+.selection__body {
+    background-image: url(../assets/);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.selection__type {
+    width: 38.54%;
+}
+
+.btnLiens__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnLiens {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    padding: 20px;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.btnLiens:hover {
+    background-color: var(--color-secondary);
 }
