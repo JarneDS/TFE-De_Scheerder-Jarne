@@ -308,3 +308,70 @@ select {
     display: flex;
     justify-self: center;
 }
+
+.boutonInfoA, .boutonInfoB, .boutonInfoC, .boutonInfoD, .boutonInfoE, .boutonInfoF, .boutonInfoG {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+    padding: 27px;
+    cursor: pointer;
+    border: none;
+    gap: 15px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.boutonInfoA:hover {
+    width: 183.5px;
+}
+
+.boutonInfoB:hover {
+    width: 179px;
+}
+
+.boutonInfoC:hover {
+    width: 220px;
+}
+
+.boutonInfoD:hover {
+    width: 183.5px;
+}
+
+.boutonInfoE:hover {
+    width: 177px;
+}
+
+.boutonInfoF:hover {
+    width: 222.5px;
+}
+
+.boutonInfoG:hover {
+    width: 297px;
+}
+
+.boutonInfo__txt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.boutonInfoA:hover .boutonInfo__txt, .boutonInfoB:hover .boutonInfo__txt, .boutonInfoC:hover .boutonInfo__txt, .boutonInfoD:hover .boutonInfo__txt, .boutonInfoE:hover .boutonInfo__txt, .boutonInfoF:hover .boutonInfo__txt, .boutonInfoG:hover .boutonInfo__txt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.boutonInfo__svg {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.boutonInfoA:hover .boutonInfo__svg, .boutonInfoB:hover .boutonInfo__svg, .boutonInfoC:hover .boutonInfo__svg, .boutonInfoD:hover .boutonInfo__svg, .boutonInfoE:hover .boutonInfo__svg, .boutonInfoF:hover .boutonInfo__svg, .boutonInfoG:hover .boutonInfo__svg {
+    transform: rotate(0deg);
+}
