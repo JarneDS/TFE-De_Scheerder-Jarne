@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'TitilliumWeb-Bold';
+  src: url('../fonts/TitilliumWeb-Bold.eot');
+  src: url('../fonts/TitilliumWeb-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TitilliumWeb-Bold.woff2') format('woff2'),
+       url('../fonts/TitilliumWeb-Bold.woff') format('woff'),
+       url('../fonts/TitilliumWeb-Bold.ttf')  format('truetype'),
+       url('../fonts/TitilliumWeb-Bold.svg#FontName') format('svg');
+}
+
+@font-face {
+  font-family: 'TitilliumWeb-SemiBold';
+  src: url('../fonts/TitilliumWeb-SemiBold.eot');
+  src: url('../fonts/TitilliumWeb-SemiBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TitilliumWeb-SemiBold.woff2') format('woff2'),
+       url('../fonts/TitilliumWeb-SemiBold.woff') format('woff'),
+       url('../fonts/TitilliumWeb-SemiBold.ttf')  format('truetype'),
+       url('../fonts/TitilliumWeb-SemiBold.svg#FontName') format('svg');
+}
+
+:root {
+  --color-bg: #f1f1f1;
+  --color-text: #000;
+  --color-primary: #FF7F00;
+  --color-secondary: rgba(255, 128, 0, 0.6);
+  --color-thirdly: #FF5050;
+}
+
+body {
+    background: var(--color-bg);
+}
+
+h1 {
+    font-size: clamp(2.188rem, 0.617vw + 2.072rem, 2.813rem);
+    margin: 37px 0;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
+    margin: 26px 0;
+}
+
+h3, label, .commencer {
+    font-size: clamp(1.25rem, 0.37vw + 1.181rem, 1.625rem);
+    margin: 14px 0;
+}
+
+p, option, select, input, button, a {
+    color: var(--color-text);
+    margin: 13px 0;
+    font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
+}
+
+/* ACCUEIL */
+.form__accueil {
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+}
+
+.form__elements {
+    display: flex;
+    flex-direction: column;
+    max-width: 289px;
+}
+
+#typeVoiture {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    padding: 9px 13px 10px 13px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#MVoiture {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    padding: 9px 0 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#MVoiture::placeholder {
+    color: var(--color-text);
+    padding-left: 13px;
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--color-text);
+    font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
+}
+
+select {
+    appearance: none;
+    width: 100%;
+    padding-right: 36px;
+}
+
+.voiture-check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.check {
+    color: var(--color-secondary);
+}
+
+#ajouterVoiture, .suppVehicule {
+    background-color: var(--color-primary);
+    border: none;
+    padding: 9px 13px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.commencer {
+    background-color: var(--color-primary);
+    padding: 20px 16px 20px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}

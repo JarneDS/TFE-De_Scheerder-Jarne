@@ -30,19 +30,22 @@
             <h3>Nouvelle voiture :</h3>
             <div class="form">
                 <label for="MVoiture">Marque de la voiture :</label><br>
-                <input type="text" id="marqueVoiture" name="marqueVoiture" placeholder="Marque">
+                <input type="text" id="MVoiture" name="marqueVoiture" placeholder="Marque">
             </div>
             <div class="form">
                 <label for="typeVoiture">Type de voiture :</label><br>
-                <select id="typeVoiture" name="typeVoiture">
-                    <option value="">Sélectionner un type</option>
-                    <option value="essence">Essence</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="mhev">MHEV</option>
-                    <option value="hev">HEV</option>
-                    <option value="phev">PHEV</option>
-                    <option value="electrique">Électrique</option>
-                </select>
+
+                <div class="select-wrapper">
+                    <select id="typeVoiture" name="typeVoiture">
+                        <option value="">Sélectionner un type</option>
+                        <option value="essence">Essence</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="mhev">MHEV</option>
+                        <option value="hev">HEV</option>
+                        <option value="phev">PHEV</option>
+                        <option value="electrique">Électrique</option>
+                    </select>
+                </div>
             </div>
             <button id="ajouterVoiture">Ajouter la voiture</button>
         </div>
@@ -51,6 +54,6 @@
             <div id="listeVoitures"></div>
         </div>
     </section>
-    <a href="selection.html">Commencer →</a>
+    <a href="selection.html" class="commencer">Commencer →</a>
 </body>
 </html>

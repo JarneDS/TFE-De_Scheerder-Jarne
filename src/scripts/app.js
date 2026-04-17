@@ -14,8 +14,11 @@ function afficherVoitures() {
     liste.innerHTML = voitures
         .map((voiture, index) => `
             <div class="voiture-item">
-                <p>${voiture.marque} – ${voiture.type}</p>
-                <button onclick="supprimerVoiture(${index})">Supprimer</button>
+                <div class="voiture-check">
+                    <p>${voiture.marque} – ${voiture.type}</p>
+                    <p class="check">&#x2714;</p>
+                </div>
+                <button onclick="supprimerVoiture(${index})" class="suppVehicule">Supprimer ce véhicule</button>
             </div>
         `)
         .join("");
