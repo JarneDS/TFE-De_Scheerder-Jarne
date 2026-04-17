@@ -264,3 +264,41 @@ select {
 .choix__option:hover {
     background-color: var(--color-secondary);
 }
+
+
+/* PAGE-PARTIES */
+.parties__body {
+    background: url(../assets/bg.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+.btnRetour__Parties {
+    background-color: var(--color-primary);
+    border-radius: 10px 0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.accueil__parties {
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    gap: 40px;
+}
+
+.accueil__parties h1 {
+    margin: 0;
+}
+
+.h2__parties {
+    color: var(--color-bg);
+    max-width: 400px;
+    margin: 26px 40px;
+}
