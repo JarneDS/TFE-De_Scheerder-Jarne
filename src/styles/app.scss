@@ -309,6 +309,12 @@ select {
     justify-self: center;
 }
 
+.btnsModel {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .boutonInfoA, .boutonInfoB, .boutonInfoC, .boutonInfoD, .boutonInfoE, .boutonInfoF, .boutonInfoG {
     display: flex;
     flex-direction: row;
@@ -322,6 +328,43 @@ select {
     gap: 15px;
     transition: width 0.3s ease;
     overflow: hidden;
+    position: absolute;
+    z-index: 10;
+}
+
+.boutonInfoA {
+    top: 46%;
+    left: 22%;
+}
+
+.boutonInfoB {
+    top: 75%;
+    left: 41%;
+}
+
+.boutonInfoC {
+    top: 52%;
+    left: 60%;
+}
+
+.boutonInfoD {
+    top: 71%;
+    left: 62%;
+}
+
+.boutonInfoE {
+    top: 68%;
+    left: 83%;
+}
+
+.boutonInfoF {
+    top: 52%;
+    left: 85%;
+}
+
+.boutonInfoG {
+    top: 32%;
+    left: 45%;
 }
 
 .boutonInfoA:hover {
