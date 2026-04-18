@@ -320,9 +320,10 @@ select {
     flex-direction: row;
     align-items: center;
     height: 70px;
-    width: 70px;
+    width: 43px;
+    background-color: var(--color-bg);
     border-radius: 35px;
-    padding: 27px;
+    padding: 0 0 0 27px;
     cursor: pointer;
     border: none;
     gap: 15px;
@@ -368,31 +369,31 @@ select {
 }
 
 .boutonInfoA:hover {
-    width: 195px;
+    width: 168px;
 }
 
 .boutonInfoB:hover {
-    width: 190px;
+    width: 163px;
 }
 
 .boutonInfoC:hover {
-    width: 240px;
+    width: 209px;
 }
 
 .boutonInfoD:hover {
-    width: 195px;
+    width: 168px;
 }
 
 .boutonInfoE:hover {
-    width: 188px;
+    width: 162px;
 }
 
 .boutonInfoF:hover {
-    width: 240px;
+    width: 212px;
 }
 
 .boutonInfoG:hover {
-    width: 325px;
+    width: 295px;
 }
 
 .boutonInfo__txt {
