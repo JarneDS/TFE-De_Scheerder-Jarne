@@ -20,8 +20,43 @@
     <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body>
-    <section class="accueil">
-        <h1>Bienvenue sur «Les secrets de la voiture».</h1>
+    <button onclick="history.back()" class="btnRetour">← Retour</button>
+    <section class="temoins">
+        <div class="part" id="TemoinsIntro">
+            <h1>Les témoins lumineux</h1>
+            <img src="couleurs_temoins.png" alt="image montrant les différentes couches pour avoir une bonne peinture sur une voiture">
+        </div>
+        <div class="part" id="TemoinsVert">
+            <h2>Les témoins verts / bleus :</h2>
+            <img src="voyants_vert.png" alt="image montrant les principaux témoins vert/bleu">
+        </div>
+        <div class="part" id="TemoinsOrange">
+            <h2>Les témoins orange :</h2>
+            <img src="voyants_orange.png" alt="image montrant les principaux témoins orange">
+        </div>
+        <div class="part" id="TemoinsRouge">
+            <h2>Les témoins rouge :</h2>
+            <img src="voyants_rouge.png" alt="image montrant les principaux témoins rouge">
+        </div>
+        <div class="select-part__container">
+            
+            <button class="select-part" data-value="TemoinsIntro">
+            Introduction&nbsp;témoins&nbsp;lumineux&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="TemoinsVert">
+            Les&nbsp;principaux&nbsp;témoins&nbsp;verts / bleus&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="TemoinsOrange">
+            Les&nbsp;principaux&nbsp;témoins&nbsp;orange&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="TemoinsRouge">
+            Les&nbsp;principaux&nbsp;témoins&nbsp;rouges&nbsp;→
+            </button>
+
+        </div>
     </section>
 </body>
 </html>

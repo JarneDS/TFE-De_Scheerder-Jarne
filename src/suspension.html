@@ -20,8 +20,27 @@
     <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body>
-    <section class="accueil">
-        <h1>Bienvenue sur «Les secrets de la voiture».</h1>
+    <button onclick="history.back()" class="btnRetour">← Retour</button>
+    <section class="peinture">
+        <div class="part" id="SuspensionIntro">
+            <h1>La suspension</h1>
+            <img src="suspension_voiture.png" alt="image montrant les différentes couches pour avoir une bonne peinture sur une voiture">
+        </div>
+        <div class="part" id="TypesSuspension">
+            <h2>Il existe 3 types :</h2>
+            <img src="types_suspension.png" alt="image montrant les différentes finitions de peinture">
+        </div>
+        <div class="select-part__container">
+            
+            <button class="select-part" data-value="SuspensionIntro">
+            Introduction&nbsp;suspension&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="TypesSuspension">
+            Types&nbsp;de&nbsp;suspension&nbsp;→
+            </button>
+
+        </div>
     </section>
 </body>
 </html>
