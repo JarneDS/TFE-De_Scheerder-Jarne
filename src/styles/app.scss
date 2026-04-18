@@ -331,6 +331,7 @@ select {
     overflow: hidden;
     position: absolute;
     z-index: 10;
+    text-decoration: none;
 }
 
 .boutonInfoA {
@@ -418,4 +419,42 @@ select {
 
 .boutonInfoA:hover .boutonInfo__svg, .boutonInfoB:hover .boutonInfo__svg, .boutonInfoC:hover .boutonInfo__svg, .boutonInfoD:hover .boutonInfo__svg, .boutonInfoE:hover .boutonInfo__svg, .boutonInfoF:hover .boutonInfo__svg, .boutonInfoG:hover .boutonInfo__svg {
     transform: rotate(0deg);
+}
+
+.select-part__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.select-part {
+    background: var(--color-secondary);
+    color: var(--color-text);
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: left;
+    transition: all .3s;
+}
+
+.select-part:hover {
+    background: var(--color-primary);
+}
+
+.select-part.selected {
+    background: var(--color-primary);
+    color: var(--color-text);
+}
+
+.part {
+    display: none;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.part.active {
+    display: block;
+    opacity: 1;
 }
