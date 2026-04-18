@@ -20,8 +20,50 @@
     <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body>
-    <section class="accueil">
-        <h1>Bienvenue sur «Les secrets de la voiture».</h1>
+    <button onclick="history.back()" class="btnRetour">← Retour</button>
+    <section class="freins">
+        <div class="part" id="FreinsIntro">
+            <h1>Les freins</h1>
+            <img src="frein.png" alt="image montrant un disque et un étrier de frein">
+            <p><span>Le système de freinage permet de ralentir et d'arrêter le véhicule en toute sécurité.</span><span>Il doit être :</span></p>
+            <ul>
+                <li>Puissant</li>
+                <li>Stable</li>
+                <li>Progressif</li>
+                <li>Fiable dans toutes les conditions météorologiques (pluie, chaleur, froid, ...)</li>
+            </ul>
+        </div>
+        <div class="part" id="FonctionnementFreins">
+            <h2>Comment ça fonctionne ?</h2>
+            <img src="frein2.png" alt="image montrant un système de freinage automobile">
+            <ol>
+                <li>Quand tu appuies sur la pédale de frein, tu actionnes le maître-cylindre</li>
+                <li>Celui-ci pousse du liquide de frein dans des tuyaux</li>
+                <li>Le liquide transmet la pression instantanément (il est incompressible)</li>
+                <li>Cette pression arrive aux étriers (ou cylindres de roue pour les tambours)</li>
+                <li>Les plaquettes (ou mâchoires) sont pressées contre le disque (ou tambour)</li>
+                <li>Le frottement ralentit la voiture</li>
+            </ol>
+        </div>
+        <div class="select-part__container">
+            
+            <button class="select-part" data-value="FreinsIntro">
+            Introduction&nbsp;freins&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="FonctionnementFreins">
+            Fonctionnement&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="ElementsFreins">
+            Éléments&nbsp;principaux&nbsp;du&nbsp;système&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="FreinAMain">
+            Le&nbsp;frein&nbsp;à&nbsp;main&nbsp;→
+            </button>
+
+        </div>
     </section>
 </body>
 </html>
