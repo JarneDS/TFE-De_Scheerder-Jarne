@@ -5,7 +5,7 @@ const liste = document.getElementById("listeVoitures");
 
 let voitures = JSON.parse(localStorage.getItem("voitures")) || [];
 
-if (window.location.pathname.includes("index.html")) {
+if (marqueInput && typeSelect && btnAjouter && liste) {
     function afficherVoitures() {
         if (voitures.length === 0) {
             liste.innerHTML = "<p>Aucune voiture enregistrée.</p>";
@@ -23,6 +23,24 @@ if (window.location.pathname.includes("index.html")) {
                 </div>
             `)
             .join("");
+
+        const voitureSelect = document.querySelectorAll(".voiture-check");
+        const activeIndex = localStorage.getItem("voitureActive");
+
+        if (activeIndex !== null && voitureSelect[activeIndex]) {
+            voitureSelect[activeIndex].classList.add("actif");
+        }
+
+        voitureSelect.forEach((v, index) => {
+            v.addEventListener("click", () => {
+
+                voitureSelect.forEach(el => el.classList.remove("actif"));
+
+                v.classList.add("actif");
+
+                localStorage.setItem("voitureActive", index);
+            });
+        });
     }
 
     btnAjouter.addEventListener("click", () => {
@@ -53,24 +71,6 @@ if (window.location.pathname.includes("index.html")) {
     };
 
     afficherVoitures();
-
-    const voitureSelect = document.querySelectorAll(".voiture-check");
-    const activeIndex = localStorage.getItem("voitureActive");
-
-    if (activeIndex !== null && voitureSelect[activeIndex]) {
-        voitureSelect[activeIndex].classList.add("actif");
-    }
-
-    voitureSelect.forEach((v, index) => {
-        v.addEventListener("click", () => {
-
-            voitureSelect.forEach(el => el.classList.remove("actif"));
-
-            v.classList.add("actif");
-
-            localStorage.setItem("voitureActive", index);
-        });
-    });
 };
 
 let mapData = 'MoteurIntro';
