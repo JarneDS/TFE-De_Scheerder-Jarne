@@ -60,15 +60,20 @@ h4 {
     font-family: "TitilliumWeb-SemiBold";
 }
 
-p, option, select, input, button, a {
+p, option, select, input, button, a, ul, ol {
     color: var(--color-text);
     margin: 13px 0;
     font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
     font-family: "TitilliumWeb-SemiBold";
 }
 
-p, span {
+p, span, ul, ol {
     max-width: 700px;
+}
+
+span {
+    display: block;
+    margin: 12px 0 27px;
 }
 
 /* ACCUEIL */
@@ -486,9 +491,38 @@ select {
     margin-right: 20px;
 }
 
+.part__img2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 6;
+    justify-self: end;
+    align-self: center;
+    margin-right: 20px;
+}
+
+.part__h2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: start;
+    margin: 0 0 0 20px;
+}
+
 .part__txt {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    margin-left: 20px;
+    margin: 0 0 0 20px;
     align-self: center;
+}
+
+.part__txt2 {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    margin: 0 0 0 20px;
+    align-self: center;
+}
+
+.part__ul, .part__ol {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+    margin: 0 0 27px 20px;
+    padding: 0;
 }
