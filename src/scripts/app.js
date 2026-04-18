@@ -73,47 +73,101 @@ if (marqueInput && typeSelect && btnAjouter && liste) {
     afficherVoitures();
 };
 
-let mapData = 'MoteurIntro';
+let mapDataA = 'MoteurIntro';
+let mapDataB = 'FreinsIntro';
+let mapDataC = 'PeintureIntro';
+let mapDataD = 'ChassisIntro';
+let mapDataE = 'RouesIntro';
+let mapDataF = 'SuspensionIntro';
+let mapDataG = 'TemoinsIntro';
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Quand on clique sur un bouton
     document.querySelectorAll('.select-part').forEach(btn => {
         btn.addEventListener('click', () => {
             setMapData(btn);
         });
     });
 
-    // Fonction appelée au clic
     function setMapData(btn) {
-        mapData = btn.dataset.value; // ex: "Liquides"
+        mapDataA = btn.dataset.value;
+        mapDataB = btn.dataset.value;
+        mapDataC = btn.dataset.value;
+        mapDataD = btn.dataset.value;
+        mapDataE = btn.dataset.value;
+        mapDataF = btn.dataset.value;
+        mapDataG = btn.dataset.value;
         updateView();
     }
 
-    // Met à jour l'affichage
     function updateView() {
         const sections = document.querySelectorAll('.part');
 
-        // Cache toutes les sections
         sections.forEach(section => {
             section.classList.remove("active");
         });
 
-        // Affiche la bonne section
-        const active = document.getElementById(mapData);
-        if (active) {
-            active.classList.add("active");
+        const activeA = document.getElementById(mapDataA);
+        if (activeA) {
+            activeA.classList.add("active");
         }
 
-        // Met à jour l'état des boutons
+        const activeB = document.getElementById(mapDataB);
+        if (activeB) {
+            activeB.classList.add("active");
+        }
+
+        const activeC = document.getElementById(mapDataC);
+        if (activeC) {
+            activeC.classList.add("active");
+        }
+
+        const activeD = document.getElementById(mapDataD);
+        if (activeD) {
+            activeD.classList.add("active");
+        }
+
+        const activeE = document.getElementById(mapDataE);
+        if (activeE) {
+            activeE.classList.add("active");
+        }
+
+        const activeF = document.getElementById(mapDataF);
+        if (activeF) {
+            activeF.classList.add("active");
+        }
+
+        const activeG = document.getElementById(mapDataG);
+        if (activeG) {
+            activeG.classList.add("active");
+        }
+
         document.querySelectorAll('.select-part').forEach(btn => {
             btn.classList.remove('selected');
-            if (btn.dataset.value === mapData) {
+            if (btn.dataset.value === mapDataA) {
+                btn.classList.add('selected');
+            }
+            if (btn.dataset.value === mapDataB) {
+                btn.classList.add('selected');
+            }
+            if (btn.dataset.value === mapDataC) {
+                btn.classList.add('selected');
+            }
+            if (btn.dataset.value === mapDataD) {
+                btn.classList.add('selected');
+            }
+            if (btn.dataset.value === mapDataE) {
+                btn.classList.add('selected');
+            }
+            if (btn.dataset.value === mapDataF) {
+                btn.classList.add('selected');
+            }
+            if (btn.dataset.value === mapDataG) {
                 btn.classList.add('selected');
             }
         });
     }
 
-    // État initial : rien affiché
     updateView();
 });

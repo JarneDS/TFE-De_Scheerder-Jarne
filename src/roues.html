@@ -20,8 +20,103 @@
     <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body>
-    <section class="accueil">
-        <h1>Bienvenue sur «Les secrets de la voiture».</h1>
+    <button onclick="history.back()" class="btnRetour">← Retour</button>
+    <section class="roues">
+        <div class="part" id="RouesIntro">
+            <h1>Les roues</h1>
+            <img src="pneu.png" alt="image de la roue du modèle 3D">
+            <p><span>Elles sont super importantes. À quoi servent les roues ? Elles assurent :</span></p>
+            <ul>
+                <li>L’adhérence</li>
+                <li>La stabilité</li>
+                <li>La direction</li>
+                <li>Le freinage</li>
+                <li>Le confort de conduite</li>
+            </ul>
+            <p><span>Sans roues en bon état, votre vie et celle des autres automobilistes est en danger.</span><span>De quoi est fait une roue ?</span></p>
+            <ol>
+                <li>Le pneu, composé de :</li>
+                <ul>
+                    <li>La bande de roulement, c’est la partie qui touche le sol et sur lequel on peut voir le dessin/la sculpture du pneu.</li>
+                    <li>Les flancs</li>
+                    <li>La structure interne (ceinture + structure)</li>
+                </ul>
+                <li>La jante qui peut être faite de 2 composants différents :</li>
+                <ul>
+                    <li>L’acier</li>
+                    <li>L’aluminium / alliage</li>
+                </ul>
+                <li>Les boulons / écrous, ils fixent la roue au moyeu</li>
+                <li>Le moyeu, c’est la pièce centrale qui relie la roue à la suspension et au frein</li>
+            </ol>
+        </div>
+        <div class="part" id="TypesPneus">
+            <h2>Il existe 4 types de pneus :</h2>
+            <img src="pneus_types.png" alt="image représentant les 4 types de pneus côte à côte">
+            <ol>
+                <li>Les pneus hiver :</li>
+                <ul>
+                    <li>Meilleure adhérence sous 7°C</li>
+                    <li>Sculpture plus profonde</li>
+                    <li>Caoutchouc plus souple</li>
+                </ul>
+                <li>Les pneus été :</li>
+                <ul>
+                    <li>Optimisés pour les températures chaudes</li>
+                    <li>Meilleure tenue de route et freinage</li>
+                </ul>
+                <li>Les pneus 4 saisons :</li>
+                <ul>
+                    <li>Compromis entre été et hiver</li>
+                    <li>Pratiques mais moins performantes dans les extrêmes</li>
+                    <li>Souvent accompagné par l’indication M+S (Mud + Snow) sur les flancs</li>
+                </ul>
+                <li>Les pneus Off-Road :</li>
+                <ul>
+                    <li>Sculpture très agressive</li>
+                    <li>Flancs renforcés</li>
+                    <li>Gomme plus résistantes</li>
+                    <li>Idéales pour 4x4, pick-up, véhicules d’aventure</li>
+                    <li>Reconnaissable à par l’indication M/T (Mud Terrain) ou A/T (All Terrain) sur les flancs</li>
+                </ul>
+            </ol>
+        </div>
+        <div class="part" id="LecturePneu">
+            <h2>Comment lire un pneu ?</h2>
+            <p><span>Lire un pneu est moins difficile que ça en a l'air.</span><span>Par exemple que veut dire 205/55 R16 91V :</span></p>
+            <ul>
+                <li>205 → largeur du pneu en mm</li>
+                <li>55 → hauteur du flanc du pneu (% de la largeur)</li>
+                <li>R → Radial les fils de la carcasse sont disposés de manière perpendiculaire à la direction de roulement (99% des pneus). Il existe aussi D et B, ici les fils de la carcasse se croisent en diagonale.</li>
+                <li>16 → diamètre de la jante</li>
+                <li>91 → indice de charge</li>
+                <li>V → indice de vitesse</li>
+            </ul>
+            <p><span>Quand faut-il changer un pneu ?</span></p>
+            <ul>
+                <li>Usure &#60; 1,6mm (limite légale)</li>
+                <li>Pneu âgé de plus de 5 à 7 ans</li>
+                <li>Déformation visible</li>
+                <li>Coupure ou hernie</li>
+                <li>Perte de pression régulière</li>
+            </ul>
+        </div>
+        <h2>Voir les parties lier aux roues :</h2>
+        <div class="select-part__container">
+            
+            <button class="select-part" data-value="RouesIntro">
+            Introduction&nbsp;roues&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="TypesPneus">
+            Types&nbsp;de&nbsp;pneus&nbsp;→
+            </button>
+
+            <button class="select-part" data-value="LecturePneu">
+            Comment&nbsp;lire&nbsp;un&nbsp;pneu&nbsp;→
+            </button>
+
+        </div>
     </section>
 </body>
 </html>
