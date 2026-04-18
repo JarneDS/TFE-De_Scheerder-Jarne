@@ -73,7 +73,7 @@ if (window.location.pathname.includes("index.html")) {
     });
 };
 
-let mapData = '';
+let mapData = 'MoteurIntro';
 
 document.addEventListener("DOMContentLoaded", () => {
 
