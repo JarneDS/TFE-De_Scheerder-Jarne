@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'TitilliumWeb-Bold';
-  src: url('../fonts/TitilliumWeb-Bold.eot');
-  src: url('../fonts/TitilliumWeb-Bold.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/TitilliumWeb-Bold.woff2') format('woff2'),
-       url('../fonts/TitilliumWeb-Bold.woff') format('woff'),
-       url('../fonts/TitilliumWeb-Bold.ttf')  format('truetype'),
-       url('../fonts/TitilliumWeb-Bold.svg#FontName') format('svg');
+  font-family: 'Oswald-Bold';
+  src: url('../fonts/Oswald-Bold.eot');
+  src: url('../fonts/Oswald-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Oswald-Bold.woff2') format('woff2'),
+       url('../fonts/Oswald-Bold.woff') format('woff'),
+       url('../fonts/Oswald-Bold.ttf')  format('truetype'),
+       url('../fonts/Oswald-Bold.svg#FontName') format('svg');
 }
 
 @font-face {
@@ -39,19 +39,19 @@ section {
 h1 {
     font-size: clamp(3.563rem, 0.432vw + 3.481rem, 4rem);
     margin: 0 0 46px;
-    font-family: "TitilliumWeb-Bold";
+    font-family: "Oswald-Bold";
 }
 
 h2 {
     font-size: clamp(2.5rem, 0.309vw + 2.442rem, 2.813rem);
     margin: 32px 0;
-    font-family: "TitilliumWeb-Bold";
+    font-family: "Oswald-Bold";
 }
 
 h3, label, .commencer {
     font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
     margin: 22px 0;
-    font-family: "TitilliumWeb-Bold";
+    font-family: "Oswald-Bold";
 }
 
 p, option, select, input, button, a, ul, ol {
