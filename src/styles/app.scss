@@ -81,6 +81,11 @@ span {
     font-family: "TitilliumWeb-SemiBold" !important;
 }
 
+.icone {
+    width: auto;
+    height: 23px;
+}
+
 /* ACCUEIL */
 .form__accueil {
     display: flex;
@@ -245,6 +250,8 @@ select {
     transition: all .3s ease-in-out;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .btnLiens:hover {
