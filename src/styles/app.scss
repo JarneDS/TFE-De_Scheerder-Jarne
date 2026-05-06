@@ -281,7 +281,8 @@ select {
 /* SELECTION */
 .btnRetour {
     background-color: var(--color-primary);
-    border-radius: 10px 0;
+    color: var(--color-text-btn);
+    border-radius: 10px;
     border: none;
     padding: 10px;
     margin: 20px;
@@ -321,6 +322,7 @@ select {
 
 .btnLiens {
     background-color: var(--color-primary);
+    color: var(--color-text-btn);
     border-radius: 10px;
     padding: 13px 0;
     margin: 0;
@@ -340,6 +342,9 @@ select {
     padding: 0 20px;
 }
 
+.choix__option h4, .accueil__selection h2 {
+    color: var(--color-text-btn);
+}
 .voitureRendu {
     display: none;
 }
@@ -359,7 +364,7 @@ select {
     align-items: center;
     width: 100%;
     padding: 10px 10px 0;
-    border: var(--color-text) 2px solid;
+    border: var(--color-text-btn) 2px solid;
     border-radius: 10px;
     text-decoration: none;
     margin: 0;
@@ -383,11 +388,13 @@ select {
 
 .btnRetour__Parties {
     background-color: var(--color-primary);
-    border-radius: 10px 0;
+    color: var(--color-text-btn);
+    border-radius: 10px;
     border: none;
     padding: 10px;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    margin: 20px;
 }
 
 .accueil__parties {
@@ -435,6 +442,7 @@ select {
 
 .boutonInfo__txt {
     white-space: nowrap;
+    color: var(--color-text-btn);
 }
 
 .boutonInfo__svg {

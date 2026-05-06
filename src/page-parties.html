@@ -20,11 +20,18 @@
     <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body class="parties__body">
-    <section class="accueil__parties">
+    <nav class="menu">
+        <img src="logo.png" alt="logo de Les secrets de la voiture" class="menu__img">
+        <button class="menu__btn NAV">Menu</button>
+        <ul class="menu__ul">
+            <li class="menu__li"><a href="" class="NAV">Contexte</a></li>
+            <li class="menu__li"><a href="" class="NAV">Crédits</a></li>
+        </ul>
+    </nav>
+    <section>
         <button onclick="history.back()" class="btnRetour__Parties">←&nbsp;Retour</button>
-        <h1>Les secrets de la voiture</h1>
+        <h2 class="h2__parties">Sélectionnez une partie pour en apprendre plus :</h2>
     </section>
-    <h2 class="h2__parties">Sélectionnez une partie pour en apprendre plus :</h2>
     <section class="btnsModel">
         <img src="golf2.png" alt="rendu de la golfe sans roue avant pour montrer le frein" class="modeleInteractif">
         <a href="moteur.html" class="boutonInfoA">
