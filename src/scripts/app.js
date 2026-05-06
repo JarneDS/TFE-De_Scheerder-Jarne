@@ -1,3 +1,14 @@
+"use strict";
+
+var menuBtn = document.querySelector(".menu__btn");
+
+menuBtn.addEventListener("click", toggleMenu);
+
+function toggleMenu() {
+    var menu = document.querySelector(".menu");
+    menu.classList.toggle("menu--open");
+}
+
 const marqueInput = document.getElementById("MVoiture");
 const typeSelect = document.getElementById("typeVoiture");
 const btnAjouter = document.getElementById("ajouterVoiture");
