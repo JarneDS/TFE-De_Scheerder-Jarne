@@ -20,14 +20,20 @@
 
 :root {
   --color-bg: #f1f1f1;
-  --color-text: #000;
+  --color-text: #f1f1f1;
+  --color-text-btn: #000;
   --color-primary: #FF7F00;
   --color-secondary: rgba(255, 128, 0, 0.6);
   --color-thirdly: #FF5050;
 }
 
 html, body {
-    background: var(--color-bg);
+    background: url(../assets/bg.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
     margin: 0;
     padding: 0;
 }
@@ -40,18 +46,21 @@ h1 {
     font-size: clamp(3.563rem, 0.432vw + 3.481rem, 4rem);
     margin: 0 0 46px;
     font-family: "Oswald-Bold";
+    color: var(--color-text);
 }
 
 h2 {
     font-size: clamp(2.5rem, 0.309vw + 2.442rem, 2.813rem);
     margin: 32px 0;
     font-family: "Oswald-Bold";
+    color: var(--color-text);
 }
 
 h3, label, .commencer {
     font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
     margin: 22px 0;
     font-family: "Oswald-Bold";
+    color: var(--color-text);
 }
 
 p, option, select, input, button, a, ul, ol {
@@ -90,20 +99,20 @@ span {
 /* ACCUEIL */
 .form__accueil {
     display: flex;
-    flex-direction: row;
-    gap: 150px;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
+    padding: 0;
 }
 
 .form__elements {
     display: flex;
     flex-direction: column;
-    max-width: 289px;
 }
 
 #typeVoiture {
     background-color: var(--color-secondary);
-    color: var(--color-text);
+    color: var(--color-text-btn);
     padding: 9px 13px 10px 13px;
     border: none;
     border-radius: 5px;
@@ -125,7 +134,7 @@ span {
 }
 
 #MVoiture::placeholder {
-    color: var(--color-text);
+    color: var(--color-text-btn);
 }
 
 .select-wrapper {
@@ -141,7 +150,7 @@ span {
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    color: var(--color-text);
+    color: var(--color-text-btn);
     font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
 }
 
@@ -160,6 +169,7 @@ select {
     margin: 0;
     padding: 0;
     cursor: pointer;
+    background-color: transparent;
 }
 
 .voiture-check .check {
@@ -178,11 +188,12 @@ select {
 #ajouterVoiture, .suppVehicule {
     background-color: var(--color-primary);
     border: none;
-    padding: 9px 13px 10px;
-    border-radius: 5px;
+    padding: 9px 0 10px;
+    border-radius: 10px;
     cursor: pointer;
-    width: fit-content;
     transition: all .3s ease-in-out;
+    color: var(--color-text-btn);
+    width: 100%;
 }
 
 #ajouterVoiture:hover, .suppVehicule:hover {
@@ -191,14 +202,25 @@ select {
 
 .commencer {
     background-color: var(--color-primary);
-    padding: 20px 16px 20px 20px;
+    padding: 20px 0;
+    margin: 20px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    position: absolute;
-    right: 40px;
-    bottom: 40px;
+    color: var(--color-text-btn);
+    display: flex;
+    justify-content: center;
+}
+
+.form__elements, .voituresEnregistrees {
+    background-color: rgb(255, 255, 255, .8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form__elements h2, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p {
+    color: var(--color-text-btn);
 }
 
 /* SELECTION */
@@ -478,6 +500,32 @@ select {
         padding: 0 40px;
     }
 
+    /* ACCUEIL */
+    .form__accueil {
+        flex-direction: row;
+        gap: 150px;
+        margin-bottom: 40px;
+    }
+
+    .form__elements {
+        max-width: 330px;
+    }
+
+    .commencer {
+        padding: 20px 16px 20px 20px;
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        width: fit-content;
+        margin: 0;
+    }
+
+    #ajouterVoiture, .suppVehicule {
+        padding: 9px 13px 10px;
+        width: fit-content;
+    }
+
+    /* SELECTION */
     .selection__type {
         width: 38.54%;
     }
