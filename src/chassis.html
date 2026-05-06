@@ -20,7 +20,17 @@
     <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body>
-    <button onclick="history.back()" class="btnRetour">← Retour</button>
+    <nav class="menu">
+        <img src="logo.png" alt="logo de Les secrets de la voiture" class="menu__img">
+        <button class="menu__btn NAV">Menu</button>
+        <ul class="menu__ul">
+            <li class="menu__li"><a href="" class="NAV">Contexte</a></li>
+            <li class="menu__li"><a href="" class="NAV">Crédits</a></li>
+        </ul>
+    </nav>
+    <section>
+        <button onclick="history.back()" class="btnRetour">←&nbsp;Retour</button>
+    </section>
     <section class="chassis">
         <div class="part" id="ChassisIntro">
             <h1>Le châssis</h1>
