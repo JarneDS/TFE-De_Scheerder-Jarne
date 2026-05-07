@@ -16,6 +16,14 @@ const liste = document.getElementById("listeVoitures");
 
 let voitures = JSON.parse(localStorage.getItem("voitures")) || [];
 
+// sécurisé l'entrer utilisateur
+function sanitize(str) {
+    return str.replace(/[<>"']/g, "").trim();
+}
+
+// vérifier les entrer pour éviter le code pur en entrer
+const regexVoiture = /^[A-Za-zÀ-ÿ0-9\s\-]{2,30}$/;
+
 if (marqueInput && typeSelect && btnAjouter && liste) {
     function afficherVoitures() {
         if (voitures.length === 0) {
@@ -55,11 +63,16 @@ if (marqueInput && typeSelect && btnAjouter && liste) {
     }
 
     btnAjouter.addEventListener("click", () => {
-        let marque = marqueInput.value.trim();
-        let type = typeSelect.value;
+        let marque = sanitize(marqueInput.value);
+        let type = sanitize(typeSelect.value);
 
         if (!marque || !type) {
             alert("Veuillez remplir les deux champs.");
+            return;
+        }
+
+        if (!regexVoiture.test(marque)) {
+            alert("Marque invalide (2–30 caractères, lettres/chiffres/espaces/tirets).");
             return;
         }
 
@@ -84,6 +97,7 @@ if (marqueInput && typeSelect && btnAjouter && liste) {
     afficherVoitures();
 };
 
+// Prendre les datas des premières divs de chaque page
 let mapDataA = 'MoteurIntro';
 let mapDataB = 'FreinsIntro';
 let mapDataC = 'PeintureIntro';
@@ -112,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateView();
     }
 
+    // faire en sorte que quand on va sur la page, par exemple moteur, que la div MoteurIntro soit affiché
     function updateView() {
         const sections = document.querySelectorAll('.part');
 
