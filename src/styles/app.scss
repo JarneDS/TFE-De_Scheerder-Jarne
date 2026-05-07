@@ -42,7 +42,7 @@ section {
     padding: 30px;
 }
 
-.section__btnRetour {
+.section__btnRetour, .accueil {
     margin-top: 50px;
 }
 
@@ -487,7 +487,6 @@ select {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    text-align: left;
     transition: all .3s;
     margin: 0;
     display: flex;
