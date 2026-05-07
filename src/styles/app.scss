@@ -296,7 +296,7 @@ select {
 }
 
 /* SELECTION */
-.btnRetour {
+.btnRetour, .btnEntretien {
     background-color: var(--color-primary);
     color: var(--color-text-btn);
     border-radius: 10px;
@@ -306,7 +306,7 @@ select {
     transition: all .3s ease-in-out;
 }
 
-.btnRetour:hover {
+.btnRetour:hover, .btnEntretien:hover {
     background-color: var(--color-secondary);
 }
 
@@ -574,13 +574,64 @@ select {
     height: 16px;
 }
 
+/* ENTRETIEN */
+.Entretien__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.Entretien__cart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.Entretien__img {
+    position: relative;
+    z-index: 10;
+}
+
+.Entretien__h3 {
+    position: absolute;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.Entretien__cart:hover .Entretien__img {
+    opacity: .3;
+}
+
+.Entretien__cart:hover .Entretien__h3 {
+    opacity: 1;
+}
+
+.Entretienpart__container {
+    display: none;
+}
+
+.Entretienpart {
+    display: none;
+}
+
+.Entretienpart.active {
+    display: block;
+}
+
 @media (min-width: 701px) {
     section {
         margin-top: 70px;
         padding: 40px;
     }
 
-    .btnRetour {
+    .btnRetour, .btnEntretien {
         margin: 0;
     }
 

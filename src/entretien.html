@@ -28,8 +28,188 @@
             <li class="menu__li"><a href="credits.html" class="NAV">Crédits</a></li>
         </ul>
     </nav>
-    <section>
-        <button onclick="history.back()" class="btnRetour">←&nbsp;Retour</button>
+    <section class="Entretien section__btnRetour">
+        <button onclick="history.back()" class="btnRetour" style="margin-bottom: 46px;">←&nbsp;Retour</button>
+        <h1>Entretiens basique</h1>
+        <h2>Que peut-on faire soi-même sur le véhicule au niveau débutant ?</h2>
+        <div class="Entretien__container">
+            <button class="Entretien__cart" data-value="capot">
+                <img src="liquides.png" alt="Sous le capot d'une VW Golf GTI" class="Entretien__img">
+                <h3 class="Entretien__h3">Sous le capot</h3>
+            </button>
+            <button class="Entretien__cart" data-value="electrique">
+                <img src="electrique_voiture.png" alt="Un multimètre avec des fusibles et des relais" class="Entretien__img">
+                <h3 class="Entretien__h3">Sur le circuit électrique</h3>
+            </button>
+            <button class="Entretien__cart" data-value="pneus">
+                <img src="entretienPneu.png" alt="Les quatres types de pneus, été, hiver, quatres saisons, off-road" class="Entretien__img">
+                <h3 class="Entretien__h3">Sur les roues</h3>
+            </button>
+            <button class="Entretien__cart" data-value="freins">
+                <img src="entretienFrein.png" alt="Disques de freins et plaquettes pour avant et derrière" class="Entretien__img">
+                <h3 class="Entretien__h3">Sur le système de freinage</h3>
+            </button>
+            <button class="Entretien__cart" data-value="peinture">
+                <img src="finitions.jpg" alt="Un mur avec des exemples de peintures sur des petits modèles de voitures" class="Entretien__img">
+                <h3 class="Entretien__h3">Sur la peinture</h3>
+            </button>
+        </div>
+    </section>
+    <section class="Entretienpart__container section__btnRetour">
+        <button class="btnEntretien" style="margin-bottom: 46px;">←&nbsp;Retour</button>
+        <div class="Entretienpart" id="capot">
+            <h2>Sous le capot</h2>
+            <p><span>Pour ouvrir le capot, tirez le levier en bas côté chauffeur vers vous, ensuite sous le capot, trouver la languette et manipuler la pour ouvrir le capot entièrement.</span></p>
+            <h3>Vérifications de base :</h3>
+            <ul>
+                <li>Niveau d’huile</li>
+                <li>Niveau de liquide de refroidissement</li>
+                <li>Niveau de liquide de frein</li>
+                <li>État du filtre à air</li>
+                <li>État des courroies visibles</li>
+                <li>Regarder si fuite visible</li>
+                <li>Niveau de liquide de frein</li>
+            </ul>
+            <img src="MinMax.png" alt="Jauge de niveau de liquide">
+            <h3>Petites réparations possibles :</h3>
+            <ul>
+                <li>Changer le filtre à air</li>
+                <li>Changer le filtre à huile (avec précautions)</li>
+                <li>Changer l’huile moteur</li>
+                <li>Remplir le liquide lave-glace</li>
+            </ul>
+            <p><span>Vérifier l’état du filtre à air tous les 15 000 à 30 000 km. Remplacez le quand il est noir, gris foncé ou que la lumière n’arrive plus à passé à travers.</span></p>
+            <img src="filtresHuile.png" alt="filtres à huile">
+        </div>
+        <div class="Entretienpart" id="electrique">
+            <h2>Sur le circuit électrique</h2>
+            <h3>Vérifier à l’aide d’un multimètre la tension de la batterie :</h3>
+            <img src="" alt="Un multimètre">
+            <ul>
+                <li>entre 12,6V et 12,8V quand la batterie est parfaitement chargée sans que le moteur tourne</li>
+                <li>12,4V pour une batterie moyennement chargée</li>
+                <li>entre 12V et 12,3V, la batterie est déchargée, une recharge est nécessaire</li>
+                <li>inférieure à 12V, la batterie est déchargée, probablement Hors Service</li>
+                <li>entre 13,7V et 14,7V quand le moteur tourne</li>
+            </ul>
+            <h3>Vérifier la courroie d’alternateur</h3>
+            <img src="" alt="Une courroie d'alternateur">
+            <p><span>Une courroie ne peut pas être :</span></p>
+            <ul>
+                <li>Brillant → indique trop ou trop peu de tension</li>
+                <li>Avoir de crassent du côté interne entre les stries</li>
+                <li>Avoir des déchirures sur les stries trop profond (pas plus de 3 lignes par 2,5cm)</li>
+            </ul>
+            <p><span>Une courroie doit être remplacée tous les 80 000 à 120 000 kms</span></p>
+            <h3>Remplacer la batterie <strong>(moteur éteint !)</strong></h3>
+            <img src="" alt="Une image montrant un montage typique de la batterie dans la voiture">
+            <ol>
+                <li>Débrancher la borne négative en premier (identifiable par la couleur noir)</li>
+                <li>Débrancher la borne positive (identifiable par la couleur rouge)</li>
+                <li>Retirer la barre ou la bride qui maintient la batterie</li>
+                <li>Enlever la batterie (ATTENTION À VOS PIEDS c’est lourd !)</li>
+                <li>Placer la nouvelle batterie dans la même direction que l’ancien est sortie</li>
+                <li>Replacer la barre ou la bride qui maintient la batterie et serrez pour que la batterie ne bouge plus</li>
+                <li>Enlever les protections des cosses</li>
+                <li>Brancher la borne positive (rouge) et serrez la</li>
+                <li>Brancher la borne négative (noir) et serrez la</li>
+            </ol>
+            <h3>Remplacer un fusible</h3>
+            <img src="" alt="Une boite à fusibles">
+            <ol>
+                <li>Repérer le boîtier à fusibles</li>
+                <li>Identifier, à l’aide du schéma que vous pouvez trouver sur le couvercle du boîtier, le fusible concerné</li>
+                <li>Couper le contact et enlever la clé</li>
+                <li>Enlevé le fusible concerné à l’aide de la pince fournie ou avec vos doigts</li>
+                <li>Tirer le doucement vers le haut</li>
+                <li>Si le fusible est transparent, regarder si le fil à l’intérieur est continu. Sinon testé le à l’aide d’un multimètre pour voir s’il y a de la continuité</li>
+                <li>Si grillé, remplacer par un fusible identique (même couleur, même ampérage)</li>
+                <li>Insérer le nouveau fusible en le poussant dedans.</li>
+                <li>Si sa n’a pas résolu le problème ou que le fusible regrille rapidement, contacter votre mécanicien pour faire faire des tests.</li>
+            </ol>
+        </div>
+        <div class="Entretienpart" id="pneus">
+            <h2>Sur les roues</h2>
+            <h3>Vérifier la pression des pneus</h3>
+            <img src="" alt="Une image montrant un sticker typique trouvable dans l'ouverture de la porte conducteur pour la pression des pneus">
+            <ol>
+                <li>Chercher sur la carrosserie dans la portière côté chauffeur ou dans la trappe à essence, un autocollant comme celui-ci :</li>
+                <li>À l’aide d’un compresseur et d’un pistolet de gonflage, vérifier la pression</li>
+                <li>Si la pression indiquée sur le pistolet est inférieur à celui indiqué sur l’autocollant pour le pneu, gonflé le pour avoir la même chose que sur celui-ci.</li>
+                <li>Si la pression indiquée est supérieur par contre, là il faudra diminué la pression du pneu pour avoir la même chose que sur l’autocollant.</li>
+            </ol>
+            <h3>Quelques petites astuces que vos pneus vous font savoir :</h3>
+            <ol>
+                <li>Si le pneu s’use sur les côtés externes, le pneu est sous-gonflé</li>
+                <li>Si le pneu s’use au milieu, le pneu est surgonflé</li>
+                <li>Si le pneu s’use sur un seul côté, alors faudra faire vérifier votre géométrie</li>
+            </ol>
+            <h3>Vérifier l’usure des pneus</h3>
+            <img src="" alt="Image montrant un profhtomètre en plastique">
+            <ol>
+                <li>À l’aide d’un profthomètre.</li>
+                <li>Si celui-ci indique au-dessus de 1,6mm alors pas de problèmes, à partir de 2mm il faut commencer à prévoir un changement de pneus</li>
+                <li>Si celui-ci indique 1,6mm ou inférieur, t’inquiète là la police t’arrête, tu rentre à pied.</li>
+            </ol>
+            <h3>Inspecter les flancs et vérifier la date du pneu (DOT)</h3>
+            <img src="" alt="Image montant l'emplacement de la date de fabrication du pneu">
+            <p><span>Sur l’image l’on peut voir 0816, mais qu’est-ce que cela signifie ?</span></p>
+            <ul>
+                <li>08 correspond à la semaine de fabrication (vers fin février)</li>
+                <li>16 à l’année de fabrication (2016)</li>
+            </ul>
+            <h3>Quand changer de pneu ?</h3>
+            <img src="" alt="Image montant un pneu avec une coupure sur le flanc et un pneu lisse">
+            <ul>
+                <li>Usure inférieure à 1,6 mm</li>
+                <li>Pneu âgé de plus de 5 à 7 ans</li>
+                <li>Déformation visible</li>
+                <li>Coupure ou hernie</li>
+                <li>Perte de pression régulière (vérification dans un bassin d’eau → possible que la jante soit défectueuse)</li>
+            </ul>
+        </div>
+        <div class="Entretienpart" id="freins">
+            <h2>Sur le système de freinage</h2>
+            <img src="" alt="Image montant un disque rouiller un disque abimé par une plaquette de freinage uséée">
+            <ul>
+                <li>Inspecter visuellement les disques et plaquettes</li>
+                <li>Tester la pédale (molle/dure)</li>
+                <li>Écouter les bruits</li>
+                <li>Vérifier si la voiture tire d’un côté</li>
+            </ul>
+            <h3>Quand changer les freins ?</h3>
+            <img src="" alt="Un calendrier">
+            <ul>
+                <li>Plaquettes : tous les 30 000 à 50 000 km selon l’usage</li>
+                <li>Disques : tous les 2 changements de plaquettes en général, si l’épaisseur est inférieur à la cote minimale (voir manuel d’utilisateur), en cas de fissures, de vibrations au freinage (disque voilé), ou de rayures profondes</li>
+                <li>Liquide de frein : tous les 2 ans</li>
+            </ul>
+            <h3>Les freins tambour (certains modèles)</h3>
+            <img src="" alt="vue interne d'un frein à tambours">
+            <ul>
+                <li>Tester le frein à main (si fonctionne pas, tire loin avant d’enclencher, tient plus en en pente, le voyant reste allumé, alors les mâchoires de frein sont probablement usé, le câble de frein à main est défectueux ou le moteur électrique est Hors Services)</li>
+                <li>Vérifier si la voiture tire d’un côté</li>
+                <li>Écouter les bruits</li>
+                <li>Vérifier le niveau de liquide de frein</li>
+            </ul>
+        </div>
+        <div class="Entretienpart" id="peinture">
+            <h2>Sur la peinture</h2>
+            <h3>Lavage douce (2 seaux (1 eau pure et 1 eau savonneuse), gant microfibre)</h3>
+            <img src="" alt="Un seau et un gant microfibre">
+            <p><span>C’est comme lavé votre corps</span></p>
+            <ol>
+                <li>Lavage à l’eau – enlever le plus gros</li>
+                <li>Savon – le vrai nettoyage</li>
+                <li>Rincage – la finition propre</li>
+            </ol>
+            <h3>Cire ou sealant, à quoi sa sert ?</h3>
+            <img src="" alt="Une bouteille de cire et une bouteille de sealant">
+            <p><span>C’est comme une crème hydratante pour ta voiture.</span><span>La cire nourrit et brille, le sealant protège longtemps.</span><span>L’un est romantique, l’autre est pragmatique.</span></p>
+            <h3>Retouches sur petits éclats</h3>
+            <img src="" alt="Un Paint Pen pour voiture avec la couleur noir">
+            <p><span>Le moyen le plus simple pour cacher une petite rayure — comme une ligne faite par une branche d’arbre — est d’utiliser un stylo de retouche (aussi appelé touch-up pen). Ce sont de petits stylos remplis de peinture exactement de la même couleur que votre voiture, basés sur le code couleur constructeur.</span></p>
+        </div>
     </section>
 </body>
 </html>
