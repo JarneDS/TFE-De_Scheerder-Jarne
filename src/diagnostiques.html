@@ -28,8 +28,68 @@
             <li class="menu__li"><a href="credits.html" class="NAV">Crédits</a></li>
         </ul>
     </nav>
-    <section class="section__btnRetour">
-        <button onclick="history.back()" class="btnRetour">←&nbsp;Retour</button>
+    <section class="Entretien section__btnRetour">
+        <button onclick="history.back()" class="btnRetour" style="margin-bottom: 46px;">←&nbsp;Retour</button>
+        <h1>Diagnostiques</h1>
+        <div class="Entretien__container">
+            <button class="Entretien__cart" data-value="filtre">
+                <img src="diagnoFiltre.png" alt="Image d'un filtre à air" class="Entretien__img">
+                <h3 class="Entretien__h3">Lier au filtre à air</h3>
+            </button>
+            <button class="Entretien__cart" data-value="fumees">
+                <img src="diagnoEchappe.png" alt="Image d'un pot d'échappement" class="Entretien__img">
+                <h3 class="Entretien__h3">Couleurs de fumées</h3>
+            </button>
+            <button class="Entretien__cart" data-value="huile">
+                <img src="huileMoteur.png" alt="Image d'une vidange d'huile moteur" class="Entretien__img">
+                <h3 class="Entretien__h3">Huile moteur</h3>
+            </button>
+            <button class="Entretien__cart" data-value="batterie">
+                <img src="diagnobatterie.png" alt="Image d'une batterie de voiture" class="Entretien__img">
+                <h3 class="Entretien__h3">Charge de la batterie</h3>
+            </button>
+            <button class="Entretien__cart" data-value="roues">
+                <img src="entretienPneu.png" alt="Les quatres types de pneus, été, hiver, quatres saisons, off-road" class="Entretien__img">
+                <h3 class="Entretien__h3">Sur les roues</h3>
+            </button>
+            <button class="Entretien__cart" data-value="freins">
+                <img src="entretienFrein.png" alt="Disques de freins et plaquettes pour avant et derrière" class="Entretien__img">
+                <h3 class="Entretien__h3">Sur les freins</h3>
+            </button>
+        </div>
+    </section>
+    <section class="Entretienpart__container section__btnRetour">
+        <button class="btnEntretien" style="margin-bottom: 46px;">←&nbsp;Retour</button>
+        <div class="Entretienpart" id="filtre">
+            <h2>Comment savoir si le filtre à air est sale ?</h2>
+            <h3>Symptôme 1 : Accélérations molles</h3>
+            <img src="" alt="Un filtre à air sale">
+            <p><span>Ta voiture respire mal. Elle accélère comme si elle montait les escaliers avec une bronchite.</span></p>
+            <h3>Symptôme 2 : Surconsommation (+10 à +20%)</h3>
+            <p><span>Elle boit plus d’essence pour compenser.</span><span>En gros : “Si je manque d’air, je carbure au carburant.”</span></p>
+            <h3>Symptôme 3 : Fumée noire</h3>
+            <p><span>Elle tousse.</span><span>Littéralement.</span><span>Ton échappement devient plus sombre que ton historique Google.</span></p>
+            <h3>Symptôme 4 : Démarrage difficile / ralenti instable</h3>
+            <p><span>Le moteur broute, tremble, hésite.</span><span>On dirait qu’il n’a pas dormi de la nuit.</span></p>
+            <img src="" alt="Un filtre à air propre et sale">
+            <h3>Symptôme 5 : Inspection visuelle</h3>
+            <p><span>Tu ouvres le boîtier…</span><span>Et tu trouves un filtre tellement sale qu’il pourrait passer pour un tapis Ikea.</span></p>
+        </div>
+        <div class="Entretienpart" id="fumees">
+            <h2>Les couleurs de fumée d’échappement :</h2>
+        </div>
+        <div class="Entretienpart" id="huile">
+            <h2>Comment vérifier le niveau d’huile moteur et comment le changer ?</h2>
+        </div>
+        <div class="Entretienpart" id="batterie">
+            <h2>Comment savoir si la charge de la batterie est faible ?</h2>
+        </div>
+        <div class="Entretienpart" id="roues">
+            <h2>Comment voir si un pneu est usé ?</h2>
+        </div>
+        <div class="Entretienpart" id="freins">
+            <h2>Comment vérifier si les freins sont usés ?</h2>
+        </div>
     </section>
 </body>
 </html>
