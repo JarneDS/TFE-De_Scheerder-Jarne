@@ -28,12 +28,6 @@
 }
 
 html, body {
-    background: url(../assets/bg.png);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    background-position: center;
     margin: 0;
     padding: 0;
 }
@@ -111,6 +105,87 @@ ul, ol {
 
 ul {
     list-style-type: disc;
+}
+
+#accueil, #parties, #selection, #moteur, #credits {
+    background: url(../assets/bg.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+#freins {
+    background: url(../assets/bgFreins.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+#peinture {
+    background: url(../assets/bgPeinture.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+#chassis {
+    background: url(../assets/bgChassis.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+#roues {
+    background: url(../assets/bgRoues.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+#suspension {
+    background: url(../assets/bgSuspension.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+#temoins {
+    background: url(../assets/bgTemoins.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+#entretien {
+    background: url(../assets/bgEntretien.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+
+#diagnostiques {
+    background: url(../assets/bgDiagnostiques.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
 }
 
 /* NAV */
