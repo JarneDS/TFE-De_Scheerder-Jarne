@@ -636,20 +636,6 @@ select {
     }
 
     /* SELECTION */
-    .selection__type {
-        width: 38.54%;
-        padding: 40px;
-    }
-
-    .voitureRendu {
-        display: block;
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 40px;
-        width: 61%;
-    }
-
     .choix__types {
         padding: 0 40px;
     }
@@ -657,16 +643,6 @@ select {
     .choix__option {
         width: 75%;
         max-width: 198px;
-    }
-
-    .btnLiens__container__selection {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 40px;
-        position: absolute;
-        bottom: 40px;
-        width: 29.5%;
     }
 
     .btnLiens__container {
@@ -807,6 +783,31 @@ select {
     }
 }
 
+@media (min-width: 900px) {
+    .selection__type {
+        width: 38.54%;
+        padding: 40px;
+    }
+
+    .voitureRendu {
+        display: block;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 40px;
+        width: 61%;
+    }
+
+    .btnLiens__container__selection {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+        position: absolute;
+        bottom: 40px;
+        width: 29.5%;
+    }
+}
 @media (min-width: 1250px) {
     .btnLiens__container__selection {
         width: 34%;
