@@ -400,11 +400,18 @@ select {
     padding: 20px;
 }
 
-.btnLiens__container__selection, .btnLiens__container {
+.btnLiens__container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin: 0 20px;
+    margin: 0 30px 30px;
+}
+
+.btnLiens__container__selection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
 }
 
 .btnLiens__container__selection {
