@@ -21,7 +21,8 @@ export default defineConfig({
         peinture: resolve(__dirname, 'src/peinture.html'),
         roues: resolve(__dirname, 'src/roues.html'),
         suspension: resolve(__dirname, 'src/suspension.html'),
-        temoins: resolve(__dirname, 'src/temoins.html')
+        temoins: resolve(__dirname, 'src/temoins.html'),
+        credits: resolve(__dirname, 'src/credits.html')
       }
     }
   },
