@@ -81,6 +81,7 @@ span {
     font-size: clamp(1.188rem, 0.185vw + 1.153rem, 1.375rem);
     font-family: "TitilliumWeb-SemiBold" !important;
     margin: 16px 0;
+    color: var(--color-text);
 }
 
 .legende {
@@ -688,7 +689,7 @@ select {
         padding: 40px;
     }
 
-    .part.active {
+    .part.active, .Entretienpart.active {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 0 20px;
@@ -966,6 +967,10 @@ select {
 
     .row--center {
         align-self: center;
+    }
+
+    .col--end {
+        justify-self: end;
     }
 
     /* GRID SPECIAL */
