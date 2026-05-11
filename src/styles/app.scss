@@ -711,6 +711,11 @@ select {
         height: auto;
         max-width: 300px;
     }
+
+    .stick {
+        position: sticky;
+        top: 110px;
+    }
     
     /* NAV */
     .menu {
