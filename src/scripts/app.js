@@ -9,112 +9,116 @@ function toggleMenu() {
     menu.classList.toggle("menu--open");
 }
 
-const marqueInput = document.getElementById("MVoiture");
-const typeSelect = document.getElementById("typeVoiture");
-const btnAjouter = document.getElementById("ajouterVoiture");
-const liste = document.getElementById("listeVoitures");
+const page = location.pathname.split("/").pop();
 
-let voitureSelectionner = false;
+if (page === "index.html") {
+    const marqueInput = document.getElementById("MVoiture");
+    const typeSelect = document.getElementById("typeVoiture");
+    const btnAjouter = document.getElementById("ajouterVoiture");
+    const liste = document.getElementById("listeVoitures");
 
-let voitures = JSON.parse(localStorage.getItem("voitures")) || [];
+    let voitureSelectionner = false;
 
-// sécurisé l'entrer utilisateur
-function sanitize(str) {
-    return str.replace(/[<>"']/g, "").trim();
-}
+    let voitures = JSON.parse(localStorage.getItem("voitures")) || [];
 
-// vérifier les entrer pour éviter le code pur en entrer
-const regexVoiture = /^[A-Za-zÀ-ÿ0-9\s\-]{2,30}$/;
-
-if (marqueInput && typeSelect && btnAjouter && liste) {
-    function afficherVoitures() {
-        if (voitures.length === 0) {
-            liste.innerHTML = "<p>Aucune voiture enregistrée.</p>";
-            return;
-        }
-
-        liste.innerHTML = voitures
-            .map((voiture, index) => `
-                <div class="voiture-item">
-                    <button class="voiture-check">
-                        <p>${voiture.marque} – ${voiture.type}</p>
-                        <span class="check">&#x2714;</span>
-                    </button>
-                    <button onclick="supprimerVoiture(${index})" class="suppVehicule">Supprimer ce véhicule</button>
-                </div>
-            `)
-            .join("");
-
-        const voitureSelect = document.querySelectorAll(".voiture-check");
-        const activeIndex = localStorage.getItem("voitureActive");
-
-        if (activeIndex !== null && voitureSelect[activeIndex]) {
-            voitureSelect[activeIndex].classList.add("actif");
-        }
-
-        voitureSelect.forEach((voiture, index) => {
-            voiture.addEventListener("click", () => {
-
-                if (voiture.classList.contains("actif")) {
-                    voiture.classList.remove("actif");
-                    localStorage.removeItem("voitureActive");
-                    voitureSelectionner = false;
-                    return;
-                }
-
-                voitureSelect.forEach(el => el.classList.remove("actif"));
-                voiture.classList.add("actif");
-                voitureSelectionner = true;
-
-                localStorage.setItem("voitureActive", index);
-            });
-        });
+    // sécurisé l'entrer utilisateur
+    function sanitize(str) {
+        return str.replace(/[<>"']/g, "").trim();
     }
 
-    btnAjouter.addEventListener("click", () => {
-        let marque = sanitize(marqueInput.value);
-        let type = sanitize(typeSelect.value);
+    // vérifier les entrer pour éviter le code pur en entrer
+    const regexVoiture = /^[A-Za-zÀ-ÿ0-9\s\-]{2,30}$/;
 
-        if (!marque || !type) {
-            alert("Veuillez remplir les deux champs.");
-            return;
+    if (marqueInput && typeSelect && btnAjouter && liste) {
+        function afficherVoitures() {
+            if (voitures.length === 0) {
+                liste.innerHTML = "<p>Aucune voiture enregistrée.</p>";
+                return;
+            }
+
+            liste.innerHTML = voitures
+                .map((voiture, index) => `
+                    <div class="voiture-item">
+                        <button class="voiture-check">
+                            <p>${voiture.marque} – ${voiture.type}</p>
+                            <span class="check">&#x2714;</span>
+                        </button>
+                        <button onclick="supprimerVoiture(${index})" class="suppVehicule">Supprimer ce véhicule</button>
+                    </div>
+                `)
+                .join("");
+
+            const voitureSelect = document.querySelectorAll(".voiture-check");
+            const activeIndex = localStorage.getItem("voitureActive");
+
+            if (activeIndex !== null && voitureSelect[activeIndex]) {
+                voitureSelect[activeIndex].classList.add("actif");
+            }
+
+            voitureSelect.forEach((voiture, index) => {
+                voiture.addEventListener("click", () => {
+
+                    if (voiture.classList.contains("actif")) {
+                        voiture.classList.remove("actif");
+                        localStorage.removeItem("voitureActive");
+                        voitureSelectionner = false;
+                        return;
+                    }
+
+                    voitureSelect.forEach(el => el.classList.remove("actif"));
+                    voiture.classList.add("actif");
+                    voitureSelectionner = true;
+
+                    localStorage.setItem("voitureActive", index);
+                });
+            });
         }
 
-        if (!regexVoiture.test(marque)) {
-            alert("Marque invalide (2–30 caractères, lettres/chiffres/espaces/tirets).");
-            return;
-        }
+        btnAjouter.addEventListener("click", () => {
+            let marque = sanitize(marqueInput.value);
+            let type = sanitize(typeSelect.value);
 
-        marque = marque.toUpperCase();
-        type = type.toUpperCase();
+            if (!marque || !type) {
+                alert("Veuillez remplir les deux champs.");
+                return;
+            }
 
-        voitures.push({ marque, type });
-        localStorage.setItem("voitures", JSON.stringify(voitures));
+            if (!regexVoiture.test(marque)) {
+                alert("Marque invalide (2–30 caractères, lettres/chiffres/espaces/tirets).");
+                return;
+            }
 
-        marqueInput.value = "";
-        typeSelect.value = "";
+            marque = marque.toUpperCase();
+            type = type.toUpperCase();
+
+            voitures.push({ marque, type });
+            localStorage.setItem("voitures", JSON.stringify(voitures));
+
+            marqueInput.value = "";
+            typeSelect.value = "";
+
+            afficherVoitures();
+        });
+
+        window.supprimerVoiture = function(index) {
+            voitures.splice(index, 1);
+            localStorage.setItem("voitures", JSON.stringify(voitures));
+            afficherVoitures();
+        };
 
         afficherVoitures();
+    };
+
+    const btnCommencer = document.querySelector(".commencer");
+
+    btnCommencer.addEventListener('click', () => {
+        if (voitureSelectionner) {
+            location.href = "page-parties.html";
+        } else {
+            location.href = "selection.html";
+        };
     });
-
-    window.supprimerVoiture = function(index) {
-        voitures.splice(index, 1);
-        localStorage.setItem("voitures", JSON.stringify(voitures));
-        afficherVoitures();
-    };
-
-    afficherVoitures();
 };
-
-const btnCommencer = document.querySelector(".commencer");
-
-btnCommencer.addEventListener('click', () => {
-    if (voitureSelectionner) {
-        location.href = "page-parties.html";
-    } else {
-        location.href = "selection.html";
-    };
-});
 
 // Prendre les datas des premières divs de chaque page
 let mapDataA = 'MoteurIntro';

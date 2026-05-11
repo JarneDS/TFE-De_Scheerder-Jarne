@@ -618,16 +618,8 @@ select {
     margin-bottom: 0;
 }
 
-.part__img {
-    width: 100%;
-}
-
 .part__h2 {
     text-align: center;
-}
-
-.part__ul, .part__ol {
-    padding: 0;
 }
 
 .iconesLiquides {
@@ -692,6 +684,16 @@ select {
         padding: 40px;
     }
 
+    .part.active {
+        display: grid;
+        grid-template-columns: repeat(7, auto);
+        gap: 0 20px;
+    }
+
+    .select-part__container { 
+        flex-direction: row;
+    }
+
     .btnRetour, .btnEntretien {
         margin: 0;
     }
@@ -700,7 +702,9 @@ select {
         padding: 0;
     }
 
-    img {
+    img, .part__img {
+        width: auto;
+        height: auto;
         max-height: 200px;
         max-width: 300px;
     }
@@ -762,7 +766,7 @@ select {
         max-width: 198px;
     }
 
-    .btnLiens__container {
+    .btnLiens__container, .btnLiens__part {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -777,12 +781,15 @@ select {
     /* PAGE-PARTIES */
     .h2__parties {
         margin: 26px 40px;
+        max-width: 700px;
     }
 
     .modeleInteractif {
         position: relative;
         display: flex;
         justify-self: center;
+        max-width: 1600px;
+        max-height: 953px;
     }
 
     .btnsModel {
@@ -898,6 +905,19 @@ select {
     .boutonInfoA:hover .boutonInfo__svg, .boutonInfoB:hover .boutonInfo__svg, .boutonInfoC:hover .boutonInfo__svg, .boutonInfoD:hover .boutonInfo__svg, .boutonInfoE:hover .boutonInfo__svg, .boutonInfoF:hover .boutonInfo__svg, .boutonInfoG:hover .boutonInfo__svg {
         transform: rotate(0deg);
     }
+
+    /* ENTRETIEN */
+    .Entretien__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .Entretien__img {
+        max-width: 374px;
+        max-height: 250px;
+        width: 374px;
+    }
 }
 
 @media (min-width: 900px) {
@@ -913,6 +933,8 @@ select {
         transform: translateY(-50%);
         right: 40px;
         width: 61%;
+        max-width: 1600px;
+        max-height: 953px;
     }
 
     .btnLiens__container__selection {
