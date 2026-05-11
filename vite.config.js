@@ -15,7 +15,7 @@ export default defineConfig({
         chassis: resolve(__dirname, 'src/chassis.html'),
         diagnostiques: resolve(__dirname, 'src/diagnostiques.html'),
         entretien: resolve(__dirname, 'src/entretien.html'),
-        friens: resolve(__dirname, 'src/friens.html'),
+        friens: resolve(__dirname, 'src/freins.html'),
         moteur: resolve(__dirname, 'src/moteur.html'),
         pageParties: resolve(__dirname, 'src/page-parties.html'),
         peinture: resolve(__dirname, 'src/peinture.html'),
