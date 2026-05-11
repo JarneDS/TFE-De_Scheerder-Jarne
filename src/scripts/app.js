@@ -14,6 +14,8 @@ const typeSelect = document.getElementById("typeVoiture");
 const btnAjouter = document.getElementById("ajouterVoiture");
 const liste = document.getElementById("listeVoitures");
 
+let voitureSelectionner = false;
+
 let voitures = JSON.parse(localStorage.getItem("voitures")) || [];
 
 // sécurisé l'entrer utilisateur
@@ -50,12 +52,19 @@ if (marqueInput && typeSelect && btnAjouter && liste) {
             voitureSelect[activeIndex].classList.add("actif");
         }
 
-        voitureSelect.forEach((v, index) => {
-            v.addEventListener("click", () => {
+        voitureSelect.forEach((voiture, index) => {
+            voiture.addEventListener("click", () => {
+
+                if (voiture.classList.contains("actif")) {
+                    voiture.classList.remove("actif");
+                    localStorage.removeItem("voitureActive");
+                    voitureSelectionner = false;
+                    return;
+                }
 
                 voitureSelect.forEach(el => el.classList.remove("actif"));
-
-                v.classList.add("actif");
+                voiture.classList.add("actif");
+                voitureSelectionner = true;
 
                 localStorage.setItem("voitureActive", index);
             });
@@ -96,6 +105,16 @@ if (marqueInput && typeSelect && btnAjouter && liste) {
 
     afficherVoitures();
 };
+
+const btnCommencer = document.querySelector(".commencer");
+
+btnCommencer.addEventListener('click', () => {
+    if (voitureSelectionner) {
+        location.href = "page-parties.html";
+    } else {
+        location.href = "selection.html";
+    };
+});
 
 // Prendre les datas des premières divs de chaque page
 let mapDataA = 'MoteurIntro';
@@ -241,4 +260,3 @@ btnRetourEntretien.addEventListener('click', () => {
         p.classList.remove('active');
     });
 });
-

@@ -358,6 +358,12 @@ select {
     color: var(--color-text-btn);
     display: flex;
     justify-content: center;
+    border: none;
+    transition: all .3s ease-in-out;
+}
+
+.commencer:hover {
+    background-color: var(--color-secondary);
 }
 
 .form__elements, .voituresEnregistrees {
@@ -692,6 +698,11 @@ select {
 
     .accueil__selection, .choix__types, .btnLiens__container, .btnLiens__container__selection {
         padding: 0;
+    }
+
+    img {
+        max-height: 200px;
+        max-width: 300px;
     }
     
     /* NAV */
