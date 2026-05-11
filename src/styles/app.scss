@@ -966,6 +966,27 @@ select {
     .row--center {
         align-self: center;
     }
+
+    /* GRID SPECIAL */
+    .row2 {
+        grid-row: 3 / 4;
+    }
+
+    .row3 {
+        grid-row: 4 / 5;
+    }
+
+    .row4 {
+        grid-row: 5 / 6;
+    }
+
+    .row5 {
+        grid-row: 6 / 7;
+    }
+
+    .row6 {
+        grid-row: 7 / 8;
+    }
 }
 
 @media (min-width: 900px) {
