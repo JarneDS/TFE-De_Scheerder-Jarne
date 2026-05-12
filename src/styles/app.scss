@@ -365,6 +365,7 @@ select {
     justify-content: center;
     border: none;
     transition: all .3s ease-in-out;
+    width: stretch;
 }
 
 .commencer:hover {
@@ -377,8 +378,12 @@ select {
     border-radius: 10px;
 }
 
-.form__elements h2, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p {
+.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p {
     color: var(--color-text-btn);
+}
+
+.color--black {
+    margin-top: 0;
 }
 
 /* SELECTION */
