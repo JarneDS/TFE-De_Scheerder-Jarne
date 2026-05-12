@@ -59,10 +59,11 @@
     <section class="Entretienpart__container section__btnRetour">
         <button class="btnEntretien" style="margin-bottom: 46px;">←&nbsp;Retour</button>
         <div class="Entretienpart" id="capot">
-            <h2>Sous le capot</h2>
-            <p><span>Pour ouvrir le capot, tirez le levier en bas côté chauffeur vers vous, ensuite sous le capot, trouver la languette et manipuler la pour ouvrir le capot entièrement.</span></p>
-            <h3>Vérifications de base :</h3>
-            <ul>
+            <h2 class="col--full row--title col--center">Sous le capot</h2>
+            <p class="col--left row--top"><span>Pour ouvrir le capot, tirez le levier en bas côté chauffeur vers vous, ensuite sous le capot, trouver la languette et manipuler la pour ouvrir le capot entièrement.</span></p>
+            <img src="" alt="Image d'un levier pour ouvrir le capot de la voiture sur une Renault Kangoo" class="col__img--right row--top col--end">
+            <h3 class="col--full row2 col--center">Vérifications de base :</h3>
+            <ul class="col--left row3">
                 <li>Niveau d’huile</li>
                 <li>Niveau de liquide de refroidissement</li>
                 <li>Niveau de liquide de frein</li>
@@ -71,63 +72,73 @@
                 <li>Regarder si fuite visible</li>
                 <li>Niveau de liquide de frein</li>
             </ul>
-            <img src="MinMax.png" alt="Jauge de niveau de liquide">
-            <h3>Petites réparations possibles :</h3>
-            <ul>
-                <li>Changer le filtre à air</li>
-                <li>Changer le filtre à huile (avec précautions)</li>
-                <li>Changer l’huile moteur</li>
-                <li>Remplir le liquide lave-glace</li>
-            </ul>
-            <p><span>Vérifier l’état du filtre à air tous les 15 000 à 30 000 km. Remplacez le quand il est noir, gris foncé ou que la lumière n’arrive plus à passé à travers.</span></p>
-            <img src="filtresHuile.png" alt="filtres à huile">
+            <img src="MinMax.png" alt="Jauge de niveau de liquide" class="col__img--right row3 col--end row--center">
+            <h3 class="col--full row4 col--center">Petites réparations possibles :</h3>
+            <div class="col--right row5">
+                <ul>
+                    <li>Changer le filtre à air</li>
+                    <li>Changer le filtre à huile (avec précautions)</li>
+                    <li>Changer l’huile moteur</li>
+                    <li>Remplir le liquide lave-glace</li>
+                </ul>
+                <p><span>Vérifier l’état du filtre à air tous les 15 000 à 30 000 km. Remplacez le quand il est noir, gris foncé ou que la lumière n’arrive plus à passé à travers.</span></p>
+            </div>
+            <img src="filtresHuile.png" alt="filtres à huile" class="col__img--left row5">
         </div>
         <div class="Entretienpart" id="electrique">
-            <h2>Sur le circuit électrique</h2>
-            <h3>Vérifier à l’aide d’un multimètre la tension de la batterie :</h3>
-            <img src="multimetre.png" alt="Un multimètre">
-            <ul>
-                <li>entre 12,6V et 12,8V quand la batterie est parfaitement chargée sans que le moteur tourne</li>
-                <li>12,4V pour une batterie moyennement chargée</li>
-                <li>entre 12V et 12,3V, la batterie est déchargée, une recharge est nécessaire</li>
-                <li>inférieure à 12V, la batterie est déchargée, probablement Hors Service</li>
-                <li>entre 13,7V et 14,7V quand le moteur tourne</li>
-            </ul>
-            <h3>Vérifier la courroie d’alternateur</h3>
-            <img src="courroie.png" alt="Une courroie d'alternateur">
-            <p><span>Une courroie ne peut pas être :</span></p>
-            <ul>
-                <li>Brillant → indique trop ou trop peu de tension</li>
-                <li>Avoir de crassent du côté interne entre les stries</li>
-                <li>Avoir des déchirures sur les stries trop profond (pas plus de 3 lignes par 2,5cm)</li>
-            </ul>
-            <p><span>Une courroie doit être remplacée tous les 80 000 à 120 000 kms</span></p>
-            <h3>Remplacer la batterie <strong>(moteur éteint !)</strong></h3>
-            <img src="batterieEntretien.png" alt="Une image montrant un montage typique de la batterie dans la voiture">
-            <ol>
-                <li>Débrancher la borne négative en premier (identifiable par la couleur noir)</li>
-                <li>Débrancher la borne positive (identifiable par la couleur rouge)</li>
-                <li>Retirer la barre ou la bride qui maintient la batterie</li>
-                <li>Enlever la batterie (ATTENTION À VOS PIEDS c’est lourd !)</li>
-                <li>Placer la nouvelle batterie dans la même direction que l’ancien est sortie</li>
-                <li>Replacer la barre ou la bride qui maintient la batterie et serrez pour que la batterie ne bouge plus</li>
-                <li>Enlever les protections des cosses</li>
-                <li>Brancher la borne positive (rouge) et serrez la</li>
-                <li>Brancher la borne négative (noir) et serrez la</li>
-            </ol>
-            <h3>Remplacer un fusible</h3>
-            <img src="fusiblesEntretien.png" alt="Une boite à fusibles">
-            <ol>
-                <li>Repérer le boîtier à fusibles</li>
-                <li>Identifier, à l’aide du schéma que vous pouvez trouver sur le couvercle du boîtier, le fusible concerné</li>
-                <li>Couper le contact et enlever la clé</li>
-                <li>Enlevé le fusible concerné à l’aide de la pince fournie ou avec vos doigts</li>
-                <li>Tirer le doucement vers le haut</li>
-                <li>Si le fusible est transparent, regarder si le fil à l’intérieur est continu. Sinon testé le à l’aide d’un multimètre pour voir s’il y a de la continuité</li>
-                <li>Si grillé, remplacer par un fusible identique (même couleur, même ampérage)</li>
-                <li>Insérer le nouveau fusible en le poussant dedans.</li>
-                <li>Si sa n’a pas résolu le problème ou que le fusible regrille rapidement, contacter votre mécanicien pour faire faire des tests.</li>
-            </ol>
+            <h2 class="col--full row--title col--center">Sur le circuit électrique</h2>
+            <div class="col--right row--top">
+                <h3>Vérifier à l’aide d’un multimètre la tension de la batterie :</h3>
+                <ul>
+                    <li>entre 12,6V et 12,8V quand la batterie est parfaitement chargée sans que le moteur tourne</li>
+                    <li>12,4V pour une batterie moyennement chargée</li>
+                    <li>entre 12V et 12,3V, la batterie est déchargée, une recharge est nécessaire</li>
+                    <li>inférieure à 12V, la batterie est déchargée, probablement Hors Service</li>
+                    <li>entre 13,7V et 14,7V quand le moteur tourne</li>
+                </ul>
+            </div>
+            <img src="multimetre.png" alt="Un multimètre" class="col__img--left row--top col--center row--center">
+            <div class="col--left row2">
+                <h3>Vérifier la courroie d’alternateur</h3>
+                <p><span>Une courroie ne peut pas être :</span></p>
+                <ul>
+                    <li>Brillant → indique trop ou trop peu de tension</li>
+                    <li>Avoir de crassent du côté interne entre les stries</li>
+                    <li>Avoir des déchirures sur les stries trop profond (pas plus de 3 lignes par 2,5cm)</li>
+                </ul>
+                <p><span>Une courroie doit être remplacée tous les 80 000 à 120 000 kms</span></p>
+            </div>
+            <img src="courroie.png" alt="Une courroie d'alternateur" class="col__img--right row2 col--end row--center">
+            <div class="col--right row3">
+                <h3>Remplacer la batterie <strong>(moteur éteint !)</strong></h3>
+                <ol>
+                    <li>Débrancher la borne négative en premier (identifiable par la couleur noir)</li>
+                    <li>Débrancher la borne positive (identifiable par la couleur rouge)</li>
+                    <li>Retirer la barre ou la bride qui maintient la batterie</li>
+                    <li>Enlever la batterie (ATTENTION À VOS PIEDS c’est lourd !)</li>
+                    <li>Placer la nouvelle batterie dans la même direction que l’ancien est sortie</li>
+                    <li>Replacer la barre ou la bride qui maintient la batterie et serrez pour que la batterie ne bouge plus</li>
+                    <li>Enlever les protections des cosses</li>
+                    <li>Brancher la borne positive (rouge) et serrez la</li>
+                    <li>Brancher la borne négative (noir) et serrez la</li>
+                </ol>
+            </div>
+            <img src="batterieEntretien.png" alt="Une image montrant un montage typique de la batterie dans la voiture" class="col__img--left row3 row--center">
+            <div class="col--left row4">
+                <h3>Remplacer un fusible</h3>
+                <ol>
+                    <li>Repérer le boîtier à fusibles</li>
+                    <li>Identifier, à l’aide du schéma que vous pouvez trouver sur le couvercle du boîtier, le fusible concerné</li>
+                    <li>Couper le contact et enlever la clé</li>
+                    <li>Enlevé le fusible concerné à l’aide de la pince fournie ou avec vos doigts</li>
+                    <li>Tirer le doucement vers le haut</li>
+                    <li>Si le fusible est transparent, regarder si le fil à l’intérieur est continu. Sinon testé le à l’aide d’un multimètre pour voir s’il y a de la continuité</li>
+                    <li>Si grillé, remplacer par un fusible identique (même couleur, même ampérage)</li>
+                    <li>Insérer le nouveau fusible en le poussant dedans.</li>
+                    <li>Si sa n’a pas résolu le problème ou que le fusible regrille rapidement, contacter votre mécanicien pour faire faire des tests.</li>
+                </ol>
+            </div>
+            <img src="fusiblesEntretien.png" alt="Une boite à fusibles" class="col__img--right row4 col--end row--center">
         </div>
         <div class="Entretienpart" id="pneus">
             <h2>Sur les roues</h2>
