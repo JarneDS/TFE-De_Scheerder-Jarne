@@ -216,6 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.classList.add('selected');
             }
         });
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
 
     updateView();
@@ -250,6 +255,11 @@ if (page2 === "entretien.html" || page2 === "diagnostiques.html") {
             const target = document.getElementById(value);
             if (target) {
                 target.classList.add('active');
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             }
         });
     });
