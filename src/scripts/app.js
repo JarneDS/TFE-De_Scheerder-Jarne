@@ -7,7 +7,7 @@ menuBtn.addEventListener("click", toggleMenu);
 function toggleMenu() {
     var menu = document.querySelector(".menu");
     menu.classList.toggle("menu--open");
-}
+};
 
 const page = location.pathname.split("/").pop();
 
@@ -24,7 +24,7 @@ if (page === "index.html" || page === "") {
     // sécurisé l'entrer utilisateur
     function sanitize(str) {
         return str.replace(/[<>"']/g, "").trim();
-    }
+    };
 
     // vérifier les entrer pour éviter le code pur en entrer
     const regexVoiture = /^[A-Za-zÀ-ÿ0-9\s\-]{2,30}$/;
@@ -34,7 +34,7 @@ if (page === "index.html" || page === "") {
             if (voitures.length === 0) {
                 liste.innerHTML = "<p>Aucune voiture enregistrée.</p>";
                 return;
-            }
+            };
 
             liste.innerHTML = voitures
                 .map((voiture, index) => `
@@ -53,7 +53,7 @@ if (page === "index.html" || page === "") {
 
             if (activeIndex !== null && voitureSelect[activeIndex]) {
                 voitureSelect[activeIndex].classList.add("actif");
-            }
+            };
 
             voitureSelect.forEach((voiture, index) => {
                 voiture.addEventListener("click", () => {
@@ -63,7 +63,7 @@ if (page === "index.html" || page === "") {
                         localStorage.removeItem("voitureActive");
                         voitureSelectionner = false;
                         return;
-                    }
+                    };
 
                     voitureSelect.forEach(el => el.classList.remove("actif"));
                     voiture.classList.add("actif");
@@ -72,7 +72,7 @@ if (page === "index.html" || page === "") {
                     localStorage.setItem("voitureActive", index);
                 });
             });
-        }
+        };
 
         btnAjouter.addEventListener("click", () => {
             let marque = sanitize(marqueInput.value);
@@ -81,12 +81,12 @@ if (page === "index.html" || page === "") {
             if (!marque || !type) {
                 alert("Veuillez remplir les deux champs.");
                 return;
-            }
+            };
 
             if (!regexVoiture.test(marque)) {
                 alert("Marque invalide (2–30 caractères, lettres/chiffres/espaces/tirets).");
                 return;
-            }
+            };
 
             marque = marque.toUpperCase();
             type = type.toUpperCase();
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mapDataF = btn.dataset.value;
         mapDataG = btn.dataset.value;
         updateView();
-    }
+    };
 
     // faire en sorte que quand on va sur la page, par exemple moteur, que la div MoteurIntro soit affiché
     function updateView() {
@@ -160,68 +160,68 @@ document.addEventListener("DOMContentLoaded", () => {
         const activeA = document.getElementById(mapDataA);
         if (activeA) {
             activeA.classList.add("active");
-        }
+        };
 
         const activeB = document.getElementById(mapDataB);
         if (activeB) {
             activeB.classList.add("active");
-        }
+        };
 
         const activeC = document.getElementById(mapDataC);
         if (activeC) {
             activeC.classList.add("active");
-        }
+        };
 
         const activeD = document.getElementById(mapDataD);
         if (activeD) {
             activeD.classList.add("active");
-        }
+        };
 
         const activeE = document.getElementById(mapDataE);
         if (activeE) {
             activeE.classList.add("active");
-        }
+        };
 
         const activeF = document.getElementById(mapDataF);
         if (activeF) {
             activeF.classList.add("active");
-        }
+        };
 
         const activeG = document.getElementById(mapDataG);
         if (activeG) {
             activeG.classList.add("active");
-        }
+        };
 
         document.querySelectorAll('.select-part').forEach(btn => {
             btn.classList.remove('selected');
             if (btn.dataset.value === mapDataA) {
                 btn.classList.add('selected');
-            }
+            };
             if (btn.dataset.value === mapDataB) {
                 btn.classList.add('selected');
-            }
+            };
             if (btn.dataset.value === mapDataC) {
                 btn.classList.add('selected');
-            }
+            };
             if (btn.dataset.value === mapDataD) {
                 btn.classList.add('selected');
-            }
+            };
             if (btn.dataset.value === mapDataE) {
                 btn.classList.add('selected');
-            }
+            };
             if (btn.dataset.value === mapDataF) {
                 btn.classList.add('selected');
-            }
+            };
             if (btn.dataset.value === mapDataG) {
                 btn.classList.add('selected');
-            }
+            };
         });
 
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-    }
+    };
 
     updateView();
 });
@@ -260,7 +260,7 @@ if (page2 === "entretien.html" || page2 === "diagnostiques.html") {
                     top: 0,
                     behavior: "smooth"
                 });
-            }
+            };
         });
     });
 
