@@ -11,7 +11,7 @@ function toggleMenu() {
 
 const page = location.pathname.split("/").pop();
 
-if (page === "index.html") {
+if (page === "index.html" || page === "") {
     const marqueInput = document.getElementById("MVoiture");
     const typeSelect = document.getElementById("typeVoiture");
     const btnAjouter = document.getElementById("ajouterVoiture");
@@ -221,46 +221,51 @@ document.addEventListener("DOMContentLoaded", () => {
     updateView();
 });
 
-// Sélecteurs principaux
-const sectionEntretien = document.querySelector('.Entretien');
-const sectionPart = document.querySelector('.Entretienpart__container');
-const btnRetourEntretien = document.querySelector('.btnEntretien');
+const page2 = location.pathname.split("/").pop();
 
-// 1. Clic sur une carte
-document.querySelectorAll('.Entretien__cart').forEach(cart => {
-    cart.addEventListener('click', () => {
-        const value = cart.dataset.value;
+if (page2 === "entretien.html" || page2 === "diagnostiques.html") {
 
-        // Cacher la section Entretien
-        sectionEntretien.style.display = "none";
+    // Sélecteurs principaux
+    const sectionEntretien = document.querySelector('.Entretien');
+    const sectionPart = document.querySelector('.Entretienpart__container');
+    const btnRetourEntretien = document.querySelector('.btnEntretien');
 
-        // Afficher la section des parties
-        sectionPart.style.display = "block";
+    // 1. Clic sur une carte
+    document.querySelectorAll('.Entretien__cart').forEach(cart => {
+        cart.addEventListener('click', () => {
+            const value = cart.dataset.value;
+
+            // Cacher la section Entretien
+            sectionEntretien.style.display = "none";
+
+            // Afficher la section des parties
+            sectionPart.style.display = "block";
+
+            // Masquer toutes les parties
+            document.querySelectorAll('.Entretienpart').forEach(p => {
+                p.classList.remove('active');
+            });
+
+            // Afficher la bonne partie
+            const target = document.getElementById(value);
+            if (target) {
+                target.classList.add('active');
+            }
+        });
+    });
+
+    // 2. Clic sur le bouton Retour (btnEntretien)
+    btnRetourEntretien.addEventListener('click', () => {
+
+        // Cacher la section des parties
+        sectionPart.style.display = "none";
+
+        // Réafficher la section Entretien
+        sectionEntretien.style.display = "block";
 
         // Masquer toutes les parties
         document.querySelectorAll('.Entretienpart').forEach(p => {
             p.classList.remove('active');
         });
-
-        // Afficher la bonne partie
-        const target = document.getElementById(value);
-        if (target) {
-            target.classList.add('active');
-        }
     });
-});
-
-// 2. Clic sur le bouton Retour (btnEntretien)
-btnRetourEntretien.addEventListener('click', () => {
-
-    // Cacher la section des parties
-    sectionPart.style.display = "none";
-
-    // Réafficher la section Entretien
-    sectionEntretien.style.display = "block";
-
-    // Masquer toutes les parties
-    document.querySelectorAll('.Entretienpart').forEach(p => {
-        p.classList.remove('active');
-    });
-});
+};
