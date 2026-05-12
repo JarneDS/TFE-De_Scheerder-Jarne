@@ -716,6 +716,11 @@ select {
         width: auto;
         height: auto;
         max-width: 300px;
+        max-height: 200px;
+    }
+
+    .height--100 {
+        max-height: fit-content;
     }
 
     .stick {
