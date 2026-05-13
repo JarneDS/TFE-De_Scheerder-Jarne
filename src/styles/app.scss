@@ -113,7 +113,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -122,7 +121,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -131,7 +129,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -140,7 +137,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -149,7 +145,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -158,7 +153,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -167,7 +161,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -176,7 +169,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -185,7 +177,6 @@ ul {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -406,12 +397,11 @@ select {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
 .selection__type {
-    min-height: 100vh;
+    height: 89vh;
     background-color: var(--color-bg);
     padding: 20px;
 }
@@ -499,7 +489,6 @@ select {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
     background-position: center;
 }
 
@@ -689,15 +678,12 @@ select {
 }
 
 @media (min-width: 701px) {
+    h1, img {
+        align-self: center;
+    }
     section {
         margin-top: 70px;
         padding: 40px;
-    }
-
-    .part.active, .Entretienpart.active, .credits {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        gap: 20px;
     }
 
     .select-part__container { 
@@ -721,11 +707,6 @@ select {
 
     .height--100 {
         max-height: fit-content;
-    }
-
-    .stick {
-        position: sticky;
-        top: 110px;
     }
     
     /* NAV */
@@ -776,6 +757,10 @@ select {
     }
 
     /* SELECTION */
+    .selection__type {
+        height: 90vh;
+    }
+
     .choix__types {
         padding: 0 40px;
     }
@@ -938,6 +923,47 @@ select {
         width: 374px;
     }
 
+    .row--center {
+        align-self: center;
+    }
+}
+
+@media (min-width: 900px) {
+    .selection__type {
+        height: 85.7vh;
+        width: 38.54%;
+        padding: 40px;
+    }
+
+    .voitureRendu {
+        display: block;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 40px;
+        width: 61%;
+        max-width: 1600px;
+        max-height: 953px;
+    }
+
+    .btnLiens__container__selection {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+        position: absolute;
+        bottom: 40px;
+        width: 29.5%;
+    }
+}
+
+@media (min-width: 1250px) {
+    .part.active, .Entretienpart.active, .credits, .accueil {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 20px;
+    }
+
     /* GRID */
     .col--full {
         grid-column: 2 / 7;
@@ -975,10 +1001,6 @@ select {
         justify-self: center;
     }
 
-    .row--center {
-        align-self: center;
-    }
-
     .col--end {
         justify-self: end;
     }
@@ -1003,37 +1025,12 @@ select {
     .row6 {
         grid-row: 7 / 8;
     }
-}
 
-@media (min-width: 900px) {
-    .selection__type {
-        width: 38.54%;
-        padding: 40px;
+    .stick {
+        position: sticky;
+        top: 110px;
     }
 
-    .voitureRendu {
-        display: block;
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 40px;
-        width: 61%;
-        max-width: 1600px;
-        max-height: 953px;
-    }
-
-    .btnLiens__container__selection {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 40px;
-        position: absolute;
-        bottom: 40px;
-        width: 29.5%;
-    }
-}
-
-@media (min-width: 1250px) {
     .btnLiens__container__selection {
         width: 34%;
     }
