@@ -233,6 +233,7 @@ ul {
 .menu__li a {
     color: var(--color-text-btn);
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .menu--open .menu__ul {
