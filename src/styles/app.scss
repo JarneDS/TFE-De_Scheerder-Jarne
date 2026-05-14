@@ -499,6 +499,7 @@ select {
     border-radius: 10px;
     border: none;
     padding: 10px;
+    margin-top: 0;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
@@ -684,6 +685,10 @@ select {
     }
     section {
         padding: 40px;
+    }
+
+    .section__btnRetour, .accueil {
+        margin-top: 70px;
     }
 
     .select-part__container { 
