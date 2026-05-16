@@ -24,12 +24,13 @@
   --color-text-btn: #000;
   --color-primary: #FF7F00;
   --color-secondary: rgba(255, 128, 0, 0.6);
-  --color-thirdly: #FF5050;
+  --color-thirdly: #4A0000;
 }
 
 html, body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 section {
@@ -234,6 +235,11 @@ ul {
     color: var(--color-text-btn);
     text-decoration: none;
     text-transform: uppercase;
+    transition: all .3s;
+}
+
+.menu__li a:hover {
+    color: var(--color-thirdly);
 }
 
 .menu--open .menu__ul {

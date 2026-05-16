@@ -1,5 +1,57 @@
 "use strict";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* GSAP */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const voiture = document.querySelector(".voitureRendu");
+
+    if (voiture) {
+        gsap.from(voiture, {
+            x: window.innerWidth,
+            scale: 0.3,
+            opacity: 0,
+            duration: 1.8,
+            ease: "power3.out"
+        });
+    }
+});
+
+function initGSAPAnimations() {
+    document.querySelectorAll(".col__img--left, .col--left").forEach(el => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: "top 90%",
+            },
+            x: -window.innerWidth,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+    });
+
+    document.querySelectorAll(".col__img--right, .col--right").forEach(el => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: "top 90%",
+            },
+            x: window.innerWidth,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+    });
+}
+
+
+/* MENU */
+
 var menuBtn = document.querySelector(".menu__btn");
 
 menuBtn.addEventListener("click", toggleMenu);
@@ -8,6 +60,8 @@ function toggleMenu() {
     var menu = document.querySelector(".menu");
     menu.classList.toggle("menu--open");
 };
+
+/* INDEX */
 
 const page = location.pathname.split("/").pop();
 
@@ -221,6 +275,32 @@ document.addEventListener("DOMContentLoaded", () => {
             top: 0,
             behavior: "smooth"
         });
+
+        document.querySelectorAll(".col__img--left, .col--left").forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                },
+                x: -window.innerWidth,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power3.out"
+            });
+        });
+
+        document.querySelectorAll(".col__img--right, .col--right").forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 90%",
+                },
+                x: window.innerWidth,
+                opacity: 0,
+                duration: 1.2,
+                ease: "power3.out"
+            });
+        });
     };
 
     updateView();
@@ -230,52 +310,48 @@ const page2 = location.pathname.split("/").pop();
 
 if (page2 === "entretien.html" || page2 === "diagnostiques.html") {
 
-    // Sélecteurs principaux
     const sectionEntretien = document.querySelector('.Entretien');
     const sectionPart = document.querySelector('.Entretienpart__container');
     const btnRetourEntretien = document.querySelector('.btnEntretien');
 
+    // fonction afficherPart
+    function afficherPart(value) {
+
+        sectionEntretien.style.display = "none";
+        sectionPart.style.display = "block";
+
+        document.querySelectorAll('.Entretienpart').forEach(p => {
+            p.classList.remove('active');
+        });
+
+        const target = document.getElementById(value);
+        if (target) {
+            target.classList.add('active');
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+            initGSAPAnimations();
+        }
+    }
+
     // 1. Clic sur une carte
     document.querySelectorAll('.Entretien__cart').forEach(cart => {
         cart.addEventListener('click', () => {
-            const value = cart.dataset.value;
-
-            // Cacher la section Entretien
-            sectionEntretien.style.display = "none";
-
-            // Afficher la section des parties
-            sectionPart.style.display = "block";
-
-            // Masquer toutes les parties
-            document.querySelectorAll('.Entretienpart').forEach(p => {
-                p.classList.remove('active');
-            });
-
-            // Afficher la bonne partie
-            const target = document.getElementById(value);
-            if (target) {
-                target.classList.add('active');
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            };
+            afficherPart(cart.dataset.value);
         });
     });
 
     // 2. Clic sur le bouton Retour (btnEntretien)
-    btnRetourEntretien.addEventListener('click', () => {
+    if (btnRetourEntretien) {
+        btnRetourEntretien.addEventListener('click', () => {
+            sectionPart.style.display = "none";
+            sectionEntretien.style.display = "block";
 
-        // Cacher la section des parties
-        sectionPart.style.display = "none";
+            document.querySelectorAll('.Entretienpart').forEach(p => {
+                p.classList.remove('active');
+            });
 
-        // Réafficher la section Entretien
-        sectionEntretien.style.display = "block";
-
-        // Masquer toutes les parties
-        document.querySelectorAll('.Entretienpart').forEach(p => {
-            p.classList.remove('active');
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
-    });
+    }
 };
