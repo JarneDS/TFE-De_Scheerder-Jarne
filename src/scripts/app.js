@@ -26,7 +26,7 @@ function initGSAPAnimations() {
         gsap.from(el, {
             scrollTrigger: {
                 trigger: el,
-                start: "top 90%",
+                start: "top 85%",
             },
             x: -window.innerWidth,
             opacity: 0,
@@ -39,7 +39,7 @@ function initGSAPAnimations() {
         gsap.from(el, {
             scrollTrigger: {
                 trigger: el,
-                start: "top 90%",
+                start: "top 85%",
             },
             x: window.innerWidth,
             opacity: 0,
@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.from(el, {
                 scrollTrigger: {
                     trigger: el,
-                    start: "top 90%",
+                    start: "top 85%",
                 },
                 x: -window.innerWidth,
                 opacity: 0,
@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.from(el, {
                 scrollTrigger: {
                     trigger: el,
-                    start: "top 90%",
+                    start: "top 85%",
                 },
                 x: window.innerWidth,
                 opacity: 0,
