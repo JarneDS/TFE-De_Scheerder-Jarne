@@ -186,11 +186,25 @@ let mapDataG = 'TemoinsIntro';
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    const page3 = location.pathname.split("/").pop();
+
     document.querySelectorAll('.select-part').forEach(btn => {
         btn.addEventListener('click', () => {
+
+            if (page3 === "moteur.html") {
+                // sur moteur.html, on passe par afficherParties
+                afficherParties(btn.dataset.value);
+                return;
+            }
+
+            // sur les autres pages, on garde l’ancien système
             setMapData(btn);
         });
     });
+
+    if (page3 !== "moteur.html") {
+        updateView();
+    }
 
     function setMapData(btn) {
         mapDataA = btn.dataset.value;
@@ -212,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         const activeA = document.getElementById(mapDataA);
+        const partiesMoteur = document.querySelector('.selectionParties');
         if (activeA) {
             activeA.classList.add("active");
         };
@@ -302,9 +317,53 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     };
-
-    updateView();
 });
+
+document.querySelectorAll(
+    ".boutonMoteurA, .boutonMoteurB, .boutonMoteurC, .boutonMoteurD, .boutonMoteurE, .boutonMoteurF"
+).forEach(btn => {
+    btn.addEventListener("click", () => {
+        afficherParties(btn.dataset.value);
+    });
+});
+
+function afficherParties(value) {
+    const sections = document.querySelectorAll(".part");
+    const selection = document.querySelector(".selectionParties");
+    const btnsModel = document.querySelector(".btnsModel");
+
+    // cacher les sections
+    sections.forEach(s => s.classList.remove("active"));
+
+    // afficher la bonne
+    const target = document.getElementById(value);
+    if (target) {
+        target.classList.add("active");
+    }
+
+    // mettre à jour l'état selected des boutons selectionParties
+    document.querySelectorAll('.select-part').forEach(btn => {
+        btn.classList.remove('selected');
+        if (btn.dataset.value === value) {
+            btn.classList.add('selected');
+        }
+    });
+
+    // cacher les blocs de choix
+    if (value === "MoteurIntro") {
+        selection.style.display = "none";
+        btnsModel.style.display = "block";
+    } else {
+        selection.style.display = "block";
+        btnsModel.style.display = "none";
+    }
+
+    // Relancer GSAP sur la nouvelle section
+    initGSAPAnimations();
+    ScrollTrigger.refresh();
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
 const page2 = location.pathname.split("/").pop();
 
@@ -355,3 +414,10 @@ if (page2 === "entretien.html" || page2 === "diagnostiques.html") {
         });
     }
 };
+
+const page3 = location.pathname.split("/").pop();
+
+if (page3 === "moteur.html") {
+    afficherParties("MoteurIntro");
+}
+
