@@ -29,13 +29,83 @@
         </ul>
     </nav>
     <section class="section__btnRetour">
-        <button onclick="history.back()" class="btnRetour">←&nbsp;Retour</button>
+        <button onclick="history.back()" class="btnRetour">←&nbsp;Retour&nbsp;vers&nbsp;sélection</button>
     </section>
     <section class="moteur">
-        <div class="part" id="MoteurIntro">
-            <h1 class="part__h1 col--full col--center row--title">Le moteur</h1>
-            <img src="engine.webp" alt="V6 car engine with engine by Blendoriano" class="col__img--left row--top">
-            <p class="col--right row--top"><span>Le compartiment moteur est le cœur de votre voiture. Sans lui, la voiture n'avance pas. Ce&nbsp;bloc massif regroupe l’ensemble des systèmes qui permettent au moteur de fonctionner correctement : alimentation en air et carburant, combustion, refroidissement, lubrification et gestion électronique. C’est aussi ici que se trouvent les éléments d’entretien les plus&nbsp;courants.</span></p>
+        <div id="MoteurIntro" class="part">
+            <div class="partGrid grid--full">
+                <h1 class="part__h1 col--full col--center row--title">Le moteur</h1>
+                <p class="col--full col--center row--top"><span>Le compartiment moteur est le cœur de votre voiture. Sans lui, la voiture n'avance pas.</span><span>Ce&nbsp;bloc massif regroupe l’ensemble des systèmes qui permettent au moteur de fonctionner correctement : alimentation en air et carburant, combustion, refroidissement, lubrification et gestion électronique. C’est aussi ici que se trouvent les éléments d’entretien les plus&nbsp;courants.</span></p>
+                <h2 class="col--full col--center row2">Voir les parties liées au moteur :</h2>
+            </div>
+            <div class="btnsModel grid--full2">
+                <img src="engine.webp" alt="V6 car engine with engine by Blendoriano" class="modeleInteractif">
+                <button class="boutonMoteurA" data-value="Alimentation-en-air">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="boutonInfo__txt NAV">Alimentation&nbsp;en&nbsp;air</h3>
+                </button>
+                <button class="boutonMoteurB" data-value="Liquides">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="boutonInfo__txt NAV">Les&nbsp;liquides</h3>
+                </button>
+                <button class="boutonMoteurC" data-value="Systeme-de-refroidissement">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="boutonInfo__txt NAV">Refroidissement</h3>
+                </button>
+                <button class="boutonMoteurD" data-value="Systeme-electrique">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="boutonInfo__txt NAV">Système&nbsp;électrique</h3>
+                </button>
+                <button class="boutonMoteurE" data-value="Transmission">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="boutonInfo__txt NAV">La&nbsp;transmission</h3>
+                </button>
+                <button class="boutonMoteurF" data-value="Fonctionnement">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none" class="boutonInfo__svg">
+                        <path d="M17 17L1 1M17 1L1 17" stroke="black" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <h3 class="boutonInfo__txt NAV">Fonctionnement</h3>
+                </button>
+            </div>
+        </div>
+        <div class="selectionParties">
+            <h2>Voir les parties lier au moteur :</h2>
+            <div class="select-part__container">
+
+                <button class="select-part NAV" data-value="Alimentation-en-air">
+                    L'alimentation&nbsp;en&nbsp;air&nbsp;→
+                </button>
+
+                <button class="select-part NAV" data-value="Liquides">
+                    Les&nbsp;liquides&nbsp;→
+                </button>
+
+                <button class="select-part NAV" data-value="Systeme-de-refroidissement">
+                    Le&nbsp;système de&nbsp;refroidissement&nbsp;→
+                </button>
+
+                <button class="select-part NAV" data-value="Systeme-electrique">
+                    Le&nbsp;système&nbsp;électrique&nbsp;→
+                </button>
+
+                <button class="select-part NAV" data-value="Transmission">
+                    La&nbsp;transmission&nbsp;→
+                </button>
+
+                <button class="select-part NAV" data-value="Fonctionnement">
+                    Fonctionnement&nbsp;→
+                </button>
+            </div>
         </div>
         <div class="part" id="Alimentation-en-air">
             <h2 class="part__h2 col--full col--center row--title">L’alimentation en air :</h2>
@@ -264,36 +334,6 @@
                 <img src="arbreTrans.webp" alt="Un arbre de transmission d'une voiture">
                 <p><span class="legende">Un arbre de transmission</span></p>
             </div>
-        </div>
-        <h2>Voir les parties lier au moteur :</h2>
-        <div class="select-part__container">
-            <button class="select-part NAV" data-value="MoteurIntro">
-                Introduction&nbsp;moteur&nbsp;→
-            </button>
-
-            <button class="select-part NAV" data-value="Alimentation-en-air">
-                L'alimentation&nbsp;en&nbsp;air&nbsp;→
-            </button>
-
-            <button class="select-part NAV" data-value="Liquides">
-                Les&nbsp;liquides&nbsp;→
-            </button>
-
-            <button class="select-part NAV" data-value="Systeme-de-refroidissement">
-                Le&nbsp;système de&nbsp;refroidissement&nbsp;→
-            </button>
-
-            <button class="select-part NAV" data-value="Systeme-electrique">
-                Le&nbsp;système&nbsp;électrique&nbsp;→
-            </button>
-
-            <button class="select-part NAV" data-value="Transmission" >
-                La&nbsp;transmission&nbsp;→
-            </button>
-
-            <button class="select-part NAV" data-value="Fonctionnement">
-                Fonctionnement&nbsp;→
-            </button>
         </div>
     </section>
 </body>

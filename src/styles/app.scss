@@ -220,12 +220,13 @@ ul {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     height: 100%;
-    transform: translateX(100%);
+    transform: translateX(1000%);
     transition: transform .3s ease-in-out;
     align-items: center;
     z-index: 1500;
+    max-width: 100vw;
 }
 
 .menu--open .menu__ul {
@@ -572,6 +573,25 @@ select {
     padding-top: 0;
 }
 
+.boutonMoteurA, .boutonMoteurB, .boutonMoteurC, .boutonMoteurD, .boutonMoteurE, .boutonMoteurF {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--color-bg);
+    border-radius: 10px;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.boutonMoteurA:hover .boutonInfo__svg, .boutonMoteurB:hover .boutonInfo__svg, .boutonMoteurC:hover .boutonInfo__svg, .boutonMoteurD:hover .boutonInfo__svg, .boutonMoteurE:hover .boutonInfo__svg, .boutonMoteurF:hover .boutonInfo__svg {
+    transform: rotate(0deg);
+}
+
 .select-part__container {
     display: flex;
     flex-direction: column;
@@ -608,7 +628,7 @@ select {
     transition: all .3s;
 }
 
-.part.active {
+.part.active, .partGrid {
     display: flex;
     flex-direction: column;
     opacity: 1;
@@ -708,31 +728,6 @@ select {
 
     .height--100 {
         max-height: fit-content;
-    }
-    
-    /* NAV */
-    .menu {
-        padding: 0 40px;
-        top: 40px;
-        right: 40px;
-    }
-
-    .menu__img {
-        height: 60px;
-    }
-
-    .menu__btn {
-        display: none;
-    }
-
-    .menu__ul {
-        flex-direction: row;
-        gap: 40px;
-        padding: 0;
-        position: static;
-        width: fit-content;
-        transform: translateX(0);
-        background-color: transparent;
     }
 
     /* ACCUEIL */
@@ -897,8 +892,84 @@ select {
         transition: transform 0.3s ease;
     }
 
-    .boutonInfoA:hover .boutonInfo__svg, .boutonInfoB:hover .boutonInfo__svg, .boutonInfoC:hover .boutonInfo__svg, .boutonInfoD:hover .boutonInfo__svg, .boutonInfoE:hover .boutonInfo__svg, .boutonInfoF:hover .boutonInfo__svg, .boutonInfoG:hover .boutonInfo__svg {
-        transform: rotate(0deg);
+    /* MOTEUR */
+    .boutonMoteurA, .boutonMoteurB, .boutonMoteurC, .boutonMoteurD, .boutonMoteurE, .boutonMoteurF {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: 70px;
+        width: 70px;
+        background-color: var(--color-bg);
+        border-radius: 35px;
+        padding: 0 0 0 27px;
+        cursor: pointer;
+        border: none;
+        gap: 15px;
+        transition: width 0.3s ease;
+        overflow: hidden;
+        position: absolute;
+        z-index: 10;
+        text-decoration: none;
+    }
+
+    .boutonMoteurA:hover .boutonInfo__txt, .boutonMoteurB:hover .boutonInfo__txt, .boutonMoteurC:hover .boutonInfo__txt, .boutonMoteurD:hover .boutonInfo__txt, .boutonMoteurE:hover .boutonInfo__txt, .boutonMoteurF:hover .boutonInfo__txt {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .boutonMoteurA {
+        top: 5%;
+        left: 40%;
+    }
+
+    .boutonMoteurB {
+        top: 44%;
+        left: 52%;
+    }
+
+    .boutonMoteurC {
+        top: 49%;
+        left: 13%;
+    }
+
+    .boutonMoteurD {
+        top: 73%;
+        left: 45%;
+    }
+
+    .boutonMoteurE {
+        top: 30%;
+        left: 80%;
+    }
+
+    .boutonMoteurF {
+        top: 68%;
+        left: 77%;
+    }
+
+    .boutonMoteurA:hover {
+        width: 260px;
+    }
+
+    .boutonMoteurB:hover {
+        width: 195px;
+    }
+
+    .boutonMoteurC:hover {
+        width: 240px;
+    }
+
+    .boutonMoteurD:hover {
+        width: 265px;
+    }
+
+    .boutonMoteurE:hover {
+        width: 235px;
+    }
+
+    .boutonMoteurF:hover {
+        width: 235px;
     }
 
     /* ENTRETIEN */
@@ -944,8 +1015,35 @@ select {
     }
 }
 
+@media (min-width: 950px) {
+    /* NAV */
+    .menu {
+        padding: 0 40px;
+        top: 40px;
+        right: 40px;
+    }
+
+    .menu__img {
+        height: 60px;
+    }
+
+    .menu__btn {
+        display: none;
+    }
+
+    .menu__ul {
+        flex-direction: row;
+        gap: 40px;
+        padding: 0;
+        position: static;
+        width: fit-content;
+        transform: translateX(0);
+        background-color: transparent;
+    }
+}
+
 @media (min-width: 1250px) {
-    .part.active, .Entretienpart.active, .credits, .accueil {
+    .part.active, .Entretienpart.active, .partGrid {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 20px;
@@ -990,6 +1088,16 @@ select {
 
     .col--end {
         justify-self: end;
+    }
+
+    .grid--full {
+        grid-column: 1 / 8;
+        grid-row: 1 / 2;
+    }
+
+    .grid--full2 {
+        grid-column: 1 / 8;
+        grid-row: 2 / 3;
     }
 
     /* GRID SPECIAL */
