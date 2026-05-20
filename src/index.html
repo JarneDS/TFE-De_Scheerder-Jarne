@@ -19,57 +19,48 @@
     <link rel="stylesheet" href="/styles/app.scss">
     <script type="module" src="scripts/app.js" defer></script>
 </head>
-<body id="accueil">
+<body class="selection__body" id="selection">
     <nav class="menu">
-        <img src="logo.png" alt="logo de Les secrets de la voiture" class="menu__img">
         <button class="menu__btn NAV">Menu</button>
         <ul class="menu__ul">
-            <li class="menu__li"><a href="#" class="NAV">L'application</a></li>
-            <li class="menu__li"><a href="https://jarnedescheerder.be/projets/TFE_Case-Study" class="NAV">Contexte</a></li>
-            <li class="menu__li"><a href="credits.html" class="NAV">Crédits</a></li>
+            <li><a href="diagnostiques.html" class="btnLiens NAV"><img src="diagnostiquesIcone.png" class="icone">Diagnostiques</a></li>
+            <li><a href="entretien.html" class="btnLiens NAV"><img src="EntretienIcone.png" class="icone">Entretien</a></li>
+            <li><a href="entretien.html" class="btnLiens NAV"><img src="mesVoituresIcone.png" class="icone">Mes voitures</a></li>
         </ul>
     </nav>
-    <section class="accueil">
-        <h1 class="col--full row--title col--center">Les secrets de la voiture</h1>
-        <h2 class="col--left row--top">L’application qui vous dit tout sur votre voiture.</h2>
-        <h3 class="col--left row2">Pourquoi cette application a été créée&nbsp;?</h3>
-        <div class="col--left row3">
-            <p><span>Comme nous avons pu le remarquer, la vie est devenue très chère et, malheureusement, les mécaniciens ont dû suivre cette tendance.</span><span>C’est exactement pour cela que cette application a été créée.</span></p>
-            <p><span>À travers cette application, vous allez pouvoir en apprendre davantage sur différents composants de votre voiture, tels que les liquides, la peinture, les freins, etc.</span></p>
+    <section class="selection__type">
+        <div class="accueil__selection">
+            <h2>Sélectionnez le type de véhicule&nbsp;:</h2>
         </div>
+        <div class="choix__types">
+            <a href="page-parties.html" class="choix__option">
+                <img src="vue_cote.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design" class="choix__optionImg">
+                <h4>ESSENCE</h4>
+            </a>
+            <a href="page-parties.html" class="choix__option non__actif">
+                <img src="vue_cote.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design" class="choix__optionImg">
+                <h4>DIESEL</h4>
+                <h3>À VENIR</h3>
+            </a>
+            <!--<a href="page-parties.html" class="choix__option">
+                <img src="vue_cote.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design" class="choix__optionImg">
+                <h4>MHEV</h4>
+            </a>
+            <a href="page-parties.html" class="choix__option">
+                <img src="vue_cote.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design" class="choix__optionImg">
+                <h4>HEV</h4>
+            </a>
+            <a href="page-parties.html" class="choix__option">
+                <img src="vue_cote.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design" class="choix__optionImg">
+                <h4>PHEV</h4>
+            </a>
+            <a href="page-parties.html" class="choix__option">
+                <img src="vue_cote.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design" class="choix__optionImg">
+                <h4>ÉLECTRIQUE</h4>
+            </a>-->
+        </div>
+        <img src="logo.png" alt="Logo de Les secrets de la voiture" class="index__logo">
     </section>
-    <!-- Section mis en commentaire pour le moment car non interressant à ce stade -->
-    <!--
-    <section class="form__accueil">
-        <div class="form__elements">
-            <h2 class="color--black">Nouvelle voiture&nbsp;:</h2>
-            <div class="form">
-                <label for="MVoiture">Marque de la voiture :</label><br>
-                <input type="text" id="MVoiture" name="marqueVoiture" placeholder="Marque">
-            </div>
-            <div class="form">
-                <label for="typeVoiture">Type de voiture :</label><br>
-
-                <div class="select-wrapper">
-                    <select id="typeVoiture" name="typeVoiture">
-                        <option value="">Sélectionner un type</option>
-                        <option value="essence">Essence</option>
-                        <option value="diesel">Diesel</option>
-                        <option value="mhev">MHEV</option>
-                        <option value="hev">HEV</option>
-                        <option value="phev">PHEV</option>
-                        <option value="electrique">Électrique</option>
-                    </select>
-                </div>
-            </div>
-            <button id="ajouterVoiture">Ajouter la voiture</button>
-        </div>
-        <div class="voituresEnregistrees">
-            <h2 class="color--black">Voitures enregistrées :</h2>
-            <div id="listeVoitures"></div>
-        </div>
-    </section>
-    -->
-    <button class="commencer">Continuer →</button>
+    <img src="vue_45.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design" class="voitureRendu">
 </body>
 </html>
