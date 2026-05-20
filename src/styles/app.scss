@@ -382,7 +382,7 @@ select {
     transition: all .3s ease-in-out;
 }
 
-.btnRetour:hover, .btnEntretien:hover {
+.btnRetour:hover, .btnRetour__Parties:hover, .btnEntretien:hover {
     background-color: var(--color-secondary);
 }
 
@@ -505,8 +505,7 @@ select {
     color: var(--color-text-btn);
     border-radius: 10px;
     border: 2px solid var(--color-text-btn);
-    border: none;
-    padding: 8px 13px;
+    padding: 10px 13px;
     margin-top: 0;
     cursor: pointer;
     transition: all .3s ease-in-out;
