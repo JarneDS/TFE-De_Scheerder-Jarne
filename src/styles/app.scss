@@ -61,6 +61,7 @@ h2 {
     margin: 32px 0;
     font-family: "Oswald-Bold";
     color: var(--color-text);
+    max-width: 725px;
 }
 
 h3, label, .commencer, .h3, .h3__strong {
@@ -672,13 +673,13 @@ select {
 }
 
 /* ENTRETIEN */
-.Entretien__container {
+.Entretien__container, .Diagno__container {
     display: flex;
     flex-direction: column;
     gap: 20px; 
 }
 
-.Entretien__cart {
+.Entretien__cart, .Diagno__cart {
     position: relative;
     display: flex;
     justify-content: center;
@@ -711,7 +712,18 @@ select {
 }
 
 .fondEntretien {
-    background: rgb(62, 106, 138, 0.95);;
+    background: rgb(62, 106, 138, .95);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 15;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.fondDiagno {
+    background: rgb(43, 116, 47, .95);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1012,7 +1024,7 @@ select {
     }
 
     /* ENTRETIEN */
-    .Entretien__container {
+    .Entretien__container, .Diagno__container {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
@@ -1024,7 +1036,7 @@ select {
         width: 374px;
     }
 
-    .fondEntretien {
+    .fondEntretien, .fondDiagno {
         position: absolute;
         inset: 0;
         z-index: 15;
@@ -1045,7 +1057,18 @@ select {
         border-radius: 5px;
     }
 
-    .Entretien__cart:hover::after {
+    .Diagno__cart::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgb(43, 116, 47, .95);
+        opacity: 0;
+        transition: opacity .35s ease;
+        z-index: 16;
+        border-radius: 5px;
+    }
+
+    .Entretien__cart:hover::after, .Diagno__cart:hover::after {
         opacity: 1;
     }
 
@@ -1054,7 +1077,7 @@ select {
         transition: transform .35s ease
     }
 
-    .Entretien__cart:hover .Entretien__h3 {
+    .Entretien__cart:hover .Entretien__h3, .Diagno__cart:hover .Entretien__h3 {
         transform: translateY(0);
     }
 
@@ -1065,7 +1088,7 @@ select {
         transition: opacity .3s ease, max-height .3s ease;
     }
 
-    .Entretien__cart:hover .Entretien__p {
+    .Entretien__cart:hover .Entretien__p, .Diagno__cart:hover .Entretien__p {
         opacity: 1;
         max-height: 200px;
     }
