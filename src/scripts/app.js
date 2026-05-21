@@ -70,11 +70,10 @@ function toggleMenu() {
     menu.classList.toggle("menu--open");
 };
 
-/* INDEX */
-/*
+/* MES VOITURES */
 const page = location.pathname.split("/").pop();
 
-if (page === "index.html" || page === "") {
+if (page === "mesVoitures.html") {
     const marqueInput = document.getElementById("MVoiture");
     const typeSelect = document.getElementById("typeVoiture");
     const btnAjouter = document.getElementById("ajouterVoiture");
@@ -182,7 +181,7 @@ if (page === "index.html" || page === "") {
         };
     });
 };
-*/
+
 // Prendre les datas des premières divs de chaque page
 let mapDataA = 'MoteurIntro';
 let mapDataB = 'FreinsIntro';

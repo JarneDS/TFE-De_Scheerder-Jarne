@@ -25,18 +25,42 @@
         <ul class="menu__ul">
             <li><a href="diagnostiques.html" class="btnLiens NAV"><img src="diagnostiquesIcone.png" class="icone">Diagnostiques</a></li>
             <li><a href="entretien.html" class="btnLiens NAV"><img src="EntretienIcone.png" class="icone">Entretien</a></li>
-            <li><a href="entretien.html" class="btnLiens NAV"><img src="mesVoituresIcone.png" class="icone">Mes voitures</a></li>
+            <li><a href="#" class="btnLiens NAV"><img src="mesVoituresIcone.png" class="icone">Mes voitures</a></li>
         </ul>
     </nav>
-    <section class="selection__type">
-        <div class="accueil__selection">
-            <h2>Sélectionnez le type de véhicule&nbsp;:</h2>
+    <section>
+        <h1>Gérer vos voitures</h1>
+        <div class="form__accueil">
+            <div class="form__elements">
+                <h2 class="color--black">Nouvelle voiture&nbsp;:</h2>
+                <div class="form">
+                    <label for="MVoiture">Marque de la voiture :</label><br>
+                    <input type="text" id="MVoiture" name="marqueVoiture" placeholder="Marque">
+                </div>
+                <div class="form">
+                    <label for="typeVoiture">Type de voiture :</label><br>
+
+                    <div class="select-wrapper">
+                        <select id="typeVoiture" name="typeVoiture">
+                            <option value="">Sélectionner un type</option>
+                            <option value="essence">Essence</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="mhev">MHEV</option>
+                            <option value="hev">HEV</option>
+                            <option value="phev">PHEV</option>
+                            <option value="electrique">Électrique</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="ajouterVoiture">Ajouter la voiture</button>
+            </div>
+            <div class="voituresEnregistrees">
+                <h2 class="color--black">Voitures enregistrées :</h2>
+                <div id="listeVoitures"></div>
+            </div>
         </div>
-        
+    </section>
         <img src="logo.png" alt="Logo de Les secrets de la voiture" class="index__logo">
     </section>
-    <div class="voitureWrapper">
-        <img src="vue_45.webp" alt="1992 Volkswagen Golf GTI Mk2 by Ddiaz Design" class="voitureRendu">
-    </div>
 </body>
 </html>

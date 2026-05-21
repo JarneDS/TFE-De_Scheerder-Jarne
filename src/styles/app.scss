@@ -87,9 +87,16 @@ span {
     margin: 13px 0;
 }
 
-.NAV, h4 {
+.NAV {
     font-size: clamp(1.188rem, 0.185vw + 1.153rem, 1.375rem);
     font-family: "TitilliumWeb-SemiBold" !important;
+    margin: 16px 0;
+    color: var(--color-text);
+}
+
+h4 {
+    font-size: clamp(1.188rem, 0.185vw + 1.153rem, 1.375rem);
+    font-family: "TitilliumWeb-Bold" !important;
     margin: 16px 0;
     color: var(--color-text);
 }
