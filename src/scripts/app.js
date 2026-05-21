@@ -378,6 +378,12 @@ if (page2 === "entretien.html" || page2 === "diagnostiques.html") {
         });
     });
 
+    document.querySelectorAll('.Diagno__cart').forEach(cart => {
+        cart.addEventListener('click', () => {
+            afficherPart(cart.dataset.value);
+        });
+    });
+
     // 2. Clic sur le bouton Retour (btnEntretien)
     if (btnRetourEntretien) {
         btnRetourEntretien.addEventListener('click', () => {
