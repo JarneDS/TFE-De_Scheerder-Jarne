@@ -18,6 +18,16 @@
        url('../fonts/TitilliumWeb-SemiBold.svg#FontName') format('svg');
 }
 
+@font-face {
+  font-family: 'TitilliumWeb-Bold';
+  src: url('../fonts/TitilliumWeb-Bold.eot');
+  src: url('../fonts/TitilliumWeb-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/TitilliumWeb-Bold.woff2') format('woff2'),
+       url('../fonts/TitilliumWeb-Bold.woff') format('woff'),
+       url('../fonts/TitilliumWeb-Bold.ttf')  format('truetype'),
+       url('../fonts/TitilliumWeb-Bold.svg#FontName') format('svg');
+}
+
 :root {
   --color-bg: #f1f1f1;
   --color-text: #f1f1f1;
@@ -88,6 +98,13 @@ span {
     font-family: "TitilliumWeb-SemiBold";
     margin: 11px 0;
     max-width: 300px;
+}
+
+b, strong {
+    color: var(--color-text);
+    margin: 13px 0;
+    font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
+    font-family: "TitilliumWeb-Bold";
 }
 
 .icone {
@@ -427,6 +444,7 @@ select {
 .choix__option h4, .accueil__selection h2 {
     color: var(--color-text-btn);
 }
+
 .voitureRendu {
     display: none;
 }
@@ -1005,7 +1023,7 @@ select {
 
     .voitureRendu {
         display: block;
-        position: fixed;
+        position: absolute;
         top: 50%;
         transform: translateY(-50%);
         right: 40px;
