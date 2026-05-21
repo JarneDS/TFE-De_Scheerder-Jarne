@@ -28,10 +28,11 @@ function initGSAPAnimations() {
                 trigger: el,
                 start: "top 90%",
             },
-            x: -window.innerWidth,
+            xPercent: -100,
             opacity: 0,
             duration: 1.2,
-            ease: "power3.out"
+            ease: "power3.out",
+            clearProps: "transform"
         });
     });
 
@@ -41,10 +42,11 @@ function initGSAPAnimations() {
                 trigger: el,
                 start: "top 90%",
             },
-            x: window.innerWidth,
+            xPercent: 100,
             opacity: 0,
             duration: 1.2,
-            ease: "power3.out"
+            ease: "power3.out",
+            clearProps: "transform"
         });
     });
 }
@@ -291,31 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth"
         });
 
-        document.querySelectorAll(".col__img--left, .col--left").forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 90%",
-                },
-                x: -window.innerWidth,
-                opacity: 0,
-                duration: 1.2,
-                ease: "power3.out"
-            });
-        });
-
-        document.querySelectorAll(".col__img--right, .col--right").forEach(el => {
-            gsap.from(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 90%",
-                },
-                x: window.innerWidth,
-                opacity: 0,
-                duration: 1.2,
-                ease: "power3.out"
-            });
-        });
+        initGSAPAnimations();
     };
 });
 
