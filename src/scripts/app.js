@@ -30,7 +30,7 @@ function initGSAPAnimations() {
             },
             xPercent: -100,
             opacity: 0,
-            duration: 1.2,
+            duration: 0.8,
             ease: "power3.out",
             clearProps: "transform"
         });
@@ -44,7 +44,7 @@ function initGSAPAnimations() {
             },
             xPercent: 100,
             opacity: 0,
-            duration: 1.2,
+            duration: 0.8,
             ease: "power3.out",
             clearProps: "transform"
         });
