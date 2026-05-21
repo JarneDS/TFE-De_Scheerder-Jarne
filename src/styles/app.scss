@@ -63,7 +63,7 @@ h2 {
     color: var(--color-text);
 }
 
-h3, label, .commencer, .h3 {
+h3, label, .commencer, .h3, .h3__strong {
     font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
     margin: 22px 0;
     font-family: "Oswald-Bold";
@@ -690,24 +690,35 @@ select {
     cursor: pointer;
 }
 
+.Entretien__txtContainer {
+    position: absolute;
+    z-index: 20;
+    padding: 0 20px;
+}
+
 .Entretien__img {
     position: relative;
     z-index: 10;
+    border-radius: 5px;
 }
 
 .Entretien__h3 {
-    position: absolute;
-    z-index: 20;
-    opacity: 0;
     transition: opacity .3s ease-in-out;
 }
 
-.Entretien__cart:hover .Entretien__img {
-    opacity: .3;
+.Entretien__p {
+    display: block;
 }
 
-.Entretien__cart:hover .Entretien__h3 {
-    opacity: 1;
+.fondEntretien {
+    background: rgb(62, 106, 138, 0.95);;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 15;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
 }
 
 .Entretienpart__container {
@@ -1013,6 +1024,52 @@ select {
         width: 374px;
     }
 
+    .fondEntretien {
+        position: absolute;
+        inset: 0;
+        z-index: 15;
+        background: linear-gradient(rgba(217, 217, 217, 0), #000000);
+        transition: opacity .35s ease;
+        opacity: 1;
+    }
+
+    /* Calque hover par-dessus */
+    .Entretien__cart::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(62, 106, 138, .95);
+        opacity: 0;
+        transition: opacity .35s ease;
+        z-index: 16;
+        border-radius: 5px;
+    }
+
+    .Entretien__cart:hover::after {
+        opacity: 1;
+    }
+
+    .Entretien__h3 {
+        transform: translateY(86px);
+        transition: transform .35s ease
+    }
+
+    .Entretien__cart:hover .Entretien__h3 {
+        transform: translateY(0);
+    }
+
+    .Entretien__p {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity .3s ease, max-height .3s ease;
+    }
+
+    .Entretien__cart:hover .Entretien__p {
+        opacity: 1;
+        max-height: 200px;
+    }
+
     .row--center {
         align-self: center;
     }
@@ -1048,7 +1105,6 @@ select {
     .menu {
         padding: 0 40px;
         top: 40px;
-        right: 40px;
     }
 
     .menu__img {
