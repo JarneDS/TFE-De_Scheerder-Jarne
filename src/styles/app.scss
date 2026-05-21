@@ -616,6 +616,7 @@ select {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    margin: 0 20px;
 }
 
 .select-part {
@@ -664,6 +665,10 @@ select {
 .iconesLiquides {
     width: auto;
     height: 16px;
+}
+
+.h2--margin {
+    margin: 32px 20px;
 }
 
 /* ENTRETIEN */
@@ -721,6 +726,11 @@ select {
     h1, img {
         align-self: center;
     }
+
+    .h2--margin {
+        margin: 32px 40px;
+    }
+
     section {
         padding: 40px;
     }
