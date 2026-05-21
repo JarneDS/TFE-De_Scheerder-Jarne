@@ -58,7 +58,7 @@ h1 {
 
 h2 {
     font-size: clamp(2.5rem, 0.309vw + 2.442rem, 2.813rem);
-    margin: 32px 0;
+    margin: 64px 0 32px;
     font-family: "Oswald-Bold";
     color: var(--color-text);
     max-width: 725px;
@@ -66,7 +66,7 @@ h2 {
 
 h3, label, .commencer, .h3, .h3__strong {
     font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
-    margin: 22px 0;
+    margin: 44px 0 22px;
     font-family: "Oswald-Bold";
     color: var(--color-text);
 }
@@ -1103,6 +1103,10 @@ select {
 
     .row--center {
         align-self: center;
+    }
+
+    .row--end {
+        align-self: end;
     }
 }
 
