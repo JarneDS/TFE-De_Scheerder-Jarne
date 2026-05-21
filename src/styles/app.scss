@@ -1111,15 +1111,19 @@ select {
         transform: translateX(0);
     }
 
-    .voitureRendu {
-        display: block;
+    .voitureWrapper {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         right: 40px;
+        transform: translateY(-50%);
         width: 61%;
+    }
+
+    .voitureRendu {
+        width: 100%;
         max-width: 1600px;
         max-height: 953px;
+        display: block;
     }
 }
 

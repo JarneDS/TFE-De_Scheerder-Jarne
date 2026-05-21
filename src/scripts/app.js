@@ -11,13 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const voiture = document.querySelector(".voitureRendu");
 
     if (voiture) {
-        gsap.from(voiture, {
-            x: window.innerWidth,
-            scale: 0.3,
-            opacity: 0,
-            duration: 1.8,
-            ease: "power3.out"
-        });
+        gsap.fromTo(voiture,
+            {
+                xPercent: 200,
+                scale: 0.3,
+                opacity: 0
+            },
+            {
+                xPercent: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 1.8,
+                ease: "power3.out"
+            }
+        );
     }
 });
 
@@ -64,7 +71,7 @@ function toggleMenu() {
 };
 
 /* INDEX */
-
+/*
 const page = location.pathname.split("/").pop();
 
 if (page === "index.html" || page === "") {
@@ -175,7 +182,7 @@ if (page === "index.html" || page === "") {
         };
     });
 };
-
+*/
 // Prendre les datas des premières divs de chaque page
 let mapDataA = 'MoteurIntro';
 let mapDataB = 'FreinsIntro';
