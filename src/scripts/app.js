@@ -130,6 +130,7 @@ if (page === "mesVoitures.html") {
                     voitureSelect.forEach(el => el.classList.remove("actif"));
                     voiture.classList.add("actif");
                     voitureSelectionner = true;
+                    window.location.href = "page-parties.html";
 
                     localStorage.setItem("voitureActive", index);
                 });
@@ -170,16 +171,6 @@ if (page === "mesVoitures.html") {
 
         afficherVoitures();
     };
-
-    const btnCommencer = document.querySelector(".commencer");
-
-    btnCommencer.addEventListener('click', () => {
-        if (voitureSelectionner) {
-            location.href = "page-parties.html";
-        } else {
-            location.href = "selection.html";
-        };
-    });
 };
 
 // Prendre les datas des premières divs de chaque page
