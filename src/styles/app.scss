@@ -64,6 +64,10 @@ h2 {
     max-width: 725px;
 }
 
+.h2__index {
+    margin: 32px 0;
+}
+
 h3, label, .commencer, .h3, .h3__strong {
     font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
     margin: 44px 0 22px;
@@ -258,7 +262,7 @@ ul {
     transform: translateX(0);
 }
 
-/* ACCUEIL */
+/* MES VOITURES */
 .form__accueil {
     display: flex;
     flex-direction: column;
@@ -499,11 +503,9 @@ select {
 
 .non__actif h3 {
     color: var(--color-aVenir);
-}
-
-.non__actif h3 {
     position: absolute;
     transform: rotate(34deg);
+    margin: 22px 0;
 }
 
 .non__actif img {
