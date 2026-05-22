@@ -1081,12 +1081,14 @@ select {
     }
 
     .Entretien__h3 {
+        opacity: 1;
         transform: translateY(86px);
-        transition: transform .35s ease
+        transition: all .35s ease;
     }
 
     .Entretien__cart:hover .Entretien__h3, .Diagno__cart:hover .Entretien__h3 {
-        transform: translateY(0);
+        opacity: 0;
+        transform: translateY(-36px);
     }
 
     .Entretien__p {
@@ -1094,6 +1096,7 @@ select {
         max-height: 0;
         overflow: hidden;
         transition: opacity .3s ease, max-height .3s ease;
+        transform: translateY(-50px);
     }
 
     .Entretien__cart:hover .Entretien__p, .Diagno__cart:hover .Entretien__p {
