@@ -410,6 +410,7 @@ select {
     margin: 0;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    max-width: 145px;
 }
 
 .btnRetour:hover, .btnRetour__Parties:hover, .btnEntretien:hover {
@@ -427,7 +428,7 @@ select {
 .selection__type {
     background-color: var(--color-bg);
     padding: 80px 30px 30px;
-    height: calc(100vh - 110px);
+    height: 100vh;
 }
 
 .btnLiens {
@@ -513,11 +514,10 @@ select {
 }
 
 .index__logo {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     max-width: 280px;
+    display: flex;
+    justify-self: center;
+    margin-top: 30px;
 }
 
 /* PAGE-PARTIES */
@@ -538,6 +538,7 @@ select {
     margin-top: 0;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    max-width: 145px;
 }
 
 .accueil__parties {
@@ -753,6 +754,12 @@ select {
 
 .Entretienpart.active {
     display: block;
+}
+
+@media (min-width: 384px) {
+    .btnRetour, .btnRetour__Parties {
+        max-width: 273px;
+    }
 }
 
 @media (min-width: 701px) {
@@ -1123,6 +1130,7 @@ select {
     }
 
     .index__logo {
+        position: absolute;
         bottom: 40px;
         left: 40px;
         transform: translateX(0);
