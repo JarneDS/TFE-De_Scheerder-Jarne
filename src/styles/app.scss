@@ -262,6 +262,11 @@ ul {
     transform: translateX(0);
 }
 
+.btnLiens.menuActive {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
 /* MES VOITURES */
 .form__accueil {
     display: flex;
@@ -472,6 +477,7 @@ select {
 }
 
 .choix__option {
+    background-color: #FFF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -680,6 +686,11 @@ select {
 
 .h2--margin {
     margin: 32px 20px;
+}
+
+.image__bidon {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* ENTRETIEN */
