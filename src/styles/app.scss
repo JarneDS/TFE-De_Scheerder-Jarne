@@ -663,7 +663,6 @@ select {
     display: flex;
     flex-direction: column;
     opacity: 1;
-    margin-bottom: 40px;
 }
 
 .part__h1 {
@@ -1183,6 +1182,7 @@ select {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 20px;
+        margin-bottom: 40px;
     }
 
     /* GRID */
