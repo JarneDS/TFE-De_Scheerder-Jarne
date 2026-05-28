@@ -68,6 +68,10 @@ h2 {
     margin: 32px 0;
 }
 
+.Diagno__h2 {
+    max-width: 800px;
+}
+
 h3, label, .commencer, .h3, .h3__strong {
     font-size: clamp(1.75rem, 0.185vw + 1.715rem, 1.938rem);
     margin: 44px 0 22px;
@@ -122,10 +126,12 @@ b, strong {
 .icone {
     width: auto;
     height: 23px;
+    filter: brightness(0);
 }
 
 img {
     width: 100%;
+    border-radius: 5px;
 }
 
 ul, ol {
@@ -265,6 +271,10 @@ ul {
 .btnLiens.menuActive {
     background-color: var(--color-primary);
     color: var(--color-text);
+}
+
+.btnLiens.menuActive .icone {
+    filter: brightness(1);
 }
 
 /* MES VOITURES */
@@ -1052,9 +1062,15 @@ select {
 
     /* ENTRETIEN */
     .Entretien__container, .Diagno__container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .Entretien__cart, .Diagno__cart {
+        width: fit-content;
     }
 
     .Entretien__img {
