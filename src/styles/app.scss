@@ -776,6 +776,52 @@ select {
     display: block;
 }
 
+.entretien--slider {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    gap: 20px;
+}
+
+.entretien__card {
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 4px rgb(255, 128, 0, .5));
+    background-color: var(--color-bg);
+    position: relative;
+    min-width: 374px;
+    width: 100%;
+    height: 342px;   
+}
+
+.entretien__itemNumero {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: var(--color-bg);
+    color: var(--color-text-btn);
+    border-radius: 25px;
+    position: absolute;
+    z-index: 2;
+    margin: 5px 0 0 5px;
+}
+
+.entretien__itemImg {
+    border-radius: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    max-width: 374px;
+    max-height: 235px;
+    border-radius: 10px 10px 0 0;
+}
+
+.entretien__itemTxt {
+    color: var(--color-text-btn);
+    margin: 247px 20px 0;
+}
+
 @media (min-width: 384px) {
     .btnRetour, .btnRetour__Parties {
         max-width: 273px;
