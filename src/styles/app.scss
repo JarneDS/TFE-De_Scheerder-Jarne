@@ -781,6 +781,21 @@ select {
     flex-direction: row;
     overflow-x: scroll;
     gap: 20px;
+    scrollbar-color: var(--color-primary);
+    padding-bottom: 13px;
+}
+
+.entretien--slider::-webkit-scrollbar {
+    height: 5px;
+}
+
+.entretien--slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.entretien--slider::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
 }
 
 .entretien__card {
