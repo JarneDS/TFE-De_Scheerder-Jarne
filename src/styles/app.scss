@@ -1131,11 +1131,10 @@ select {
 
     /* ENTRETIEN */
     .Entretien__container, .Diagno__container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        width: fit-content;
-        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .Entretien__cart, .Diagno__cart {
@@ -1247,7 +1246,7 @@ select {
     }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 1050px) {
     /* NAV */
     .menu {
         padding: 0 40px;
@@ -1264,7 +1263,7 @@ select {
 
     .menu__ul {
         flex-direction: row;
-        gap: 40px;
+        gap: 20px;
         padding: 0;
         position: static;
         width: fit-content;
@@ -1274,6 +1273,14 @@ select {
 }
 
 @media (min-width: 1250px) {
+    .Entretien__container, .Diagno__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
     .part.active, .Entretienpart.active, .partGrid {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
