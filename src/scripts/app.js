@@ -393,6 +393,9 @@ if (page === "entretien.html" || page === "diagnostiques.html") {
         });
     }
 
+    /* code basé sur 2 sources :
+    - https://codepen.io/Gutto/pen/GBLPyN
+    - https://stackoverflow.com/questions/3864739/scroll-by-clicking-and-dragging-inside-div-instead-of-clicking-scrollbar */
     const sliders = document.querySelectorAll('.entretien--slider');
 
     sliders.forEach(slider => {
@@ -424,7 +427,7 @@ if (page === "entretien.html" || page === "diagnostiques.html") {
                 if (!isDown) return;
                 e.preventDefault();
                 const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX); // tu peux multiplier si tu veux plus de vitesse
+                const walk = (x - startX);
                 slider.scrollLeft = scrollLeft - walk;
             });
 
