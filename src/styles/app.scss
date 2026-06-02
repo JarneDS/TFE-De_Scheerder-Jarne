@@ -806,9 +806,9 @@ select {
     filter: drop-shadow(4px 4px 4px rgb(255, 128, 0, .5));
     background-color: var(--color-bg);
     position: relative;
-    min-width: 374px;
+    min-width: 260px;
     width: 100%;
-    height: 342px;
+    height: 309px;
 }
 
 .entretien__itemNumero {
@@ -835,12 +835,12 @@ select {
 
 .entretien__itemTxt {
     color: var(--color-text-btn);
-    margin: 247px 20px 0;
+    margin: 176px 20px 0;
 }
 
 .filter {
     filter: brightness(0);
-    max-width: 235px;
+    max-width: 163px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1154,6 +1154,20 @@ select {
         background: linear-gradient(rgba(217, 217, 217, 0), #000000);
         transition: opacity .35s ease;
         opacity: 1;
+    }
+
+    .entretien__card {
+        min-width: 374px;
+        width: 100%;
+        height: 342px;
+    }
+
+    .entretien__itemTxt {
+        margin: 247px 20px 0;
+    }
+
+    .filter {
+        max-width: 235px;
     }
 
     /* Calque hover par-dessus */
