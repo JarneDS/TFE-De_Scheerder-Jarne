@@ -808,7 +808,7 @@ select {
     position: relative;
     min-width: 374px;
     width: 100%;
-    height: 342px;   
+    height: 342px;
 }
 
 .entretien__itemNumero {
@@ -836,6 +836,13 @@ select {
 .entretien__itemTxt {
     color: var(--color-text-btn);
     margin: 247px 20px 0;
+}
+
+.filter {
+    filter: brightness(0);
+    max-width: 235px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media (min-width: 384px) {
