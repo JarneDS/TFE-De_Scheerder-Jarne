@@ -779,12 +779,19 @@ select {
 .entretien--slider {
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    overflow-x: auto;
     gap: 20px;
     scrollbar-width: thin;
     scrollbar-color: var(--color-primary) transparent;
     padding-bottom: 13px;
+    cursor: grab;
+    user-select: none;
 }
+
+.entretien--slider.is-dragging {
+    cursor: grabbing;
+}
+
 
 .entretien--slider::-webkit-scrollbar {
     height: 5px;

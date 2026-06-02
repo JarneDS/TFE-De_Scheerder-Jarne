@@ -392,6 +392,63 @@ if (page === "entretien.html" || page === "diagnostiques.html") {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     }
+
+    const sliders = document.querySelectorAll('.entretien--slider');
+
+    sliders.forEach(slider => {
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        if (slider) {
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('is-dragging');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+                e.preventDefault();
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('is-dragging');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('is-dragging');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX); // tu peux multiplier si tu veux plus de vitesse
+                slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // Version touch (mobile)
+            slider.addEventListener('touchstart', (e) => {
+                isDown = true;
+                slider.classList.add('is-dragging');
+                startX = e.touches[0].pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            }, { passive: true });
+
+            slider.addEventListener('touchend', () => {
+                isDown = false;
+                slider.classList.remove('is-dragging');
+            }, { passive: true });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - slider.offsetLeft;
+                const walk = (x - startX);
+                slider.scrollLeft = scrollLeft - walk;
+            }, { passive: true });
+        }
+    });
 };
 
 if (page === "moteur.html") {
