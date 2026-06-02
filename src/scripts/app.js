@@ -340,9 +340,7 @@ function afficherParties(value) {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-const page2 = location.pathname.split("/").pop();
-
-if (page2 === "entretien.html" || page2 === "diagnostiques.html") {
+if (page === "entretien.html" || page === "diagnostiques.html") {
 
     const sectionEntretien = document.querySelector('.Entretien');
     const sectionPart = document.querySelector('.Entretienpart__container');
@@ -396,9 +394,7 @@ if (page2 === "entretien.html" || page2 === "diagnostiques.html") {
     }
 };
 
-const page3 = location.pathname.split("/").pop();
-
-if (page3 === "moteur.html") {
+if (page === "moteur.html") {
     afficherParties("MoteurIntro");
 }
 
