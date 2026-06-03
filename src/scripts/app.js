@@ -155,6 +155,8 @@ if (page === "mesVoitures.html") {
                 return;
             }
 
+            const activeIndex = localStorage.getItem("voitureActive");
+
             container.innerHTML = `
                 <select id="voitureSelect">
                     <option value="">Sélectionner une voiture</option>
@@ -164,12 +166,27 @@ if (page === "mesVoitures.html") {
                 </select>
             `;
 
-            // Quand on change la sélection on active la voiture
-            const select = document.getElementById("selectVoitureListe");
+            const select = document.getElementById("voitureSelect");
+
+            // Remettre la voiture active dans le select
+            if (activeIndex !== null) {
+                select.value = activeIndex;
+            }
+
+            // Quand on change la sélection
             select.addEventListener("change", () => {
-                if (select.value !== "") {
-                    setActiveVoiture(select.value);
+                if (select.value === "") {
+                    // aucune voiture sélectionnée → on désactive
+                    localStorage.removeItem("voitureActive");
+                    afficherVoitures();
+                    afficherVoitureSelectionnee();
+                    afficherProblemesConnus();
+                    // pas besoin de rappeler afficherSelectVoiture(), tu es déjà dedans
+                    return;
                 }
+
+                // une voiture est choisie → on l’active
+                setActiveVoiture(Number(select.value));
             });
         }
 
@@ -306,7 +323,7 @@ if (page === "mesVoitures.html") {
             const type = document.getElementById("typeProbleme").value;
             const description = document.getElementById("Description").value.trim();
 
-            if (!index) {
+            if (index === null) {
                 alert("Veuillez sélectionner une voiture.");
                 return;
             }
