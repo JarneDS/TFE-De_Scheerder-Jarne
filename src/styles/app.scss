@@ -302,7 +302,7 @@ ul {
     cursor: pointer;
 }
 
-#MVoiture {
+#MVoiture, #typeProbleme {
     background-color: var(--color-secondary);
     color: var(--color-text-btn);
     padding: 9px 0 10px 13px;
@@ -314,17 +314,17 @@ ul {
     box-sizing: border-box;
 }
 
-#MVoiture::placeholder {
+#MVoiture::placeholder, #typeProbleme::placeholder {
     color: var(--color-text-btn);
 }
 
-.select-wrapper {
+.select-wrapper, .problemesSelection {
     position: relative;
     display: inline-block;
     width: 100%;
 }
 
-.select-wrapper::after {
+.select-wrapper::after, .problemesSelection::after {
     content: "▼";
     position: absolute;
     right: 13px;
@@ -407,7 +407,7 @@ select {
     border-radius: 10px;
 }
 
-.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p {
+.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p, .problemesSelection option {
     color: var(--color-text-btn);
 }
 

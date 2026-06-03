@@ -36,11 +36,11 @@
             <div class="form__elements">
                 <h2 class="color--black">Nouvelle voiture&nbsp;:</h2>
                 <div class="form">
-                    <label for="MVoiture">Marque de la voiture :</label><br>
+                    <label for="MVoiture">Marque de la voiture :</label>
                     <input type="text" id="MVoiture" name="marqueVoiture" placeholder="Marque">
                 </div>
                 <div class="form">
-                    <label for="typeVoiture">Type de voiture :</label><br>
+                    <label for="typeVoiture">Type de voiture :</label>
                     <!-- Toutes les catégories sont actives pour que les gens puissent mettre leurs voiture dedans même s'il n'y a pas encore de trajet personnalisé pour son véhicule -->
                     <div class="select-wrapper">
                         <select id="typeVoiture" name="typeVoiture">
@@ -60,6 +60,20 @@
                 <h2 class="color--black">Voitures enregistrées :</h2>
                 <div id="listeVoitures"></div>
             </div>
+        </div>
+    </section>
+    <section id="mesVoitures__problemes">
+        <h2>Quel problème rencontrez-vous ?</h2>
+        <div class="problemesSelection">
+            <select id="typeProbleme" name="typeProbleme">
+                <option value="">Sélectionner un type</option>
+                <option value="moteur">Problème moteur</option>
+                <option value="electrique">Problème électrique</option>
+                <option value="chassis">Problème châssis</option>
+                <option value="pneus">Problème pneus</option>
+                <option value="freins">Problème freins</option>
+                <option value="peinture">Problème peinture</option>
+            </select>
         </div>
     </section>
 </body>
