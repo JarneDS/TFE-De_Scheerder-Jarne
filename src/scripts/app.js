@@ -176,16 +176,14 @@ if (page === "mesVoitures.html") {
             // Quand on change la sélection
             select.addEventListener("change", () => {
                 if (select.value === "") {
-                    // aucune voiture sélectionnée → on désactive
                     localStorage.removeItem("voitureActive");
                     afficherVoitures();
                     afficherVoitureSelectionnee();
                     afficherProblemesConnus();
-                    // pas besoin de rappeler afficherSelectVoiture(), tu es déjà dedans
                     return;
                 }
 
-                // une voiture est choisie → on l’active
+                // une voiture est choisie, on l’active
                 setActiveVoiture(Number(select.value));
             });
         }
@@ -316,7 +314,27 @@ if (page === "mesVoitures.html") {
         window.supprimerVoiture = function(index) {
             voitures.splice(index, 1);
             localStorage.setItem("voitures", JSON.stringify(voitures));
+
+            delete problemes[index];
+
+            const newProblemes = {};
+            Object.keys(problemes).forEach((key, i) => {
+                newProblemes[i] = problemes[key];
+            });
+            problemes = newProblemes;
+            localStorage.setItem("problemes", JSON.stringify(problemes));
+
+            const active = Number(localStorage.getItem("voitureActive"));
+            if (active === index) {
+                localStorage.removeItem("voitureActive");
+            } else if (active > index) {
+                localStorage.setItem("voitureActive", active - 1);
+            }
+
             afficherVoitures();
+            afficherVoitureSelectionnee();
+            afficherProblemesConnus();
+            afficherSelectVoiture();
         };
 
         btnAjouterProbleme.addEventListener("click", () => {
