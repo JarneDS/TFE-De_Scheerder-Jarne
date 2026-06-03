@@ -29,10 +29,6 @@
             <li><a href="#" class="btnLiens NAV menuActive"><img src="mesVoituresIcone.png" class="icone" alt="icone Mes voitures">Mes voitures</a></li>
         </ul>
     </nav>
-    <div id="mesVoitures__sideNav">
-        <h3>Mes&nbsp;voitures&nbsp;enregistrées</h3>
-        <div id="listeVoituresSideNav"></div>
-    </div>
     <section class="mesVoitures section__btnRetour">
         <button onclick="window.location.href='index.html'" class="btnRetour" style="margin-bottom: 46px;">←&nbsp;Retour&nbsp;vers&nbsp;Accueil</button>
         <h1>Gérer vos voitures</h1>
@@ -90,7 +86,16 @@
         </div>
         <div>
             <h2>Liste des problèmes connus avec votre <b class="voitureSelectionner h2"></b> :</h2>
-            <div id="listeProblemesConnus"></div>
+            <table class="probleme__item" id="tableProblemes">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="h3">Type de problème</th>
+                        <th class="h3">Description</th>
+                    </tr>
+                </thead>
+                <tbody id="listeProblemesConnus"></tbody>
+            </table>
         </div>
     </section>
 </body>

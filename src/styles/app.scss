@@ -278,41 +278,6 @@ ul {
 }
 
 /* MES VOITURES */
-#mesVoitures__sideNav {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--color-primary);
-    padding: 20px;
-    width: 45px;
-    height: 322px;
-    border-radius: 10px 0 0 10px;
-    display: grid;
-    gap: 0 20px;
-    grid-template-columns: 45px 322px;
-    transition: all .3s;
-}
-
-#mesVoitures__sideNav h3 {
-    margin: 0;
-    color: var(--color-text-btn);   
-    grid-column: 1 / 2;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    text-align: center;
-    white-space: nowrap;
-    justify-self: center;
-    align-self: center;
-}
-
-#listeVoituresSideNav {
-    opacity: 0;
-    transition: all .3s;
-    grid-column: 2 / 3;
-    overflow-y: scroll;
-}
-
 .voituresEnregistrees {
     overflow-y: scroll;
     scrollbar-width: thin;
@@ -330,27 +295,6 @@ ul {
 .voituresEnregistrees::-webkit-scrollbar-thumb {
     background: var(--color-primary);
     border-radius: 10px;
-}
-
-#mesVoitures__sideNav:hover {
-    width: 367px;
-}
-
-#mesVoitures__sideNav:hover #listeVoituresSideNav {
-    opacity: 1;
-}
-
-#listeVoituresSideNav p {
-    color: var(--color-text-btn);
-}
-
-#listeVoituresSideNav .check {
-    color: var(--color-thirdly);
-    display: none;
-}
-
-#listeVoituresSideNav .voiture-check.actif .check {
-    display: block;
 }
 
 .form__accueil {
@@ -441,7 +385,7 @@ select {
     display: block;
 }
 
-#ajouterVoiture, .suppVehicule {
+#ajouterVoiture, .suppVehicule, #ajouterProbleme {
     background-color: var(--color-primary);
     border: none;
     padding: 9px 0 10px;
@@ -452,11 +396,11 @@ select {
     width: 100%;
 }
 
-#ajouterVoiture:hover, .suppVehicule:hover {
+#ajouterVoiture:hover, .suppVehicule:hover, #ajouterProbleme:hover {
     background-color: var(--color-secondary);
 }
 
-.form__elements, .voituresEnregistrees, .mesVoituresProblemes__form, #listeProblemesConnus {
+.form__elements, .voituresEnregistrees, .mesVoituresProblemes__form, #tableProblemes {
     background-color: rgb(255, 255, 255, .8);
     padding: 20px;
     border-radius: 10px;
@@ -487,6 +431,7 @@ select {
     margin: 0;
     padding: 10px;
     width: auto !important;
+    font-family: "TitilliumWeb-SemiBold";
 }
 
 #mesVoitures__problemes {
@@ -499,6 +444,20 @@ select {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.probleme__item {
+    margin-bottom: 26px;
+}
+
+.probleme__item td {
+    color: var(--color-text-btn);
+    font-family: "TitilliumWeb-SemiBold";
+    padding: 6px 8px;
+}
+
+.probleme__item th {
+    color: var(--color-text-btn);
 }
 
 /* SELECTION */
@@ -999,7 +958,7 @@ select {
         float: right;
     }
 
-    #ajouterVoiture, .suppVehicule {
+    #ajouterVoiture, .suppVehicule, #ajouterProbleme {
         padding: 9px 13px 10px;
         width: fit-content;
     }

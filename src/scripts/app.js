@@ -78,7 +78,6 @@ if (page === "mesVoitures.html") {
     const typeSelect = document.getElementById("typeVoiture");
     const btnAjouter = document.getElementById("ajouterVoiture");
     const liste = document.getElementById("listeVoitures");
-    const listeSideNav = document.getElementById("listeVoituresSideNav");
     const btnAjouterProbleme = document.getElementById("ajouterProbleme");
     const listeProblemesConnus = document.getElementById("listeProblemesConnus");
 
@@ -100,13 +99,9 @@ if (page === "mesVoitures.html") {
             if (voitures.length === 0) {
                 liste.innerHTML = "<p>Aucune voiture enregistrée.</p>";
 
-                if (listeSideNav) {
-                    listeSideNav.innerHTML = "<p>Aucune voiture enregistrée.</p>";
-                }
-
                 // vider les textes affichés
                 document.querySelectorAll(".voitureSelectionner")
-                    .forEach(el => el.textContent = "");
+                    .forEach(el => el.textContent = "voiture");
 
                 return;
             }
@@ -123,32 +118,13 @@ if (page === "mesVoitures.html") {
                 `)
                 .join("");
 
-                // Affichage dans le sideNav
-                if (listeSideNav) {
-                    listeSideNav.innerHTML = voitures
-                        .map((voiture, index) => `
-                            <button class="voiture-check side" data-index="${index}">
-                                <p>${voiture.marque} – ${voiture.type}</p>
-                                <span class="check">&#x2714;</span>
-                            </button>
-                        `)
-                        .join("");
-                }
-
             const activeIndex = localStorage.getItem("voitureActive");
 
             // Sélection des deux listes
             const voitureSelectMain = document.querySelectorAll(".voiture-check:not(.side)");
-            const voitureSelectSide = document.querySelectorAll(".voiture-check.side");
 
             // LISTE PRINCIPALE
             voitureSelectMain.forEach((btn, index) => {
-                btn.classList.toggle("actif", activeIndex == index);
-                btn.addEventListener("click", () => setActiveVoiture(index));
-            });
-
-            // LISTE SIDENAV
-            voitureSelectSide.forEach((btn, index) => {
                 btn.classList.toggle("actif", activeIndex == index);
                 btn.addEventListener("click", () => setActiveVoiture(index));
             });
@@ -159,7 +135,7 @@ if (page === "mesVoitures.html") {
             const cibles = document.querySelectorAll(".voitureSelectionner");
 
             if (index === null || !voitures[index]) {
-                cibles.forEach(el => el.textContent = "");
+                cibles.forEach(el => el.textContent = "voiture");
                 return;
             }
 
@@ -185,25 +161,25 @@ if (page === "mesVoitures.html") {
 
         function afficherProblemesConnus() {
             const index = localStorage.getItem("voitureActive");
-
-            if (index === null) {
-                listeProblemesConnus.innerHTML = "<p>Aucune voiture sélectionnée.</p>";
-                return;
-            }
-
             const liste = problemes[index] || [];
+            const tbody = document.getElementById("listeProblemesConnus");
 
             if (liste.length === 0) {
-                listeProblemesConnus.innerHTML = "<p>Aucun problème enregistré pour cette voiture.</p>";
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="3">Aucun problème enregistré.</td>
+                    </tr>
+                `;
                 return;
             }
 
-            listeProblemesConnus.innerHTML = liste
-                .map(p => `
-                    <div class="probleme-item">
-                        <h4>${p.type}</h4>
-                        <p>${p.description}</p>
-                    </div>
+            tbody.innerHTML = liste
+                .map((p, i) => `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${p.type}</td>
+                        <td>${p.description}</td>
+                    </tr>
                 `)
                 .join("");
         }
