@@ -337,13 +337,13 @@ ul {
     color: var(--color-text-btn);
 }
 
-.select-wrapper, .problemesSelection, .etatProbleme, .selectVoiture {
+.select-wrapper, .problemesSelection, .etatProbleme, #selectVoiture {
     position: relative;
     display: inline-block;
     width: 100%;
 }
 
-.select-wrapper::after, .problemesSelection::after, .etatProbleme::after, .selectVoiture::after {
+.select-wrapper::after, .problemesSelection::after, .etatProbleme::after, #selectVoiture::after {
     content: "▼";
     position: absolute;
     top: 50%;

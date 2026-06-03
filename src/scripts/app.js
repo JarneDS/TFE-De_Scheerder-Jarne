@@ -145,6 +145,34 @@ if (page === "mesVoitures.html") {
             cibles.forEach(el => el.textContent = txt);
         }
 
+        function afficherSelectVoiture() {
+            const container = document.getElementById("selectVoiture");
+
+            if (!container) return;
+
+            if (voitures.length === 0) {
+                container.innerHTML = "<p>Aucune voiture enregistrée.</p>";
+                return;
+            }
+
+            container.innerHTML = `
+                <select id="voitureSelect">
+                    <option value="">Sélectionner une voiture</option>
+                    ${voitures
+                        .map((v, i) => `<option value="${i}">${v.marque} ${v.type}</option>`)
+                        .join("")}
+                </select>
+            `;
+
+            // Quand on change la sélection on active la voiture
+            const select = document.getElementById("selectVoitureListe");
+            select.addEventListener("change", () => {
+                if (select.value !== "") {
+                    setActiveVoiture(select.value);
+                }
+            });
+        }
+
         function setActiveVoiture(index) {
             const activeIndex = localStorage.getItem("voitureActive");
 
@@ -157,6 +185,7 @@ if (page === "mesVoitures.html") {
             afficherVoitures();
             afficherVoitureSelectionnee();
             afficherProblemesConnus();
+            afficherSelectVoiture();
         }
 
         function afficherProblemesConnus() {
@@ -299,6 +328,7 @@ if (page === "mesVoitures.html") {
         afficherVoitures();
         afficherVoitureSelectionnee();
         afficherProblemesConnus();
+        afficherSelectVoiture();
     };
 };
 
