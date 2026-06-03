@@ -354,6 +354,10 @@ ul {
     font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
 }
 
+#selectVoiture p {
+    color: var(--color-text-btn);
+}
+
 select {
     appearance: none;
     width: 100%;

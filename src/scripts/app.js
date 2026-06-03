@@ -273,7 +273,7 @@ if (page === "mesVoitures.html") {
                 btn.addEventListener("click", () => {
 
                     if (!confirm("Voulez-vous supprimer ce problème ?")) {
-                        return; // L'utilisateur a annulé
+                        return;
                     }
 
                     const indexVoiture = localStorage.getItem("voitureActive");
