@@ -101,9 +101,9 @@ if (page === "mesVoitures.html") {
                     listeSideNav.innerHTML = "<p>Aucune voiture enregistrée.</p>";
                 }
 
-                // vider aussi la sélection affichée
-                const cible = document.getElementById("voitureSelectionner");
-                if (cible) cible.textContent = "";
+                // vider les textes affichés
+                document.querySelectorAll(".voitureSelectionner")
+                    .forEach(el => el.textContent = "");
 
                 return;
             }
@@ -153,15 +153,17 @@ if (page === "mesVoitures.html") {
 
         function afficherVoitureSelectionnee() {
             const index = localStorage.getItem("voitureActive");
-            const cible = document.getElementById("voitureSelectionner");
+            const cibles = document.querySelectorAll(".voitureSelectionner");
 
             if (index === null || !voitures[index]) {
-                cible.textContent = "";
+                cibles.forEach(el => el.textContent = "");
                 return;
             }
 
             const voiture = voitures[index];
-            cible.textContent = `${voiture.marque} ${voiture.type}`;
+            const txt = `${voiture.marque} ${voiture.type}`;
+
+            cibles.forEach(el => el.textContent = txt);
         }
 
         function setActiveVoiture(index) {

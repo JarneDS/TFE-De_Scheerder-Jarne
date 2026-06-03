@@ -310,10 +310,30 @@ ul {
     opacity: 0;
     transition: all .3s;
     grid-column: 2 / 3;
+    overflow-y: scroll;
+}
+
+.voituresEnregistrees {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
+}
+
+.voituresEnregistrees::-webkit-scrollbar {
+    width: 2px;
+}
+
+.voituresEnregistrees::-webkit-scrollbar-track {
+    background: none;
+}
+
+.voituresEnregistrees::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
 }
 
 #mesVoitures__sideNav:hover {
-    width: 306px;
+    width: 367px;
 }
 
 #mesVoitures__sideNav:hover #listeVoituresSideNav {
@@ -383,18 +403,11 @@ ul {
     content: "▼";
     position: absolute;
     top: 50%;
+    right: 13px;
     transform: translateY(-50%);
     pointer-events: none;
     color: var(--color-text-btn);
     font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
-}
-
-.select-wrapper::after {
-    right: 13px;
-}
-
-.problemesSelection::after {
-    right: 33px;
 }
 
 select {
@@ -443,13 +456,13 @@ select {
     background-color: var(--color-secondary);
 }
 
-.form__elements, .voituresEnregistrees, .problemesSelection {
+.form__elements, .voituresEnregistrees, .mesVoituresProblemes__form, #listeProblemesConnus {
     background-color: rgb(255, 255, 255, .8);
     padding: 20px;
     border-radius: 10px;
 }
 
-.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p, .problemesSelection option {
+.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p, .mesVoituresProblemes__form option {
     color: var(--color-text-btn);
 }
 
@@ -943,8 +956,9 @@ select {
         margin-bottom: 40px;
     }
 
-    .form__elements, .mesVoituresProblemes__form {
+    .form__elements, .voituresEnregistrees, .mesVoituresProblemes__form {
         max-width: 330px;
+        max-height: 394px;
     }
 
     .commencer {

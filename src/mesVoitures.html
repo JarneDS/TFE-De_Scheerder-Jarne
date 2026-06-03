@@ -67,11 +67,11 @@
         </div>
     </section>
     <section id="mesVoitures__problemes">
-        <h2>Quel problème rencontrez-vous avec votre <b id="voitureSelectionner" class="h2"></b> ?</h2>
+        <h2>Quel problème rencontrez-vous avec votre <b class="voitureSelectionner h2"></b> ?</h2>
         <div class="mesVoituresProblemes__form">
             <div class="problemesSelection">
                 <select id="typeProbleme" name="typeProbleme">
-                    <option value="">Sélectionner un type</option>
+                    <option value="">Sélectionner un type de problème</option>
                     <option value="moteur">Problème moteur</option>
                     <option value="electrique">Problème électrique</option>
                     <option value="chassis">Problème châssis</option>
@@ -80,7 +80,13 @@
                     <option value="peinture">Problème peinture</option>
                 </select>
             </div>
+            <div class="problemesSelection__txt">
+                <label for="Description" class="h3">Description :</label>
+                <textarea id="Description" name="Description" placeholder="Description du problème"></textarea>
+            </div>
         </div>
+        <h2>Liste des problèmes connus avec votre <b class="voitureSelectionner h2"></b> :</h2>
+        <div id="listeProblemesConnus"></div>
     </section>
 </body>
 </html>
