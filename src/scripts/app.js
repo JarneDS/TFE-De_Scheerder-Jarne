@@ -164,6 +164,7 @@ if (page === "mesVoitures.html") {
             const liste = problemes[index] || [];
             const tbody = document.getElementById("listeProblemesConnus");
 
+            /* Fusionner 3 colonnes en 1 avec colspan */
             if (liste.length === 0) {
                 tbody.innerHTML = `
                     <tr>
@@ -179,6 +180,12 @@ if (page === "mesVoitures.html") {
                         <td>${i + 1}</td>
                         <td>${p.type}</td>
                         <td>${p.description}</td>
+                        <td>
+                            <select class="etatProbleme" data-index="${i}">
+                                <option value="enCours">En cours</option>
+                                <option value="repare">Réparé</option>
+                            </select>
+                        </td>
                     </tr>
                 `)
                 .join("");
@@ -530,4 +537,3 @@ if (page === "entretien.html" || page === "diagnostiques.html") {
 if (page === "moteur.html") {
     afficherParties("MoteurIntro");
 }
-

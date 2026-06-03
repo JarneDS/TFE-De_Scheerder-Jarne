@@ -79,7 +79,7 @@ h3, label, .commencer, .h3, .h3__strong {
     color: var(--color-text);
 }
 
-p, option, select, input, button, a, ul, ol {
+p, option, select, input, button, a, ul, ol, .probleme__item td {
     color: var(--color-text);
     margin: 13px 0;
     font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
@@ -337,13 +337,13 @@ ul {
     color: var(--color-text-btn);
 }
 
-.select-wrapper, .problemesSelection {
+.select-wrapper, .problemesSelection, .etatProbleme {
     position: relative;
     display: inline-block;
     width: 100%;
 }
 
-.select-wrapper::after, .problemesSelection::after {
+.select-wrapper::after, .problemesSelection::after, .etatProbleme::after {
     content: "▼";
     position: absolute;
     top: 50%;
@@ -407,7 +407,7 @@ select {
     width: 100%;
 }
 
-.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p, .mesVoituresProblemes__form option, .problemesSelection__txt label {
+.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p, .mesVoituresProblemes__form option, .problemesSelection__txt label, .etatProbleme option {
     color: var(--color-text-btn);
 }
 
@@ -452,12 +452,17 @@ select {
 
 .probleme__item td {
     color: var(--color-text-btn);
-    font-family: "TitilliumWeb-SemiBold";
     padding: 6px 8px;
 }
 
 .probleme__item th {
     color: var(--color-text-btn);
+}
+
+.etatProbleme {
+    color: var(--color-text-btn);
+    padding: 9px 0 10px 13px;
+    border-radius: 5px;
 }
 
 /* SELECTION */
