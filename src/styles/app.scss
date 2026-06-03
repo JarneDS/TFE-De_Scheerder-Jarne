@@ -310,7 +310,7 @@ ul {
     flex-direction: column;
 }
 
-#typeVoiture, #typeProbleme {
+#typeVoiture, #typeProbleme, #voitureSelect {
     background-color: var(--color-secondary);
     color: var(--color-text-btn);
     padding: 9px 13px 10px 13px;
@@ -337,13 +337,13 @@ ul {
     color: var(--color-text-btn);
 }
 
-.select-wrapper, .problemesSelection, .etatProbleme {
+.select-wrapper, .problemesSelection, .etatProbleme, .selectVoiture {
     position: relative;
     display: inline-block;
     width: 100%;
 }
 
-.select-wrapper::after, .problemesSelection::after, .etatProbleme::after {
+.select-wrapper::after, .problemesSelection::after, .etatProbleme::after, .selectVoiture::after {
     content: "▼";
     position: absolute;
     top: 50%;
