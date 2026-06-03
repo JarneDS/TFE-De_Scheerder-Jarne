@@ -180,15 +180,64 @@ if (page === "mesVoitures.html") {
                         <td>${i + 1}</td>
                         <td>${p.type}</td>
                         <td>${p.description}</td>
-                        <td>
+                        <td class="etatCell">
                             <select class="etatProbleme" data-index="${i}">
                                 <option value="enCours">En cours</option>
                                 <option value="repare">Réparé</option>
                             </select>
                         </td>
+                        <td class="corbeille" data-index="${i}"><img src="corbeille.png" alt="Icone d'une poubelle" class="icone"></td>
                     </tr>
                 `)
                 .join("");
+
+            document.querySelectorAll(".etatProbleme").forEach(select => {
+                const index = localStorage.getItem("voitureActive");
+                const i = select.dataset.index;
+                const td = select.closest(".etatProbleme");
+
+                // Charger l'état si déjà enregistré
+                if (problemes[index][i].etat) {
+                    select.value = problemes[index][i].etat;
+                }
+
+                // Fonction pour mettre la bonne couleur
+                function updateColor() {
+                    td.classList.remove("etat--encours", "etat--repare");
+
+                    if (select.value === "enCours") {
+                        td.classList.add("etat--encours");
+                    } else if (select.value === "repare") {
+                        td.classList.add("etat--repare");
+                    }
+                }
+
+                // Appliquer la couleur au chargement
+                updateColor();
+
+                // Sauvegarder + mettre à jour la couleur quand on change
+                select.addEventListener("change", () => {
+                    problemes[index][i].etat = select.value;
+                    localStorage.setItem("problemes", JSON.stringify(problemes));
+                    updateColor();
+                });
+            });
+
+            document.querySelectorAll(".corbeille").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const indexVoiture = localStorage.getItem("voitureActive");
+                    const indexProbleme = btn.dataset.index;
+
+                    // Supprimer le problème
+                    problemes[indexVoiture].splice(indexProbleme, 1);
+
+                    // Sauvegarder
+                    localStorage.setItem("problemes", JSON.stringify(problemes));
+
+                    // Rafraîchir l'affichage
+                    afficherProblemesConnus();
+                });
+            });
         }
 
         btnAjouter.addEventListener("click", () => {

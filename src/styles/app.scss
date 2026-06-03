@@ -465,6 +465,27 @@ select {
     border-radius: 5px;
 }
 
+.etatProbleme.etat--encours {
+    background: rgb(255, 0, 0, .5);
+}
+
+.etatProbleme.etat--repare {
+    background: rgb(0, 255, 0, .5);
+}
+
+.etatProbleme option {
+    background: var(--color-bg);
+}
+
+.corbeille {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+    transform: translateY(60%);
+}
+
 /* SELECTION */
 .btnRetour, .btnEntretien {
     background-color: var(--color-bg);
