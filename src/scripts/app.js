@@ -122,7 +122,7 @@ if (page === "mesVoitures.html") {
                         `)
                         .join("");
                 }
-                
+
             const activeIndex = localStorage.getItem("voitureActive");
 
             // LISTE PRINCIPALE
@@ -148,9 +148,23 @@ if (page === "mesVoitures.html") {
             });
         }
 
+        function afficherVoitureSelectionnee() {
+            const index = localStorage.getItem("voitureActive");
+            const cible = document.getElementById("voitureSelectionner");
+
+            if (index === null || !voitures[index]) {
+                cible.textContent = "";
+                return;
+            }
+
+            const voiture = voitures[index];
+            cible.textContent = `${voiture.marque} ${voiture.type}`;
+        }
+
         function setActiveVoiture(index) {
             localStorage.setItem("voitureActive", index);
             afficherVoitures();
+            afficherVoitureSelectionnee();
         }
 
         btnAjouter.addEventListener("click", () => {
@@ -186,6 +200,7 @@ if (page === "mesVoitures.html") {
         };
 
         afficherVoitures();
+        afficherVoitureSelectionnee();
     };
 };
 

@@ -56,7 +56,7 @@ h1 {
     color: var(--color-text);
 }
 
-h2 {
+h2, .h2 {
     font-size: clamp(2.5rem, 0.309vw + 2.442rem, 2.813rem);
     margin: 64px 0 32px;
     font-family: "Oswald-Bold";
@@ -278,10 +278,6 @@ ul {
 }
 
 /* MES VOITURES */
-/*.mesVoitures {
-    display: none;
-}*/
-
 #mesVoitures__sideNav {
     position: fixed;
     right: 0;
