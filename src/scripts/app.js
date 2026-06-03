@@ -271,16 +271,16 @@ if (page === "mesVoitures.html") {
 
             document.querySelectorAll(".corbeille").forEach(btn => {
                 btn.addEventListener("click", () => {
+
+                    if (!confirm("Voulez-vous supprimer ce problème ?")) {
+                        return; // L'utilisateur a annulé
+                    }
+
                     const indexVoiture = localStorage.getItem("voitureActive");
                     const indexProbleme = btn.dataset.index;
 
-                    // Supprimer le problème
                     problemes[indexVoiture].splice(indexProbleme, 1);
-
-                    // Sauvegarder
                     localStorage.setItem("problemes", JSON.stringify(problemes));
-
-                    // Rafraîchir l'affichage
                     afficherProblemesConnus();
                 });
             });
