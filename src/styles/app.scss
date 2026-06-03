@@ -400,11 +400,17 @@ select {
     background-color: var(--color-secondary);
 }
 
-.form__elements, .voituresEnregistrees, .mesVoituresProblemes__form, #tableProblemes {
+.form__elements, .voituresEnregistrees {
     background-color: rgb(255, 255, 255, .8);
     padding: 20px;
     border-radius: 10px;
-    width: 100%;
+}
+
+.mesVoituresProblemes__form, #tableProblemes {
+    background-color: rgb(255, 255, 255, .8);
+    padding: 20px;
+    border-radius: 10px;
+    width: -webkit-fill-available;
 }
 
 .color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p, .mesVoituresProblemes__form option, .problemesSelection__txt label, .etatProbleme option {
@@ -973,7 +979,6 @@ select {
 
     .form__elements, .voituresEnregistrees, .mesVoituresProblemes__form {
         max-width: 330px;
-        max-height: 394px;
     }
 
     .commencer {
