@@ -29,6 +29,10 @@
             <li><a href="#" class="btnLiens NAV menuActive"><img src="mesVoituresIcone.png" class="icone" alt="icone Mes voitures">Mes voitures</a></li>
         </ul>
     </nav>
+    <div id="mesVoitures__sideNav">
+        <h3>Mes&nbsp;voitures&nbsp;enregistrées</h3>
+        <div id="listeVoituresSideNav"></div>
+    </div>
     <section class="mesVoitures section__btnRetour">
         <button onclick="window.location.href='index.html'" class="btnRetour" style="margin-bottom: 46px;">←&nbsp;Retour&nbsp;vers&nbsp;Accueil</button>
         <h1>Gérer vos voitures</h1>
@@ -64,16 +68,18 @@
     </section>
     <section id="mesVoitures__problemes">
         <h2>Quel problème rencontrez-vous ?</h2>
-        <div class="problemesSelection">
-            <select id="typeProbleme" name="typeProbleme">
-                <option value="">Sélectionner un type</option>
-                <option value="moteur">Problème moteur</option>
-                <option value="electrique">Problème électrique</option>
-                <option value="chassis">Problème châssis</option>
-                <option value="pneus">Problème pneus</option>
-                <option value="freins">Problème freins</option>
-                <option value="peinture">Problème peinture</option>
-            </select>
+        <div class="mesVoituresProblemes__form">
+            <div class="problemesSelection">
+                <select id="typeProbleme" name="typeProbleme">
+                    <option value="">Sélectionner un type</option>
+                    <option value="moteur">Problème moteur</option>
+                    <option value="electrique">Problème électrique</option>
+                    <option value="chassis">Problème châssis</option>
+                    <option value="pneus">Problème pneus</option>
+                    <option value="freins">Problème freins</option>
+                    <option value="peinture">Problème peinture</option>
+                </select>
+            </div>
         </div>
     </section>
 </body>

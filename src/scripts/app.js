@@ -78,6 +78,7 @@ if (page === "mesVoitures.html") {
     const typeSelect = document.getElementById("typeVoiture");
     const btnAjouter = document.getElementById("ajouterVoiture");
     const liste = document.getElementById("listeVoitures");
+    const listeSideNav = document.getElementById("listeVoituresSideNav");
 
     let voitureSelectionner = false;
 
@@ -96,12 +97,12 @@ if (page === "mesVoitures.html") {
             if (voitures.length === 0) {
                 liste.innerHTML = "<p>Aucune voiture enregistrée.</p>";
                 return;
-            };
+            }
 
             liste.innerHTML = voitures
                 .map((voiture, index) => `
                     <div class="voiture-item">
-                        <button class="voiture-check">
+                        <button class="voiture-check" data-index="${index}">
                             <p>${voiture.marque} – ${voiture.type}</p>
                             <span class="check">&#x2714;</span>
                         </button>
@@ -110,32 +111,47 @@ if (page === "mesVoitures.html") {
                 `)
                 .join("");
 
-            const voitureSelect = document.querySelectorAll(".voiture-check");
+                // Affichage dans le sideNav
+                if (listeSideNav) {
+                    listeSideNav.innerHTML = voitures
+                        .map((voiture, index) => `
+                            <button class="voiture-check side" data-index="${index}">
+                                <p>${voiture.marque} – ${voiture.type}</p>
+                                <span class="check">&#x2714;</span>
+                            </button>
+                        `)
+                        .join("");
+                }
+                
             const activeIndex = localStorage.getItem("voitureActive");
 
-            if (activeIndex !== null && voitureSelect[activeIndex]) {
-                voitureSelect[activeIndex].classList.add("actif");
-            };
+            // LISTE PRINCIPALE
+            const voitureSelect = document.querySelectorAll(".voiture-check:not(.side)");
 
-            voitureSelect.forEach((voiture, index) => {
-                voiture.addEventListener("click", () => {
+            voitureSelect.forEach((btn, index) => {
+                if (activeIndex == index) btn.classList.add("actif");
 
-                    if (voiture.classList.contains("actif")) {
-                        voiture.classList.remove("actif");
-                        localStorage.removeItem("voitureActive");
-                        voitureSelectionner = false;
-                        return;
-                    };
-
-                    voitureSelect.forEach(el => el.classList.remove("actif"));
-                    voiture.classList.add("actif");
-                    voitureSelectionner = true;
-                    window.location.href = "page-parties.html";
-
-                    localStorage.setItem("voitureActive", index);
+                btn.addEventListener("click", () => {
+                    setActiveVoiture(index);
                 });
             });
-        };
+
+            // LISTE SIDENAV
+            const voitureSelectSide = document.querySelectorAll(".voiture-check.side");
+
+            voitureSelectSide.forEach((btn, index) => {
+                if (activeIndex == index) btn.classList.add("actif");
+
+                btn.addEventListener("click", () => {
+                    setActiveVoiture(index);
+                });
+            });
+        }
+
+        function setActiveVoiture(index) {
+            localStorage.setItem("voitureActive", index);
+            afficherVoitures();
+        }
 
         btnAjouter.addEventListener("click", () => {
             let marque = sanitize(marqueInput.value);
