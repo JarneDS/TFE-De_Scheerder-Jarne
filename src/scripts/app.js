@@ -96,6 +96,15 @@ if (page === "mesVoitures.html") {
         function afficherVoitures() {
             if (voitures.length === 0) {
                 liste.innerHTML = "<p>Aucune voiture enregistrée.</p>";
+
+                if (listeSideNav) {
+                    listeSideNav.innerHTML = "<p>Aucune voiture enregistrée.</p>";
+                }
+
+                // vider aussi la sélection affichée
+                const cible = document.getElementById("voitureSelectionner");
+                if (cible) cible.textContent = "";
+
                 return;
             }
 
@@ -125,26 +134,20 @@ if (page === "mesVoitures.html") {
 
             const activeIndex = localStorage.getItem("voitureActive");
 
+            // Sélection des deux listes
+            const voitureSelectMain = document.querySelectorAll(".voiture-check:not(.side)");
+            const voitureSelectSide = document.querySelectorAll(".voiture-check.side");
+
             // LISTE PRINCIPALE
-            const voitureSelect = document.querySelectorAll(".voiture-check:not(.side)");
-
-            voitureSelect.forEach((btn, index) => {
-                if (activeIndex == index) btn.classList.add("actif");
-
-                btn.addEventListener("click", () => {
-                    setActiveVoiture(index);
-                });
+            voitureSelectMain.forEach((btn, index) => {
+                btn.classList.toggle("actif", activeIndex == index);
+                btn.addEventListener("click", () => setActiveVoiture(index));
             });
 
             // LISTE SIDENAV
-            const voitureSelectSide = document.querySelectorAll(".voiture-check.side");
-
             voitureSelectSide.forEach((btn, index) => {
-                if (activeIndex == index) btn.classList.add("actif");
-
-                btn.addEventListener("click", () => {
-                    setActiveVoiture(index);
-                });
+                btn.classList.toggle("actif", activeIndex == index);
+                btn.addEventListener("click", () => setActiveVoiture(index));
             });
         }
 
@@ -162,7 +165,14 @@ if (page === "mesVoitures.html") {
         }
 
         function setActiveVoiture(index) {
-            localStorage.setItem("voitureActive", index);
+            const activeIndex = localStorage.getItem("voitureActive");
+
+            if (activeIndex == index) {
+                localStorage.removeItem("voitureActive");
+            } else {
+                localStorage.setItem("voitureActive", index);
+            }
+
             afficherVoitures();
             afficherVoitureSelectionnee();
         }
