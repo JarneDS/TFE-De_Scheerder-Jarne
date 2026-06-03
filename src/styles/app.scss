@@ -460,14 +460,45 @@ select {
     background-color: rgb(255, 255, 255, .8);
     padding: 20px;
     border-radius: 10px;
+    width: 100%;
 }
 
-.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p, .mesVoituresProblemes__form option {
+.color--black, .form__elements  h3, .form__elements label, .form__elements option, .voituresEnregistrees h3, .voituresEnregistrees p, .mesVoituresProblemes__form option, .problemesSelection__txt label {
     color: var(--color-text-btn);
 }
 
 .color--black {
     margin-top: 0;
+}
+
+.problemesSelection__txt {
+    display: flex;
+    flex-direction: column;
+}
+
+.problemesSelection__txt label {
+    margin-top: 22px;
+}
+
+.problemesSelection__txt textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 218px;
+    margin: 0;
+    padding: 10px;
+    width: auto !important;
+}
+
+#mesVoitures__problemes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.problemesListe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* SELECTION */
@@ -953,7 +984,6 @@ select {
     .form__accueil {
         flex-direction: row;
         gap: 50px;
-        margin-bottom: 40px;
     }
 
     .form__elements, .voituresEnregistrees, .mesVoituresProblemes__form {
@@ -986,6 +1016,11 @@ select {
 
     .btnLiens {
         padding: 8px 13px;
+    }
+
+    /* MES VOITURES */
+    #mesVoitures__problemes {
+        flex-direction: row;
     }
     
     /* PAGE-PARTIES */

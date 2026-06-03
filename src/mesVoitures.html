@@ -61,32 +61,37 @@
                 <button id="ajouterVoiture">Ajouter la voiture</button>
             </div>
             <div class="voituresEnregistrees">
-                <h2 class="color--black">Voitures enregistrées :</h2>
+                <h2 class="color--black">Voitures enregistrées&nbsp;:</h2>
                 <div id="listeVoitures"></div>
             </div>
         </div>
     </section>
     <section id="mesVoitures__problemes">
-        <h2>Quel problème rencontrez-vous avec votre <b class="voitureSelectionner h2"></b> ?</h2>
-        <div class="mesVoituresProblemes__form">
-            <div class="problemesSelection">
-                <select id="typeProbleme" name="typeProbleme">
-                    <option value="">Sélectionner un type de problème</option>
-                    <option value="moteur">Problème moteur</option>
-                    <option value="electrique">Problème électrique</option>
-                    <option value="chassis">Problème châssis</option>
-                    <option value="pneus">Problème pneus</option>
-                    <option value="freins">Problème freins</option>
-                    <option value="peinture">Problème peinture</option>
-                </select>
-            </div>
-            <div class="problemesSelection__txt">
-                <label for="Description" class="h3">Description :</label>
-                <textarea id="Description" name="Description" placeholder="Description du problème"></textarea>
+        <div class="problemesListe">
+            <h2>Quel problème rencontrez-vous avec votre <b class="voitureSelectionner h2"></b> ?</h2>
+            <div class="mesVoituresProblemes__form">
+                <div class="problemesSelection">
+                    <select id="typeProbleme" name="typeProbleme">
+                        <option value="">Sélectionner un type de problème</option>
+                        <option value="moteur">Problème moteur</option>
+                        <option value="electrique">Problème électrique</option>
+                        <option value="chassis">Problème châssis</option>
+                        <option value="pneus">Problème pneus</option>
+                        <option value="freins">Problème freins</option>
+                        <option value="peinture">Problème peinture</option>
+                    </select>
+                </div>
+                <div class="problemesSelection__txt">
+                    <label for="Description" class="h3">Description :</label>
+                    <textarea id="Description" name="Description" placeholder="Description du problème"></textarea>
+                </div>
+                <button id="ajouterProbleme">Ajouter ce problème</button>
             </div>
         </div>
-        <h2>Liste des problèmes connus avec votre <b class="voitureSelectionner h2"></b> :</h2>
-        <div id="listeProblemesConnus"></div>
+        <div>
+            <h2>Liste des problèmes connus avec votre <b class="voitureSelectionner h2"></b> :</h2>
+            <div id="listeProblemesConnus"></div>
+        </div>
     </section>
 </body>
 </html>

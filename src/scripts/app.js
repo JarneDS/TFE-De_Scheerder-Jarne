@@ -79,10 +79,13 @@ if (page === "mesVoitures.html") {
     const btnAjouter = document.getElementById("ajouterVoiture");
     const liste = document.getElementById("listeVoitures");
     const listeSideNav = document.getElementById("listeVoituresSideNav");
+    const btnAjouterProbleme = document.getElementById("ajouterProbleme");
+    const listeProblemesConnus = document.getElementById("listeProblemesConnus");
 
     let voitureSelectionner = false;
 
     let voitures = JSON.parse(localStorage.getItem("voitures")) || [];
+    let problemes = JSON.parse(localStorage.getItem("problemes")) || {};
 
     // sécurisé l'entrer utilisateur
     function sanitize(str) {
@@ -177,6 +180,32 @@ if (page === "mesVoitures.html") {
 
             afficherVoitures();
             afficherVoitureSelectionnee();
+            afficherProblemesConnus();
+        }
+
+        function afficherProblemesConnus() {
+            const index = localStorage.getItem("voitureActive");
+
+            if (index === null) {
+                listeProblemesConnus.innerHTML = "<p>Aucune voiture sélectionnée.</p>";
+                return;
+            }
+
+            const liste = problemes[index] || [];
+
+            if (liste.length === 0) {
+                listeProblemesConnus.innerHTML = "<p>Aucun problème enregistré pour cette voiture.</p>";
+                return;
+            }
+
+            listeProblemesConnus.innerHTML = liste
+                .map(p => `
+                    <div class="probleme-item">
+                        <h4>${p.type}</h4>
+                        <p>${p.description}</p>
+                    </div>
+                `)
+                .join("");
         }
 
         btnAjouter.addEventListener("click", () => {
@@ -211,8 +240,33 @@ if (page === "mesVoitures.html") {
             afficherVoitures();
         };
 
+        btnAjouterProbleme.addEventListener("click", () => {
+            const index = localStorage.getItem("voitureActive");
+            const type = document.getElementById("typeProbleme").value;
+            const description = document.getElementById("Description").value.trim();
+
+            if (!index) {
+                alert("Veuillez sélectionner une voiture.");
+                return;
+            }
+
+            if (!type || !description) {
+                alert("Veuillez remplir tous les champs.");
+                return;
+            }
+
+            if (!problemes[index]) problemes[index] = [];
+
+            problemes[index].push({ type, description });
+
+            localStorage.setItem("problemes", JSON.stringify(problemes));
+
+            afficherProblemesConnus();
+        });
+
         afficherVoitures();
         afficherVoitureSelectionnee();
+        afficherProblemesConnus();
     };
 };
 
