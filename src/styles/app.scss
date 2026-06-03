@@ -415,6 +415,25 @@ select {
 
 .table--scroll {
     overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
+}
+
+.table--scroll.is-dragging {
+    cursor: grabbing;
+}
+
+.table--scroll::-webkit-scrollbar {
+    height: 5px;
+}
+
+.table--scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table--scroll::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
 }
 
 #tableProblemes {
@@ -484,6 +503,7 @@ select {
     color: var(--color-text-btn);
     padding: 9px 13px 10px 13px;
     border-radius: 5px;
+    width: fit-content;
 }
 
 .etatProbleme.etat--encours {
@@ -641,7 +661,6 @@ select {
     margin-top: 0;
     cursor: pointer;
     transition: all .3s ease-in-out;
-    max-width: 145px;
 }
 
 .accueil__parties {
@@ -671,6 +690,9 @@ select {
     width: fit-content;
     margin: 0;
     padding-top: 0;
+    display: flex !important;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .boutonInfoA, .boutonInfoB, .boutonInfoC, .boutonInfoD, .boutonInfoE, .boutonInfoF, .boutonInfoG {
@@ -879,7 +901,6 @@ select {
     cursor: grabbing;
 }
 
-
 .entretien--slider::-webkit-scrollbar {
     height: 5px;
 }
@@ -1016,11 +1037,6 @@ select {
 
     .btnLiens {
         padding: 8px 13px;
-    }
-
-    /* MES VOITURES */
-    #mesVoitures__problemes {
-        flex-direction: row;
     }
     
     /* PAGE-PARTIES */
@@ -1398,6 +1414,11 @@ select {
         grid-template-columns: repeat(7, 1fr);
         gap: 20px;
         margin-bottom: 40px;
+    }
+
+    /* MES VOITURES */
+    #mesVoitures__problemes {
+        flex-direction: row;
     }
 
     /* GRID */
