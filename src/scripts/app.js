@@ -310,6 +310,7 @@ if (page === "mesVoitures.html") {
             typeSelect.value = "";
 
             afficherVoitures();
+            afficherSelectVoiture(); 
         });
 
         window.supprimerVoiture = function(index) {
@@ -340,6 +341,9 @@ if (page === "mesVoitures.html") {
             localStorage.setItem("problemes", JSON.stringify(problemes));
 
             afficherProblemesConnus();
+
+            document.getElementById("typeProbleme").value = "";
+            document.getElementById("Description").value = "";
         });
 
         afficherVoitures();
