@@ -79,7 +79,7 @@ h3, label, .commencer, .h3, .h3__strong {
     color: var(--color-text);
 }
 
-p, option, select, input, button, a, ul, ol, .probleme__item td {
+p, option, select, input, button, a, ul, ol, .probleme__item td, .problemesSelection__txt textarea {
     color: var(--color-text);
     margin: 13px 0;
     font-size: clamp(1rem, 0.123vw + 0.977rem, 1.125rem);
@@ -486,13 +486,17 @@ select {
     margin: 0;
     padding: 10px;
     width: auto !important;
-    font-family: "TitilliumWeb-SemiBold";
+    color: var(--color-text-btn);
 }
 
 #mesVoitures__problemes {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.historiqueProblemes h3 {
+    max-width: 500px;
 }
 
 .problemesListe {
@@ -1071,8 +1075,12 @@ select {
     }
 
     .form__elements, .voituresEnregistrees, .mesVoituresProblemes__form {
-        max-width: 330px;
+        max-width: 458px;
         max-height: 451px;
+    }
+
+    .no--margin {
+        margin-top: 0;
     }
 
     .commencer {
@@ -1472,16 +1480,11 @@ select {
         margin: 0 auto;
     }
 
-    .part.active, .Entretienpart.active, .partGrid {
+    .part.active, .Entretienpart.active, .partGrid, #mesVoitures__problemes {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 20px;
         margin-bottom: 40px;
-    }
-
-    /* MES VOITURES */
-    #mesVoitures__problemes {
-        flex-direction: row;
     }
 
     /* GRID */
@@ -1554,6 +1557,14 @@ select {
 
     .row6 {
         grid-row: 7 / 8;
+    }
+
+    .formProblemeActuel {
+        grid-column: 1 / 3;
+    }
+
+    .historiqueProblemes {
+        grid-column: 3 / 8;
     }
 
     .stick {
