@@ -423,8 +423,10 @@ select {
 
 .table--scroll {
     overflow-x: scroll;
+    overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: var(--color-primary) transparent;
+    max-height: 451px;
 }
 
 .table--scroll.is-dragging {
