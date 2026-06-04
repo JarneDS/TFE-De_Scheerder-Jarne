@@ -218,6 +218,10 @@ ul {
     margin-left: -29px;
 }
 
+.h3--marginNormal {
+    margin: 0 0 22px -29px;
+}
+
 /* NAV */
 .menu {
     height: 50px;
@@ -729,7 +733,7 @@ select {
 
 /* MOTEUR */
 .moteur {
-    padding-top: 0;
+    padding-top: 40px;
 }
 
 .boutonMoteurA, .boutonMoteurB, .boutonMoteurC, .boutonMoteurD, .boutonMoteurE, .boutonMoteurF {
@@ -818,6 +822,30 @@ select {
 .image__bidon {
     max-width: 100%;
     max-height: 100%;
+}
+
+.icone__liquides {
+    width: 33px;
+    height: 33px;
+}
+
+.liquides--flex {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 12px 12px 12px 41px;
+    border-radius: 10px;
+    border: 2px solid var(--color-primary);
+    margin: 52px 0 0;
+}
+
+.liquidesAttention--flex {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 0;
+    border-radius: 10px;
+    border: 2px solid var(--color-primary);
+    margin: 52px 0 0;
 }
 
 /* ENTRETIEN */
@@ -1004,6 +1032,25 @@ select {
         height: auto;
         max-width: 300px;
         max-height: 200px;
+    }
+
+    .image__bidon {
+        max-width: 100%;
+        max-height: 263px;
+    }
+
+    .liquides--flex {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        padding: 32px 32px 32px 61px;
+    }
+
+    .liquidesAttention--flex {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        padding: 6px 32px;
     }
 
     .height--100 {
