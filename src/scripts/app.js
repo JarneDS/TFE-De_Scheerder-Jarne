@@ -225,7 +225,7 @@ if (page === "mesVoitures.html") {
                         <td>${p.type}</td>
                         <td class="description">${p.description}</td>
                         <td class="etatCell">
-                            <select class="etatProbleme" data-index="${i}">
+                            <select class="etatProbleme" data-index="${i}" id="etatProbleme">
                                 <option value="enCours">En cours</option>
                                 <option value="repare">Réparé</option>
                             </select>
