@@ -450,6 +450,11 @@ select {
     min-width: 720px;
 }
 
+.etatCell {
+    display: flex;
+    justify-content: center;
+}
+
 .description {
     max-width: 280px;
     white-space: normal;
